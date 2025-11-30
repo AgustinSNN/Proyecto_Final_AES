@@ -1,0 +1,29 @@
+library ieee;
+library lpm;
+
+use lpm.lpm_components.all;
+use ieee.numeric_std.all;
+use ieee.std_logic_1164.all;
+
+entity main_AES is
+port (
+		plaintext : in std_logic_vector (127 downto 0);
+		key : in std_logic_vector (127 downto 0);
+		clk : in std_logic;
+		ciphertext: out std_logic_vector (127 downto 0)
+	);
+end main_AES;
+
+architecture behave of main_AES is
+
+type state is array (0 t0 15) of std_logic_vector (7 downto 0);
+signal currentstate, auxstate : state;
+
+begin
+
+	for i in 0 to 15 loop
+		begin
+			currentstate(i) <= std_logic_vector'(plaintext(0 + 8*i),plaintext(1 + 8*i),plaintext(2 + 8*i),plaintext(3 + 8*i),plaintext(4 + 8*i),plaintext(5 + 8*i),plaintext(6 + 8*i),plaintext(7 + 8*i));
+		end loop;
+		
+		

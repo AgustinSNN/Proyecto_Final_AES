@@ -1,0 +1,554 @@
+Analysis & Synthesis report for AES
+Thu May 22 16:30:35 2025
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. State Machine - |main_AES|state
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Registers Packed Into Inferred Megafunctions
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Source assignments for sbox_rom:u1|altsyncram:Mux7_rtl_0|altsyncram_atv:auto_generated
+ 15. Parameter Settings for Inferred Entity Instance: sbox_rom:u1|altsyncram:Mux7_rtl_0
+ 16. altsyncram Parameter Settings by Entity Instance
+ 17. Port Connectivity Checks: "mux2to1:mux_plain_text"
+ 18. Elapsed Time Per Partition
+ 19. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Thu May 22 16:30:35 2025           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; AES                                             ;
+; Top-level Entity Name              ; main_AES                                        ;
+; Family                             ; Cyclone II                                      ;
+; Total logic elements               ; 858                                             ;
+;     Total combinational functions  ; 725                                             ;
+;     Dedicated logic registers      ; 277                                             ;
+; Total registers                    ; 277                                             ;
+; Total pins                         ; 277                                             ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 2,048                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP2C35F672C6       ;                    ;
+; Top-level entity name                                                      ; main_AES           ; AES                ;
+; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                            ; Library ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------+---------+
+; sbox_rom.vhd                     ; yes             ; User VHDL File               ; E:/Proyecto final v3/sbox_rom.vhd                                       ;         ;
+; mix_columns.vhd                  ; yes             ; User VHDL File               ; E:/Proyecto final v3/mix_columns.vhd                                    ;         ;
+; demux1to16.vhd                   ; yes             ; User VHDL File               ; E:/Proyecto final v3/demux1to16.vhd                                     ;         ;
+; mux16to1.vhd                     ; yes             ; User VHDL File               ; E:/Proyecto final v3/mux16to1.vhd                                       ;         ;
+; main_aes.vhd                     ; yes             ; User VHDL File               ; E:/Proyecto final v3/main_aes.vhd                                       ;         ;
+; register_state.vhd               ; yes             ; User VHDL File               ; E:/Proyecto final v3/register_state.vhd                                 ;         ;
+; mux2to1.vhd                      ; yes             ; User VHDL File               ; E:/Proyecto final v3/mux2to1.vhd                                        ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
+; aglobal130.inc                   ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc        ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
+; altrom.inc                       ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altrom.inc            ;         ;
+; altram.inc                       ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altram.inc            ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altdpram.inc          ;         ;
+; db/altsyncram_atv.tdf            ; yes             ; Auto-Generated Megafunction  ; E:/Proyecto final v3/db/altsyncram_atv.tdf                              ;         ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimated Total logic elements              ; 858   ;
+;                                             ;       ;
+; Total combinational functions               ; 725   ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 484   ;
+;     -- 3 input functions                    ; 71    ;
+;     -- <=2 input functions                  ; 170   ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 725   ;
+;     -- arithmetic mode                      ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 277   ;
+;     -- Dedicated logic registers            ; 277   ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 277   ;
+; Total memory bits                           ; 2048  ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 285   ;
+; Total fan-out                               ; 3676  ;
+; Average fan-out                             ; 2.86  ;
++---------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                             ;
++------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node               ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                       ; Library Name ;
++------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------+--------------+
+; |main_AES                                ; 725 (349)         ; 277 (149)    ; 2048        ; 0            ; 0       ; 0         ; 277  ; 0            ; |main_AES                                                                 ; work         ;
+;    |mix_columns:column1|                 ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main_AES|mix_columns:column1                                             ; work         ;
+;    |mix_columns:column2|                 ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main_AES|mix_columns:column2                                             ; work         ;
+;    |mix_columns:column3|                 ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main_AES|mix_columns:column3                                             ; work         ;
+;    |mix_columns:column4|                 ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main_AES|mix_columns:column4                                             ; work         ;
+;    |mux16to1:mux_in|                     ; 80 (80)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main_AES|mux16to1:mux_in                                                 ; work         ;
+;    |mux2to1:mux_last_round|              ; 149 (149)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main_AES|mux2to1:mux_last_round                                          ; work         ;
+;    |mux2to1:mux_plain_text|              ; 128 (128)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main_AES|mux2to1:mux_plain_text                                          ; work         ;
+;    |register_state:register_plain_text|  ; 0 (0)             ; 128 (128)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main_AES|register_state:register_plain_text                              ; work         ;
+;    |sbox_rom:u1|                         ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |main_AES|sbox_rom:u1                                                     ; work         ;
+;       |altsyncram:Mux7_rtl_0|            ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |main_AES|sbox_rom:u1|altsyncram:Mux7_rtl_0                               ; work         ;
+;          |altsyncram_atv:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |main_AES|sbox_rom:u1|altsyncram:Mux7_rtl_0|altsyncram_atv:auto_generated ; work         ;
++------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                    ;
++----------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+-----------------------+
+; Name                                                                       ; Type ; Mode ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF                   ;
++----------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+-----------------------+
+; sbox_rom:u1|altsyncram:Mux7_rtl_0|altsyncram_atv:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; 256          ; 8            ; --           ; --           ; 2048 ; AES.main_AES0.rtl.mif ;
++----------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+-----------------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------+
+; State Machine - |main_AES|state                                                                 ;
++-----------------+-----------------+-----------------+------------+----------------+-------------+
+; Name            ; state.inc_round ; state.int_state ; state.idle ; state.counting ; state.start ;
++-----------------+-----------------+-----------------+------------+----------------+-------------+
+; state.start     ; 0               ; 0               ; 0          ; 0              ; 0           ;
+; state.counting  ; 0               ; 0               ; 0          ; 1              ; 1           ;
+; state.idle      ; 0               ; 0               ; 1          ; 0              ; 1           ;
+; state.int_state ; 0               ; 1               ; 0          ; 0              ; 1           ;
+; state.inc_round ; 1               ; 0               ; 0          ; 0              ; 1           ;
++-----------------+-----------------+-----------------+------------+----------------+-------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 277   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 15    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 264   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; round[0]                               ; 135     ;
+; Total number of inverted registers = 1 ;         ;
++----------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Registers Packed Into Inferred Megafunctions        ;
++---------------------+------------------------+------+
+; Register Name       ; Megafunction           ; Type ;
++---------------------+------------------------+------+
+; sbox_rom:u1|q[0..7] ; sbox_rom:u1|Mux7_rtl_0 ; ROM  ;
++---------------------+------------------------+------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |main_AES|counter[2]           ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |main_AES|round[3]             ;
+; 16:1               ; 8 bits    ; 80 LEs        ; 80 LEs               ; 0 LEs                  ; No         ; |main_AES|mux16to1:mux_in|Mux0 ;
+; 32:1               ; 8 bits    ; 168 LEs       ; 8 LEs                ; 160 LEs                ; No         ; |main_AES|Mux4                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
+
+
++----------------------------------------------------------------------------------------+
+; Source assignments for sbox_rom:u1|altsyncram:Mux7_rtl_0|altsyncram_atv:auto_generated ;
++---------------------------------+--------------------+------+--------------------------+
+; Assignment                      ; Value              ; From ; To                       ;
++---------------------------------+--------------------+------+--------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                        ;
++---------------------------------+--------------------+------+--------------------------+
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: sbox_rom:u1|altsyncram:Mux7_rtl_0 ;
++------------------------------------+-----------------------+-----------------------+
+; Parameter Name                     ; Value                 ; Type                  ;
++------------------------------------+-----------------------+-----------------------+
+; BYTE_SIZE_BLOCK                    ; 8                     ; Untyped               ;
+; AUTO_CARRY_CHAINS                  ; ON                    ; AUTO_CARRY            ;
+; IGNORE_CARRY_BUFFERS               ; OFF                   ; IGNORE_CARRY          ;
+; AUTO_CASCADE_CHAINS                ; ON                    ; AUTO_CASCADE          ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                   ; IGNORE_CASCADE        ;
+; WIDTH_BYTEENA                      ; 1                     ; Untyped               ;
+; OPERATION_MODE                     ; ROM                   ; Untyped               ;
+; WIDTH_A                            ; 8                     ; Untyped               ;
+; WIDTHAD_A                          ; 8                     ; Untyped               ;
+; NUMWORDS_A                         ; 256                   ; Untyped               ;
+; OUTDATA_REG_A                      ; UNREGISTERED          ; Untyped               ;
+; ADDRESS_ACLR_A                     ; NONE                  ; Untyped               ;
+; OUTDATA_ACLR_A                     ; NONE                  ; Untyped               ;
+; WRCONTROL_ACLR_A                   ; NONE                  ; Untyped               ;
+; INDATA_ACLR_A                      ; NONE                  ; Untyped               ;
+; BYTEENA_ACLR_A                     ; NONE                  ; Untyped               ;
+; WIDTH_B                            ; 1                     ; Untyped               ;
+; WIDTHAD_B                          ; 1                     ; Untyped               ;
+; NUMWORDS_B                         ; 1                     ; Untyped               ;
+; INDATA_REG_B                       ; CLOCK1                ; Untyped               ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                ; Untyped               ;
+; RDCONTROL_REG_B                    ; CLOCK1                ; Untyped               ;
+; ADDRESS_REG_B                      ; CLOCK1                ; Untyped               ;
+; OUTDATA_REG_B                      ; UNREGISTERED          ; Untyped               ;
+; BYTEENA_REG_B                      ; CLOCK1                ; Untyped               ;
+; INDATA_ACLR_B                      ; NONE                  ; Untyped               ;
+; WRCONTROL_ACLR_B                   ; NONE                  ; Untyped               ;
+; ADDRESS_ACLR_B                     ; NONE                  ; Untyped               ;
+; OUTDATA_ACLR_B                     ; NONE                  ; Untyped               ;
+; RDCONTROL_ACLR_B                   ; NONE                  ; Untyped               ;
+; BYTEENA_ACLR_B                     ; NONE                  ; Untyped               ;
+; WIDTH_BYTEENA_A                    ; 1                     ; Untyped               ;
+; WIDTH_BYTEENA_B                    ; 1                     ; Untyped               ;
+; RAM_BLOCK_TYPE                     ; AUTO                  ; Untyped               ;
+; BYTE_SIZE                          ; 8                     ; Untyped               ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE             ; Untyped               ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ  ; Untyped               ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ  ; Untyped               ;
+; INIT_FILE                          ; AES.main_AES0.rtl.mif ; Untyped               ;
+; INIT_FILE_LAYOUT                   ; PORT_A                ; Untyped               ;
+; MAXIMUM_DEPTH                      ; 0                     ; Untyped               ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL                ; Untyped               ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                ; Untyped               ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                ; Untyped               ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                ; Untyped               ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN       ; Untyped               ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN       ; Untyped               ;
+; ENABLE_ECC                         ; FALSE                 ; Untyped               ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                 ; Untyped               ;
+; WIDTH_ECCSTATUS                    ; 3                     ; Untyped               ;
+; DEVICE_FAMILY                      ; Cyclone II            ; Untyped               ;
+; CBXI_PARAMETER                     ; altsyncram_atv        ; Untyped               ;
++------------------------------------+-----------------------+-----------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                              ;
++-------------------------------------------+-----------------------------------+
+; Name                                      ; Value                             ;
++-------------------------------------------+-----------------------------------+
+; Number of entity instances                ; 1                                 ;
+; Entity Instance                           ; sbox_rom:u1|altsyncram:Mux7_rtl_0 ;
+;     -- OPERATION_MODE                     ; ROM                               ;
+;     -- WIDTH_A                            ; 8                                 ;
+;     -- NUMWORDS_A                         ; 256                               ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                      ;
+;     -- WIDTH_B                            ; 1                                 ;
+;     -- NUMWORDS_B                         ; 1                                 ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                            ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                      ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                              ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                         ;
++-------------------------------------------+-----------------------------------+
+
+
++----------------------------------------------------+
+; Port Connectivity Checks: "mux2to1:mux_plain_text" ;
++--------------+-------+----------+------------------+
+; Port         ; Type  ; Severity ; Details          ;
++--------------+-------+----------+------------------+
+; d0[124..123] ; Input ; Info     ; Stuck at VCC     ;
+; d0[117..114] ; Input ; Info     ; Stuck at VCC     ;
+; d0[112..109] ; Input ; Info     ; Stuck at VCC     ;
+; d0[105..103] ; Input ; Info     ; Stuck at VCC     ;
+; d0[101..97]  ; Input ; Info     ; Stuck at VCC     ;
+; d0[87..84]   ; Input ; Info     ; Stuck at VCC     ;
+; d0[79..77]   ; Input ; Info     ; Stuck at VCC     ;
+; d0[65..63]   ; Input ; Info     ; Stuck at VCC     ;
+; d0[60..59]   ; Input ; Info     ; Stuck at VCC     ;
+; d0[55..54]   ; Input ; Info     ; Stuck at VCC     ;
+; d0[50..49]   ; Input ; Info     ; Stuck at VCC     ;
+; d0[43..42]   ; Input ; Info     ; Stuck at VCC     ;
+; d0[31..29]   ; Input ; Info     ; Stuck at VCC     ;
+; d0[24..19]   ; Input ; Info     ; Stuck at VCC     ;
+; d0[127..125] ; Input ; Info     ; Stuck at GND     ;
+; d0[122..121] ; Input ; Info     ; Stuck at GND     ;
+; d0[119..118] ; Input ; Info     ; Stuck at GND     ;
+; d0[108..106] ; Input ; Info     ; Stuck at GND     ;
+; d0[92..88]   ; Input ; Info     ; Stuck at GND     ;
+; d0[81..80]   ; Input ; Info     ; Stuck at GND     ;
+; d0[76..74]   ; Input ; Info     ; Stuck at GND     ;
+; d0[72..70]   ; Input ; Info     ; Stuck at GND     ;
+; d0[62..61]   ; Input ; Info     ; Stuck at GND     ;
+; d0[53..51]   ; Input ; Info     ; Stuck at GND     ;
+; d0[46..44]   ; Input ; Info     ; Stuck at GND     ;
+; d0[39..38]   ; Input ; Info     ; Stuck at GND     ;
+; d0[26..25]   ; Input ; Info     ; Stuck at GND     ;
+; d0[18..15]   ; Input ; Info     ; Stuck at GND     ;
+; d0[13..12]   ; Input ; Info     ; Stuck at GND     ;
+; d0[10..4]    ; Input ; Info     ; Stuck at GND     ;
+; d0[2..0]     ; Input ; Info     ; Stuck at GND     ;
+; d0[120]      ; Input ; Info     ; Stuck at VCC     ;
+; d0[113]      ; Input ; Info     ; Stuck at GND     ;
+; d0[102]      ; Input ; Info     ; Stuck at GND     ;
+; d0[96]       ; Input ; Info     ; Stuck at GND     ;
+; d0[95]       ; Input ; Info     ; Stuck at VCC     ;
+; d0[94]       ; Input ; Info     ; Stuck at GND     ;
+; d0[93]       ; Input ; Info     ; Stuck at VCC     ;
+; d0[83]       ; Input ; Info     ; Stuck at GND     ;
+; d0[82]       ; Input ; Info     ; Stuck at VCC     ;
+; d0[73]       ; Input ; Info     ; Stuck at VCC     ;
+; d0[69]       ; Input ; Info     ; Stuck at VCC     ;
+; d0[68]       ; Input ; Info     ; Stuck at GND     ;
+; d0[67]       ; Input ; Info     ; Stuck at VCC     ;
+; d0[66]       ; Input ; Info     ; Stuck at GND     ;
+; d0[58]       ; Input ; Info     ; Stuck at GND     ;
+; d0[57]       ; Input ; Info     ; Stuck at VCC     ;
+; d0[56]       ; Input ; Info     ; Stuck at GND     ;
+; d0[48]       ; Input ; Info     ; Stuck at GND     ;
+; d0[47]       ; Input ; Info     ; Stuck at VCC     ;
+; d0[41]       ; Input ; Info     ; Stuck at GND     ;
+; d0[40]       ; Input ; Info     ; Stuck at VCC     ;
+; d0[37]       ; Input ; Info     ; Stuck at VCC     ;
+; d0[36]       ; Input ; Info     ; Stuck at GND     ;
+; d0[35]       ; Input ; Info     ; Stuck at VCC     ;
+; d0[34]       ; Input ; Info     ; Stuck at GND     ;
+; d0[33]       ; Input ; Info     ; Stuck at VCC     ;
+; d0[32]       ; Input ; Info     ; Stuck at GND     ;
+; d0[28]       ; Input ; Info     ; Stuck at GND     ;
+; d0[27]       ; Input ; Info     ; Stuck at VCC     ;
+; d0[14]       ; Input ; Info     ; Stuck at VCC     ;
+; d0[11]       ; Input ; Info     ; Stuck at VCC     ;
+; d0[3]        ; Input ; Info     ; Stuck at VCC     ;
++--------------+-------+----------+------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:04     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Thu May 22 16:30:24 2025
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off AES -c AES
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 2 design units, including 1 entities, in source file sbox_rom.vhd
+    Info (12022): Found design unit 1: sbox_rom-Behavioral
+    Info (12023): Found entity 1: sbox_rom
+Info (12021): Found 2 design units, including 1 entities, in source file mix_columns.vhd
+    Info (12022): Found design unit 1: mix_columns-behave
+    Info (12023): Found entity 1: mix_columns
+Info (12021): Found 2 design units, including 1 entities, in source file demux1to16.vhd
+    Info (12022): Found design unit 1: demux1to16-Behavioral
+    Info (12023): Found entity 1: demux1to16
+Info (12021): Found 2 design units, including 1 entities, in source file mux16to1.vhd
+    Info (12022): Found design unit 1: mux16to1-Behavioral
+    Info (12023): Found entity 1: mux16to1
+Info (12021): Found 2 design units, including 1 entities, in source file main_aes.vhd
+    Info (12022): Found design unit 1: main_AES-behave
+    Info (12023): Found entity 1: main_AES
+Info (12021): Found 2 design units, including 1 entities, in source file register_state.vhd
+    Info (12022): Found design unit 1: register_state-behave
+    Info (12023): Found entity 1: register_state
+Info (12021): Found 2 design units, including 1 entities, in source file mux2to1.vhd
+    Info (12022): Found design unit 1: mux2to1-Behavioral
+    Info (12023): Found entity 1: mux2to1
+Info (12127): Elaborating entity "main_AES" for the top level hierarchy
+Info (12128): Elaborating entity "mux2to1" for hierarchy "mux2to1:mux_plain_text"
+Info (12128): Elaborating entity "register_state" for hierarchy "register_state:register_plain_text"
+Info (12128): Elaborating entity "demux1to16" for hierarchy "demux1to16:demux_out"
+Info (12128): Elaborating entity "mux16to1" for hierarchy "mux16to1:mux_in"
+Info (12128): Elaborating entity "sbox_rom" for hierarchy "sbox_rom:u1"
+Info (12128): Elaborating entity "mix_columns" for hierarchy "mix_columns:column1"
+Info (19000): Inferred 1 megafunctions from design logic
+    Info (276031): Inferred altsyncram megafunction from the following design logic: "sbox_rom:u1|Mux7_rtl_0"
+        Info (286033): Parameter OPERATION_MODE set to ROM
+        Info (286033): Parameter WIDTH_A set to 8
+        Info (286033): Parameter WIDTHAD_A set to 8
+        Info (286033): Parameter NUMWORDS_A set to 256
+        Info (286033): Parameter OUTDATA_REG_A set to UNREGISTERED
+        Info (286033): Parameter RAM_BLOCK_TYPE set to AUTO
+        Info (286033): Parameter INIT_FILE set to AES.main_AES0.rtl.mif
+Info (12130): Elaborated megafunction instantiation "sbox_rom:u1|altsyncram:Mux7_rtl_0"
+Info (12133): Instantiated megafunction "sbox_rom:u1|altsyncram:Mux7_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "ROM"
+    Info (12134): Parameter "WIDTH_A" = "8"
+    Info (12134): Parameter "WIDTHAD_A" = "8"
+    Info (12134): Parameter "NUMWORDS_A" = "256"
+    Info (12134): Parameter "OUTDATA_REG_A" = "UNREGISTERED"
+    Info (12134): Parameter "RAM_BLOCK_TYPE" = "AUTO"
+    Info (12134): Parameter "INIT_FILE" = "AES.main_AES0.rtl.mif"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_atv.tdf
+    Info (12023): Found entity 1: altsyncram_atv
+Info (13000): Registers with preset signals will power-up high
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 1145 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 275 output pins
+    Info (21061): Implemented 860 logic cells
+    Info (21064): Implemented 8 RAM segments
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4656 megabytes
+    Info: Processing ended: Thu May 22 16:30:35 2025
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:04
+
+

@@ -1,0 +1,146 @@
+library ieee;
+
+use ieee.numeric_std.all;
+use ieee.std_logic_1164.all;
+
+entity main_AES_v2 is
+port (
+		clk, reset : in std_logic;
+		ciphertext: out std_logic_vector (127 downto 0);
+		
+		--  test outputs
+		round_out : out integer range 0 to 8;
+		counter_out : out  integer range 0 to 15
+--		add_test, sbox_test : out std_logic_vector (7 downto 0)
+	);
+end main_AES_v2;
+
+architecture behave of main_AES_v2 is
+
+component sbox_rom is
+    Port (
+        clk, e     : in  std_logic;
+        addr    : in  std_logic_vector(7 downto 0);  -- 8-bit input address
+        q: out std_logic_vector(7 downto 0)   -- 8-bit output from S-Box
+    );
+end component;
+
+component mix_columns is 
+port (
+		byte0, byte1, byte2, byte3 : in std_logic_vector (7 downto 0);
+		out0,out1, out2, out3 : out std_logic_vector (7 downto 0)
+	);
+end component;
+
+type state_block is array (0 to 15) of std_logic_vector(7 downto 0);
+type expanded_key is array (0 to 8) of std_logic_vector(127 downto 0);
+signal currentstate, aux_state, out_state : state_block;
+signal address, sbox_out : std_logic_vector (7 downto 0);
+signal roundkey : expanded_key;
+signal plain_text_in, plain_text : std_logic_vector (127 downto 0);
+----------state machine signals -------------
+type state_type is (idle, counting, end_state);
+signal state   : state_type;
+signal counter : integer range 0 to 15;
+signal round : integer range 0 to 8;
+signal enable, stop : std_logic;
+
+
+begin
+	
+	plain_text_in <= X"193DE3BEA0F4E22B9AC68D2AE9F84808";
+	
+	roundkey(0) <= X"A0FAFE1788542CB123A339392A6C7605"; 
+	roundkey(1) <= X"F2C295F27A96B9435935807A7359F67F";
+	roundkey(2) <= X"3D80477D4716FE3E1E237E446D7A883B";
+	roundkey(3) <= X"EF44A541A8525B7FB671253BDB0BAD00";
+	roundkey(4) <= X"D4D1C6F87C839D87CAF2B8BC11F915BC";
+	roundkey(5) <= X"6D88A37A110B3EFDDBF98641CA0093FD";
+	roundkey(6) <= X"4E54F70E5F5FC9F384A64FB24EA6DC4F";
+	roundkey(7) <= X"EAD27321B58DBAD2312BF5607F8D292F";
+	roundkey(8) <= X"AC7766F319FADC2128D12941575C006E";
+	
+	
+	
+	process (clk, reset)
+	begin
+		if reset = '1' then
+			state <= idle;
+			counter <= 0;
+			enable <= '0';
+			round <= 0;
+			stop <= '0';
+			plain_text <= plain_text_in;
+		elsif (rising_edge(clk)) then
+			case state is
+				when idle =>
+					state <= counting;
+					counter <= 0;
+					round <= 0;
+					enable <= '0';
+					stop <= '0';
+				when counting =>
+					enable <= '1';
+					if counter = 15 then
+						counter <= 0;
+						plain_text <= out_state;
+						if round = 8 then
+							stop <= '1';
+							state <= end_state;
+						else 
+							round <= round + 1;
+							state <= counting;
+						end if;
+					else
+						counter <= counter + 1;
+					end if;
+				when end_state =>
+					state <= end_state;
+					counter <= 0;
+					round <= 0;
+					enable <= '0';
+					stop <='0';
+			end case;
+		end if;
+	end process;
+				
+			
+				
+		
+		
+		
+		
+		
+		-------------------------------
+			if state = idle then
+--				state_out <= 0;
+				counter <= 0;
+				round <= 0;
+				stop <= '0';
+				state <= counting;
+			elsif state = counting then
+			enable <= '1';
+--			state_out <= 1;
+				if counter = 15 then
+					plain_text <= (out_state(0) & out_state(1) & out_state(2) & out_state(3) & out_state(4) & out_state(5) & out_state(6) & out_state(7) & out_state(8) & out_state(9) & out_state(10) & out_state(11) & out_state(12) & out_state(13) & out_state(14) & out_state(15)) xor roundkey(round);
+					counter <= 0;
+					if round = 8 then
+						stop <= '1';
+						state <= end_state;
+					else 
+						round <= round + 1;
+						state <= counting;
+					end if;
+				else
+					counter <= counter + 1;
+				end if;
+			else
+				state <= end_state;
+				counter <= 0;
+				round <= 0;
+				enable <= '0';
+				stop <='0';
+--				state_out <= 2;
+			end if;
+		end if;
+	end process;

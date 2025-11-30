@@ -1,0 +1,8 @@
+
+State Machine - |main_AES|state
+Name state.inc_round state.int_state state.idle state.counting state.start 
+state.start 0 0 0 0 0 
+state.counting 0 0 0 1 1 
+state.idle 0 0 1 0 1 
+state.int_state 0 1 0 0 1 
+state.inc_round 1 0 0 0 1 

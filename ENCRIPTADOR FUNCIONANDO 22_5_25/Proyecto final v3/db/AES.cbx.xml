@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="AES">
+		<CBX_INST_ENTRY INSTANCE_NAME="|main_AES|sbox_rom:u1|altsyncram:Mux7_rtl_0" CBX_FILE_NAME="altsyncram_atv.tdf"/>
+	</PROJECT>
+</LOG_ROOT>
