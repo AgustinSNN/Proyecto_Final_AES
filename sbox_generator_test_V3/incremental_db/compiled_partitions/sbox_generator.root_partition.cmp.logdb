@@ -1,0 +1,4 @@
+v1
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,lorenz:comp_lorenz|lpm_mult:Mult1|mult_56t:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,lorenz:comp_lorenz|lpm_mult:Mult0|mult_56t:auto_generated|mac_out2,
+PORT_SWAPPING,PORT_SWAPPING_FINISHED,lorenz:comp_lorenz|lpm_mult:Mult0|mult_56t:auto_generated|mac_mult1,

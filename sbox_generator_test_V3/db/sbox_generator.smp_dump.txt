@@ -1,0 +1,17 @@
+
+State Machine - |sbox_generator|state
+Name state.DONE state.TEST state.INSERT_AUX state.COMPARE_SHIFT state.LOAD_AUX state.INIT_I state.LOAD_ARRAY state.IDLE 
+state.IDLE 0 0 0 0 0 0 0 0 
+state.LOAD_ARRAY 0 0 0 0 0 0 1 1 
+state.INIT_I 0 0 0 0 0 1 0 1 
+state.LOAD_AUX 0 0 0 0 1 0 0 1 
+state.COMPARE_SHIFT 0 0 0 1 0 0 0 1 
+state.INSERT_AUX 0 0 1 0 0 0 0 1 
+state.TEST 0 1 0 0 0 0 0 1 
+state.DONE 1 0 0 0 0 0 0 1 
+
+State Machine - |sbox_generator|lorenz:comp_lorenz|state
+Name state.DONE state.GENERATE_VALUES state.IDLE 
+state.IDLE 0 0 0 
+state.GENERATE_VALUES 0 1 1 
+state.DONE 1 0 1 
