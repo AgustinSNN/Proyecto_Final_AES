@@ -1,0 +1,74 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+entity key_expansion is
+  Port (
+        clk, reset     : in  std_logic        
+    );
+end key_expansion;
+
+architecture behave of key_expansion is
+begin
+
+	type state_type is (s0, s1, s2, s3);
+	signal state   : state_type;
+	
+	type word is array (3 downto 0) of std_logic_vector (7 downto 0);
+	signal w0, w1, w2, w3, w_aux : word;
+	
+	constant key : std_logic_vector (127 downto 0):= XX"2b7e151628aed2a6abf7158809cf4f3c";
+	
+	------------------------------------------------------------------
+	process (clk, reset)
+	begin
+		if reset = '1' then
+			state <= s0;
+		elsif (rising_edge(clk)) then
+			case state is
+				when s0=>
+					if input = '1' then
+						state <= s1;
+					else
+						state <= s0;
+					end if;
+				when s1=>
+					if input = '1' then
+						state <= s2;
+					else
+						state <= s1;
+					end if;
+				when s2=>
+					if input = '1' then
+						state <= s3;
+					else
+						state <= s2;
+					end if;
+				when s3 =>
+					if input = '1' then
+						state <= s0;
+					else
+						state <= s3;
+					end if;
+			end case;
+		end if;
+	end process;
+
+	-- Output depends solely on the current state
+	process (state)
+	begin
+		case state is
+			when s0 =>
+				output <= "00";
+			when s1 =>
+				output <= "01";
+			when s2 =>
+				output <= "10";
+			when s3 =>
+				output <= "11";
+		end case;
+	end process;
+
+end rtl;
+
+	
