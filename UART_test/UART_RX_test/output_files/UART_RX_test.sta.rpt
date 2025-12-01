@@ -1,0 +1,1704 @@
+TimeQuest Timing Analyzer report for UART_RX_test
+Fri Nov 28 15:22:52 2025
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow 1200mV 85C Model Fmax Summary
+  6. Timing Closure Recommendations
+  7. Slow 1200mV 85C Model Setup Summary
+  8. Slow 1200mV 85C Model Hold Summary
+  9. Slow 1200mV 85C Model Recovery Summary
+ 10. Slow 1200mV 85C Model Removal Summary
+ 11. Slow 1200mV 85C Model Minimum Pulse Width Summary
+ 12. Slow 1200mV 85C Model Setup: 'i_Clk'
+ 13. Slow 1200mV 85C Model Hold: 'i_Clk'
+ 14. Slow 1200mV 85C Model Minimum Pulse Width: 'i_Clk'
+ 15. Setup Times
+ 16. Hold Times
+ 17. Clock to Output Times
+ 18. Minimum Clock to Output Times
+ 19. Slow 1200mV 85C Model Metastability Report
+ 20. Slow 1200mV 0C Model Fmax Summary
+ 21. Slow 1200mV 0C Model Setup Summary
+ 22. Slow 1200mV 0C Model Hold Summary
+ 23. Slow 1200mV 0C Model Recovery Summary
+ 24. Slow 1200mV 0C Model Removal Summary
+ 25. Slow 1200mV 0C Model Minimum Pulse Width Summary
+ 26. Slow 1200mV 0C Model Setup: 'i_Clk'
+ 27. Slow 1200mV 0C Model Hold: 'i_Clk'
+ 28. Slow 1200mV 0C Model Minimum Pulse Width: 'i_Clk'
+ 29. Setup Times
+ 30. Hold Times
+ 31. Clock to Output Times
+ 32. Minimum Clock to Output Times
+ 33. Slow 1200mV 0C Model Metastability Report
+ 34. Fast 1200mV 0C Model Setup Summary
+ 35. Fast 1200mV 0C Model Hold Summary
+ 36. Fast 1200mV 0C Model Recovery Summary
+ 37. Fast 1200mV 0C Model Removal Summary
+ 38. Fast 1200mV 0C Model Minimum Pulse Width Summary
+ 39. Fast 1200mV 0C Model Setup: 'i_Clk'
+ 40. Fast 1200mV 0C Model Hold: 'i_Clk'
+ 41. Fast 1200mV 0C Model Minimum Pulse Width: 'i_Clk'
+ 42. Setup Times
+ 43. Hold Times
+ 44. Clock to Output Times
+ 45. Minimum Clock to Output Times
+ 46. Fast 1200mV 0C Model Metastability Report
+ 47. Multicorner Timing Analysis Summary
+ 48. Setup Times
+ 49. Hold Times
+ 50. Clock to Output Times
+ 51. Minimum Clock to Output Times
+ 52. Board Trace Model Assignments
+ 53. Input Transition Times
+ 54. Signal Integrity Metrics (Slow 1200mv 0c Model)
+ 55. Signal Integrity Metrics (Slow 1200mv 85c Model)
+ 56. Signal Integrity Metrics (Fast 1200mv 0c Model)
+ 57. Setup Transfers
+ 58. Hold Transfers
+ 59. Report TCCS
+ 60. Report RSKM
+ 61. Unconstrained Paths
+ 62. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; UART_RX_test                                                      ;
+; Device Family      ; Cyclone IV E                                                      ;
+; Device Name        ; EP4CE115F29C7                                                     ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Enabled                                                           ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                            ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets   ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+; i_Clk      ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { i_Clk } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Fmax Summary                                                                        ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note                                                          ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; 300.75 MHz ; 250.0 MHz       ; i_Clk      ; limit due to minimum period restriction (max I/O toggle rate) ;
++------------+-----------------+------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
+----------------------------------
+; Timing Closure Recommendations ;
+----------------------------------
+HTML report is unavailable in plain text report export.
+
+
++-------------------------------------+
+; Slow 1200mV 85C Model Setup Summary ;
++-------+--------+--------------------+
+; Clock ; Slack  ; End Point TNS      ;
++-------+--------+--------------------+
+; i_Clk ; -2.325 ; -49.101            ;
++-------+--------+--------------------+
+
+
++------------------------------------+
+; Slow 1200mV 85C Model Hold Summary ;
++-------+-------+--------------------+
+; Clock ; Slack ; End Point TNS      ;
++-------+-------+--------------------+
+; i_Clk ; 0.385 ; 0.000              ;
++-------+-------+--------------------+
+
+
+------------------------------------------
+; Slow 1200mV 85C Model Recovery Summary ;
+------------------------------------------
+No paths to report.
+
+
+-----------------------------------------
+; Slow 1200mV 85C Model Removal Summary ;
+-----------------------------------------
+No paths to report.
+
+
++---------------------------------------------------+
+; Slow 1200mV 85C Model Minimum Pulse Width Summary ;
++-------+--------+----------------------------------+
+; Clock ; Slack  ; End Point TNS                    ;
++-------+--------+----------------------------------+
+; i_Clk ; -3.000 ; -38.980                          ;
++-------+--------+----------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Setup: 'i_Clk'                                                                                     ;
++--------+----------------+--------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node      ; To Node                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------+--------------------------+--------------+-------------+--------------+------------+------------+
+; -2.325 ; r_Clk_Count[6] ; r_RX_DV                  ; i_Clk        ; i_Clk       ; 1.000        ; -0.082     ; 3.241      ;
+; -2.315 ; r_Clk_Count[8] ; r_RX_DV                  ; i_Clk        ; i_Clk       ; 1.000        ; -0.513     ; 2.800      ;
+; -2.296 ; r_Clk_Count[4] ; r_RX_DV                  ; i_Clk        ; i_Clk       ; 1.000        ; -0.082     ; 3.212      ;
+; -2.220 ; r_Clk_Count[3] ; r_RX_DV                  ; i_Clk        ; i_Clk       ; 1.000        ; -0.082     ; 3.136      ;
+; -2.214 ; r_Clk_Count[0] ; r_RX_DV                  ; i_Clk        ; i_Clk       ; 1.000        ; -0.082     ; 3.130      ;
+; -2.163 ; r_Clk_Count[2] ; r_Clk_Count[0]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.080     ; 3.081      ;
+; -2.163 ; r_Clk_Count[2] ; r_Clk_Count[1]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.080     ; 3.081      ;
+; -2.163 ; r_Clk_Count[2] ; r_Clk_Count[2]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.080     ; 3.081      ;
+; -2.163 ; r_Clk_Count[2] ; r_Clk_Count[3]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.080     ; 3.081      ;
+; -2.163 ; r_Clk_Count[2] ; r_Clk_Count[4]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.080     ; 3.081      ;
+; -2.163 ; r_Clk_Count[2] ; r_Clk_Count[5]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.080     ; 3.081      ;
+; -2.163 ; r_Clk_Count[2] ; r_Clk_Count[6]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.080     ; 3.081      ;
+; -2.163 ; r_Clk_Count[2] ; r_Clk_Count[7]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.080     ; 3.081      ;
+; -2.159 ; r_Clk_Count[5] ; r_RX_DV                  ; i_Clk        ; i_Clk       ; 1.000        ; -0.082     ; 3.075      ;
+; -2.158 ; r_Clk_Count[1] ; r_Clk_Count[0]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.080     ; 3.076      ;
+; -2.158 ; r_Clk_Count[1] ; r_Clk_Count[1]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.080     ; 3.076      ;
+; -2.158 ; r_Clk_Count[1] ; r_Clk_Count[2]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.080     ; 3.076      ;
+; -2.158 ; r_Clk_Count[1] ; r_Clk_Count[3]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.080     ; 3.076      ;
+; -2.158 ; r_Clk_Count[1] ; r_Clk_Count[4]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.080     ; 3.076      ;
+; -2.158 ; r_Clk_Count[1] ; r_Clk_Count[5]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.080     ; 3.076      ;
+; -2.158 ; r_Clk_Count[1] ; r_Clk_Count[6]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.080     ; 3.076      ;
+; -2.158 ; r_Clk_Count[1] ; r_Clk_Count[7]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.080     ; 3.076      ;
+; -2.109 ; r_Clk_Count[6] ; r_Clk_Count[0]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.080     ; 3.027      ;
+; -2.109 ; r_Clk_Count[6] ; r_Clk_Count[1]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.080     ; 3.027      ;
+; -2.109 ; r_Clk_Count[6] ; r_Clk_Count[2]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.080     ; 3.027      ;
+; -2.109 ; r_Clk_Count[6] ; r_Clk_Count[3]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.080     ; 3.027      ;
+; -2.109 ; r_Clk_Count[6] ; r_Clk_Count[4]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.080     ; 3.027      ;
+; -2.109 ; r_Clk_Count[6] ; r_Clk_Count[5]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.080     ; 3.027      ;
+; -2.109 ; r_Clk_Count[6] ; r_Clk_Count[6]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.080     ; 3.027      ;
+; -2.109 ; r_Clk_Count[6] ; r_Clk_Count[7]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.080     ; 3.027      ;
+; -2.101 ; r_Clk_Count[8] ; r_Clk_Count[0]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.511     ; 2.588      ;
+; -2.101 ; r_Clk_Count[8] ; r_Clk_Count[1]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.511     ; 2.588      ;
+; -2.101 ; r_Clk_Count[8] ; r_Clk_Count[2]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.511     ; 2.588      ;
+; -2.101 ; r_Clk_Count[8] ; r_Clk_Count[3]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.511     ; 2.588      ;
+; -2.101 ; r_Clk_Count[8] ; r_Clk_Count[4]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.511     ; 2.588      ;
+; -2.101 ; r_Clk_Count[8] ; r_Clk_Count[5]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.511     ; 2.588      ;
+; -2.101 ; r_Clk_Count[8] ; r_Clk_Count[6]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.511     ; 2.588      ;
+; -2.101 ; r_Clk_Count[8] ; r_Clk_Count[7]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.511     ; 2.588      ;
+; -2.080 ; r_Clk_Count[4] ; r_Clk_Count[0]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.080     ; 2.998      ;
+; -2.080 ; r_Clk_Count[4] ; r_Clk_Count[1]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.080     ; 2.998      ;
+; -2.080 ; r_Clk_Count[4] ; r_Clk_Count[2]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.080     ; 2.998      ;
+; -2.080 ; r_Clk_Count[4] ; r_Clk_Count[3]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.080     ; 2.998      ;
+; -2.080 ; r_Clk_Count[4] ; r_Clk_Count[4]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.080     ; 2.998      ;
+; -2.080 ; r_Clk_Count[4] ; r_Clk_Count[5]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.080     ; 2.998      ;
+; -2.080 ; r_Clk_Count[4] ; r_Clk_Count[6]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.080     ; 2.998      ;
+; -2.080 ; r_Clk_Count[4] ; r_Clk_Count[7]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.080     ; 2.998      ;
+; -2.062 ; r_Clk_Count[6] ; r_SM_Main.s_RX_Stop_Bit  ; i_Clk        ; i_Clk       ; 1.000        ; -0.078     ; 2.982      ;
+; -2.052 ; r_Clk_Count[8] ; r_SM_Main.s_RX_Stop_Bit  ; i_Clk        ; i_Clk       ; 1.000        ; -0.509     ; 2.541      ;
+; -2.036 ; r_Clk_Count[0] ; r_Clk_Count[0]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.080     ; 2.954      ;
+; -2.036 ; r_Clk_Count[0] ; r_Clk_Count[1]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.080     ; 2.954      ;
+; -2.036 ; r_Clk_Count[0] ; r_Clk_Count[2]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.080     ; 2.954      ;
+; -2.036 ; r_Clk_Count[0] ; r_Clk_Count[3]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.080     ; 2.954      ;
+; -2.036 ; r_Clk_Count[0] ; r_Clk_Count[4]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.080     ; 2.954      ;
+; -2.036 ; r_Clk_Count[0] ; r_Clk_Count[5]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.080     ; 2.954      ;
+; -2.036 ; r_Clk_Count[0] ; r_Clk_Count[6]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.080     ; 2.954      ;
+; -2.036 ; r_Clk_Count[0] ; r_Clk_Count[7]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.080     ; 2.954      ;
+; -2.033 ; r_Clk_Count[2] ; r_RX_DV                  ; i_Clk        ; i_Clk       ; 1.000        ; -0.082     ; 2.949      ;
+; -2.033 ; r_Clk_Count[4] ; r_SM_Main.s_RX_Stop_Bit  ; i_Clk        ; i_Clk       ; 1.000        ; -0.078     ; 2.953      ;
+; -2.030 ; r_Clk_Count[7] ; r_RX_DV                  ; i_Clk        ; i_Clk       ; 1.000        ; -0.082     ; 2.946      ;
+; -2.004 ; r_Clk_Count[3] ; r_Clk_Count[0]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.080     ; 2.922      ;
+; -2.004 ; r_Clk_Count[3] ; r_Clk_Count[1]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.080     ; 2.922      ;
+; -2.004 ; r_Clk_Count[3] ; r_Clk_Count[2]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.080     ; 2.922      ;
+; -2.004 ; r_Clk_Count[3] ; r_Clk_Count[3]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.080     ; 2.922      ;
+; -2.004 ; r_Clk_Count[3] ; r_Clk_Count[4]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.080     ; 2.922      ;
+; -2.004 ; r_Clk_Count[3] ; r_Clk_Count[5]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.080     ; 2.922      ;
+; -2.004 ; r_Clk_Count[3] ; r_Clk_Count[6]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.080     ; 2.922      ;
+; -2.004 ; r_Clk_Count[3] ; r_Clk_Count[7]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.080     ; 2.922      ;
+; -1.988 ; r_Clk_Count[6] ; r_Bit_Index[2]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.082     ; 2.904      ;
+; -1.987 ; r_Clk_Count[6] ; r_SM_Main.s_RX_Data_Bits ; i_Clk        ; i_Clk       ; 1.000        ; -0.082     ; 2.903      ;
+; -1.978 ; r_Clk_Count[8] ; r_Bit_Index[2]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.513     ; 2.463      ;
+; -1.977 ; r_Clk_Count[8] ; r_SM_Main.s_RX_Data_Bits ; i_Clk        ; i_Clk       ; 1.000        ; -0.513     ; 2.462      ;
+; -1.974 ; r_Clk_Count[6] ; r_Bit_Index[1]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.082     ; 2.890      ;
+; -1.964 ; r_Clk_Count[8] ; r_Bit_Index[1]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.513     ; 2.449      ;
+; -1.959 ; r_Clk_Count[4] ; r_Bit_Index[2]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.082     ; 2.875      ;
+; -1.958 ; r_Clk_Count[4] ; r_SM_Main.s_RX_Data_Bits ; i_Clk        ; i_Clk       ; 1.000        ; -0.082     ; 2.874      ;
+; -1.957 ; r_Clk_Count[3] ; r_SM_Main.s_RX_Stop_Bit  ; i_Clk        ; i_Clk       ; 1.000        ; -0.078     ; 2.877      ;
+; -1.951 ; r_Clk_Count[0] ; r_SM_Main.s_RX_Stop_Bit  ; i_Clk        ; i_Clk       ; 1.000        ; -0.078     ; 2.871      ;
+; -1.945 ; r_Clk_Count[4] ; r_Bit_Index[1]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.082     ; 2.861      ;
+; -1.943 ; r_Clk_Count[5] ; r_Clk_Count[0]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.080     ; 2.861      ;
+; -1.943 ; r_Clk_Count[5] ; r_Clk_Count[1]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.080     ; 2.861      ;
+; -1.943 ; r_Clk_Count[5] ; r_Clk_Count[2]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.080     ; 2.861      ;
+; -1.943 ; r_Clk_Count[5] ; r_Clk_Count[3]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.080     ; 2.861      ;
+; -1.943 ; r_Clk_Count[5] ; r_Clk_Count[4]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.080     ; 2.861      ;
+; -1.943 ; r_Clk_Count[5] ; r_Clk_Count[5]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.080     ; 2.861      ;
+; -1.943 ; r_Clk_Count[5] ; r_Clk_Count[6]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.080     ; 2.861      ;
+; -1.943 ; r_Clk_Count[5] ; r_Clk_Count[7]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.080     ; 2.861      ;
+; -1.907 ; r_Clk_Count[1] ; r_RX_DV                  ; i_Clk        ; i_Clk       ; 1.000        ; -0.082     ; 2.823      ;
+; -1.896 ; r_Clk_Count[5] ; r_SM_Main.s_RX_Stop_Bit  ; i_Clk        ; i_Clk       ; 1.000        ; -0.078     ; 2.816      ;
+; -1.883 ; r_Clk_Count[3] ; r_Bit_Index[2]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.082     ; 2.799      ;
+; -1.882 ; r_Clk_Count[3] ; r_SM_Main.s_RX_Data_Bits ; i_Clk        ; i_Clk       ; 1.000        ; -0.082     ; 2.798      ;
+; -1.877 ; r_Clk_Count[0] ; r_Bit_Index[2]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.082     ; 2.793      ;
+; -1.876 ; r_Clk_Count[0] ; r_SM_Main.s_RX_Data_Bits ; i_Clk        ; i_Clk       ; 1.000        ; -0.082     ; 2.792      ;
+; -1.869 ; r_Clk_Count[3] ; r_Bit_Index[1]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.082     ; 2.785      ;
+; -1.863 ; r_Clk_Count[0] ; r_Bit_Index[1]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.082     ; 2.779      ;
+; -1.822 ; r_Clk_Count[5] ; r_Bit_Index[2]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.082     ; 2.738      ;
+; -1.821 ; r_Clk_Count[5] ; r_SM_Main.s_RX_Data_Bits ; i_Clk        ; i_Clk       ; 1.000        ; -0.082     ; 2.737      ;
+; -1.814 ; r_Clk_Count[7] ; r_Clk_Count[0]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.080     ; 2.732      ;
+; -1.814 ; r_Clk_Count[7] ; r_Clk_Count[1]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.080     ; 2.732      ;
+; -1.814 ; r_Clk_Count[7] ; r_Clk_Count[2]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.080     ; 2.732      ;
+; -1.814 ; r_Clk_Count[7] ; r_Clk_Count[3]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.080     ; 2.732      ;
++--------+----------------+--------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Hold: 'i_Clk'                                                                                               ;
++-------+--------------------------+--------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                ; To Node                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------+--------------------------+--------------+-------------+--------------+------------+------------+
+; 0.385 ; r_RX_Byte[0]             ; r_RX_Byte[0]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.098      ; 0.669      ;
+; 0.385 ; r_RX_Byte[1]             ; r_RX_Byte[1]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.098      ; 0.669      ;
+; 0.385 ; r_RX_Byte[2]             ; r_RX_Byte[2]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.098      ; 0.669      ;
+; 0.385 ; r_RX_Byte[3]             ; r_RX_Byte[3]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.098      ; 0.669      ;
+; 0.385 ; r_RX_Byte[4]             ; r_RX_Byte[4]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.098      ; 0.669      ;
+; 0.385 ; r_RX_Byte[5]             ; r_RX_Byte[5]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.098      ; 0.669      ;
+; 0.385 ; r_RX_Byte[7]             ; r_RX_Byte[7]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.098      ; 0.669      ;
+; 0.386 ; r_RX_Byte[6]             ; r_RX_Byte[6]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.097      ; 0.669      ;
+; 0.403 ; r_SM_Main.s_RX_Stop_Bit  ; r_SM_Main.s_RX_Stop_Bit  ; i_Clk        ; i_Clk       ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; r_SM_Main.s_Idle         ; r_SM_Main.s_Idle         ; i_Clk        ; i_Clk       ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; r_Bit_Index[0]           ; r_Bit_Index[0]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; r_Bit_Index[1]           ; r_Bit_Index[1]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; r_Bit_Index[2]           ; r_Bit_Index[2]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; r_SM_Main.s_RX_Data_Bits ; r_SM_Main.s_RX_Data_Bits ; i_Clk        ; i_Clk       ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; r_RX_DV                  ; r_RX_DV                  ; i_Clk        ; i_Clk       ; 0.000        ; 0.080      ; 0.669      ;
+; 0.433 ; r_Clk_Count[8]           ; r_Clk_Count[8]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.097      ; 0.716      ;
+; 0.540 ; r_Clk_Count[7]           ; r_Clk_Count[8]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.511      ; 1.237      ;
+; 0.588 ; r_SM_Main.s_RX_Stop_Bit  ; r_SM_Main.s_Cleanup      ; i_Clk        ; i_Clk       ; 0.000        ; 0.507      ; 1.281      ;
+; 0.590 ; r_RX_Data                ; r_SM_Main.s_RX_Start_Bit ; i_Clk        ; i_Clk       ; 0.000        ; 0.080      ; 0.856      ;
+; 0.605 ; r_RX_Data                ; r_RX_Byte[6]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.518      ; 1.309      ;
+; 0.649 ; r_Clk_Count[1]           ; r_Clk_Count[1]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.080      ; 0.915      ;
+; 0.654 ; r_Clk_Count[7]           ; r_Clk_Count[7]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.080      ; 0.920      ;
+; 0.666 ; r_SM_Main.s_RX_Data_Bits ; r_Bit_Index[0]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.080      ; 0.932      ;
+; 0.686 ; r_RX_Data                ; r_RX_Byte[1]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.516      ; 1.388      ;
+; 0.686 ; r_RX_Data                ; r_RX_Byte[2]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.516      ; 1.388      ;
+; 0.687 ; r_RX_Data                ; r_RX_Byte[3]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.516      ; 1.389      ;
+; 0.688 ; r_RX_Data                ; r_RX_Byte[4]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.516      ; 1.390      ;
+; 0.689 ; r_RX_Data                ; r_RX_Byte[5]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.516      ; 1.391      ;
+; 0.690 ; r_RX_Data                ; r_RX_Byte[7]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.516      ; 1.392      ;
+; 0.691 ; r_RX_Data                ; r_RX_Byte[0]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.516      ; 1.393      ;
+; 0.693 ; r_SM_Main.s_Idle         ; r_Bit_Index[2]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.080      ; 0.959      ;
+; 0.696 ; r_SM_Main.s_RX_Start_Bit ; r_RX_DV                  ; i_Clk        ; i_Clk       ; 0.000        ; 0.080      ; 0.962      ;
+; 0.722 ; r_RX_Data                ; r_SM_Main.s_RX_Data_Bits ; i_Clk        ; i_Clk       ; 0.000        ; 0.080      ; 0.988      ;
+; 0.733 ; r_Clk_Count[6]           ; r_Clk_Count[8]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.511      ; 1.430      ;
+; 0.736 ; r_SM_Main.s_Idle         ; r_Bit_Index[1]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.080      ; 1.002      ;
+; 0.772 ; r_SM_Main.s_Idle         ; r_SM_Main.s_RX_Start_Bit ; i_Clk        ; i_Clk       ; 0.000        ; 0.080      ; 1.038      ;
+; 0.776 ; r_RX_Data                ; r_SM_Main.s_Idle         ; i_Clk        ; i_Clk       ; 0.000        ; 0.080      ; 1.042      ;
+; 0.790 ; r_Bit_Index[2]           ; r_SM_Main.s_RX_Data_Bits ; i_Clk        ; i_Clk       ; 0.000        ; 0.080      ; 1.056      ;
+; 0.819 ; r_Clk_Count[2]           ; r_Clk_Count[2]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.080      ; 1.085      ;
+; 0.822 ; r_Clk_Count[4]           ; r_Clk_Count[4]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.080      ; 1.088      ;
+; 0.824 ; r_Clk_Count[5]           ; r_Clk_Count[5]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.080      ; 1.090      ;
+; 0.827 ; r_Clk_Count[3]           ; r_Clk_Count[3]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.080      ; 1.093      ;
+; 0.832 ; r_Clk_Count[6]           ; r_Clk_Count[6]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.080      ; 1.098      ;
+; 0.837 ; r_Clk_Count[5]           ; r_Clk_Count[8]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.511      ; 1.534      ;
+; 0.848 ; r_Clk_Count[0]           ; r_Clk_Count[0]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.080      ; 1.114      ;
+; 0.849 ; r_Clk_Count[4]           ; r_Clk_Count[8]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.511      ; 1.546      ;
+; 0.850 ; r_SM_Main.s_RX_Data_Bits ; r_Bit_Index[2]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.080      ; 1.116      ;
+; 0.869 ; r_Bit_Index[0]           ; r_RX_Byte[6]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.518      ; 1.573      ;
+; 0.914 ; r_Bit_Index[0]           ; r_RX_Byte[2]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.516      ; 1.616      ;
+; 0.914 ; r_Clk_Count[1]           ; r_Clk_Count[8]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.511      ; 1.611      ;
+; 0.916 ; r_Bit_Index[0]           ; r_RX_Byte[0]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.516      ; 1.618      ;
+; 0.918 ; r_Bit_Index[0]           ; r_RX_Byte[4]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.516      ; 1.620      ;
+; 0.919 ; r_Bit_Index[0]           ; r_RX_Byte[1]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.516      ; 1.621      ;
+; 0.922 ; r_Bit_Index[0]           ; r_RX_Byte[3]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.516      ; 1.624      ;
+; 0.924 ; r_Bit_Index[0]           ; r_RX_Byte[5]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.516      ; 1.626      ;
+; 0.929 ; r_Bit_Index[0]           ; r_RX_Byte[7]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.516      ; 1.631      ;
+; 0.938 ; r_SM_Main.s_RX_Start_Bit ; r_SM_Main.s_RX_Start_Bit ; i_Clk        ; i_Clk       ; 0.000        ; 0.080      ; 1.204      ;
+; 0.946 ; r_Bit_Index[2]           ; r_RX_Byte[6]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.518      ; 1.650      ;
+; 0.948 ; r_SM_Main.s_RX_Data_Bits ; r_Bit_Index[1]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.080      ; 1.214      ;
+; 0.954 ; r_Bit_Index[1]           ; r_RX_Byte[6]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.518      ; 1.658      ;
+; 0.965 ; r_Clk_Count[3]           ; r_Clk_Count[8]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.511      ; 1.662      ;
+; 0.967 ; r_Clk_Count[1]           ; r_Clk_Count[2]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.080      ; 1.233      ;
+; 0.972 ; r_Clk_Count[2]           ; r_Clk_Count[8]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.511      ; 1.669      ;
+; 1.002 ; r_Bit_Index[1]           ; r_SM_Main.s_RX_Data_Bits ; i_Clk        ; i_Clk       ; 0.000        ; 0.080      ; 1.268      ;
+; 1.009 ; r_Bit_Index[0]           ; r_Bit_Index[2]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.080      ; 1.275      ;
+; 1.010 ; r_SM_Main.s_RX_Data_Bits ; r_RX_DV                  ; i_Clk        ; i_Clk       ; 0.000        ; 0.080      ; 1.276      ;
+; 1.014 ; r_Bit_Index[1]           ; r_RX_Byte[7]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.516      ; 1.716      ;
+; 1.023 ; r_Bit_Index[1]           ; r_RX_Byte[2]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.516      ; 1.725      ;
+; 1.026 ; r_Bit_Index[1]           ; r_RX_Byte[3]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.516      ; 1.728      ;
+; 1.034 ; r_Bit_Index[1]           ; r_RX_Byte[1]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.516      ; 1.736      ;
+; 1.035 ; r_Bit_Index[1]           ; r_RX_Byte[0]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.516      ; 1.737      ;
+; 1.051 ; r_Bit_Index[1]           ; r_RX_Byte[4]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.516      ; 1.753      ;
+; 1.052 ; r_Bit_Index[2]           ; r_RX_Byte[7]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.516      ; 1.754      ;
+; 1.057 ; r_Bit_Index[1]           ; r_RX_Byte[5]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.516      ; 1.759      ;
+; 1.059 ; r_Bit_Index[0]           ; r_Bit_Index[1]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.080      ; 1.325      ;
+; 1.060 ; r_Bit_Index[2]           ; r_RX_Byte[1]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.516      ; 1.762      ;
+; 1.061 ; r_Bit_Index[2]           ; r_RX_Byte[4]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.516      ; 1.763      ;
+; 1.065 ; r_Bit_Index[2]           ; r_RX_Byte[5]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.516      ; 1.767      ;
+; 1.073 ; r_Bit_Index[2]           ; r_RX_Byte[0]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.516      ; 1.775      ;
+; 1.077 ; r_SM_Main.s_Idle         ; r_Bit_Index[0]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.080      ; 1.343      ;
+; 1.080 ; r_Bit_Index[2]           ; r_RX_Byte[2]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.516      ; 1.782      ;
+; 1.088 ; r_Clk_Count[1]           ; r_Clk_Count[3]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.080      ; 1.354      ;
+; 1.093 ; r_Clk_Count[1]           ; r_Clk_Count[4]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.080      ; 1.359      ;
+; 1.094 ; r_Bit_Index[2]           ; r_RX_Byte[3]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.516      ; 1.796      ;
+; 1.104 ; r_Clk_Count[0]           ; r_Clk_Count[8]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.511      ; 1.801      ;
+; 1.135 ; r_RX_Data_R              ; r_RX_Data                ; i_Clk        ; i_Clk       ; 0.000        ; 0.059      ; 1.380      ;
+; 1.142 ; r_Clk_Count[5]           ; r_Clk_Count[6]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.080      ; 1.408      ;
+; 1.144 ; r_Clk_Count[3]           ; r_Clk_Count[4]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.080      ; 1.410      ;
+; 1.146 ; r_Clk_Count[2]           ; r_Clk_Count[3]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.080      ; 1.412      ;
+; 1.149 ; r_Clk_Count[4]           ; r_Clk_Count[5]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.080      ; 1.415      ;
+; 1.150 ; r_SM_Main.s_Idle         ; r_Clk_Count[8]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.513      ; 1.849      ;
+; 1.151 ; r_Clk_Count[2]           ; r_Clk_Count[4]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.080      ; 1.417      ;
+; 1.152 ; r_Clk_Count[0]           ; r_Clk_Count[1]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.080      ; 1.418      ;
+; 1.154 ; r_Clk_Count[4]           ; r_Clk_Count[6]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.080      ; 1.420      ;
+; 1.157 ; r_Clk_Count[0]           ; r_Clk_Count[2]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.080      ; 1.423      ;
+; 1.159 ; r_Clk_Count[6]           ; r_Clk_Count[7]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.080      ; 1.425      ;
+; 1.198 ; r_Bit_Index[1]           ; r_Bit_Index[2]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.080      ; 1.464      ;
+; 1.214 ; r_Clk_Count[1]           ; r_Clk_Count[5]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.080      ; 1.480      ;
+; 1.219 ; r_Clk_Count[1]           ; r_Clk_Count[6]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.080      ; 1.485      ;
+; 1.247 ; r_Clk_Count[5]           ; r_Clk_Count[7]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.080      ; 1.513      ;
++-------+--------------------------+--------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Minimum Pulse Width: 'i_Clk'                                                           ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                      ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------+
+; -3.000 ; 1.000        ; 4.000          ; Port Rate        ; i_Clk ; Rise       ; i_Clk                       ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; i_Clk ; Rise       ; r_Bit_Index[0]              ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; i_Clk ; Rise       ; r_Bit_Index[1]              ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; i_Clk ; Rise       ; r_Bit_Index[2]              ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; i_Clk ; Rise       ; r_Clk_Count[0]              ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; i_Clk ; Rise       ; r_Clk_Count[1]              ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; i_Clk ; Rise       ; r_Clk_Count[2]              ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; i_Clk ; Rise       ; r_Clk_Count[3]              ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; i_Clk ; Rise       ; r_Clk_Count[4]              ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; i_Clk ; Rise       ; r_Clk_Count[5]              ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; i_Clk ; Rise       ; r_Clk_Count[6]              ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; i_Clk ; Rise       ; r_Clk_Count[7]              ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; i_Clk ; Rise       ; r_Clk_Count[8]              ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; i_Clk ; Rise       ; r_RX_Byte[0]                ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; i_Clk ; Rise       ; r_RX_Byte[1]                ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; i_Clk ; Rise       ; r_RX_Byte[2]                ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; i_Clk ; Rise       ; r_RX_Byte[3]                ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; i_Clk ; Rise       ; r_RX_Byte[4]                ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; i_Clk ; Rise       ; r_RX_Byte[5]                ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; i_Clk ; Rise       ; r_RX_Byte[6]                ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; i_Clk ; Rise       ; r_RX_Byte[7]                ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; i_Clk ; Rise       ; r_RX_DV                     ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; i_Clk ; Rise       ; r_RX_Data                   ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; i_Clk ; Rise       ; r_RX_Data_R                 ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; i_Clk ; Rise       ; r_SM_Main.s_Cleanup         ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; i_Clk ; Rise       ; r_SM_Main.s_Idle            ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; i_Clk ; Rise       ; r_SM_Main.s_RX_Data_Bits    ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; i_Clk ; Rise       ; r_SM_Main.s_RX_Start_Bit    ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; i_Clk ; Rise       ; r_SM_Main.s_RX_Stop_Bit     ;
+; 0.255  ; 0.443        ; 0.188          ; Low Pulse Width  ; i_Clk ; Rise       ; r_RX_Data_R                 ;
+; 0.256  ; 0.444        ; 0.188          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Bit_Index[0]              ;
+; 0.256  ; 0.444        ; 0.188          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Bit_Index[1]              ;
+; 0.256  ; 0.444        ; 0.188          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Bit_Index[2]              ;
+; 0.256  ; 0.444        ; 0.188          ; Low Pulse Width  ; i_Clk ; Rise       ; r_RX_DV                     ;
+; 0.256  ; 0.444        ; 0.188          ; Low Pulse Width  ; i_Clk ; Rise       ; r_RX_Data                   ;
+; 0.256  ; 0.444        ; 0.188          ; Low Pulse Width  ; i_Clk ; Rise       ; r_SM_Main.s_Idle            ;
+; 0.256  ; 0.444        ; 0.188          ; Low Pulse Width  ; i_Clk ; Rise       ; r_SM_Main.s_RX_Data_Bits    ;
+; 0.256  ; 0.444        ; 0.188          ; Low Pulse Width  ; i_Clk ; Rise       ; r_SM_Main.s_RX_Start_Bit    ;
+; 0.256  ; 0.444        ; 0.188          ; Low Pulse Width  ; i_Clk ; Rise       ; r_SM_Main.s_RX_Stop_Bit     ;
+; 0.257  ; 0.445        ; 0.188          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Clk_Count[0]              ;
+; 0.257  ; 0.445        ; 0.188          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Clk_Count[1]              ;
+; 0.257  ; 0.445        ; 0.188          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Clk_Count[2]              ;
+; 0.257  ; 0.445        ; 0.188          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Clk_Count[3]              ;
+; 0.257  ; 0.445        ; 0.188          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Clk_Count[4]              ;
+; 0.257  ; 0.445        ; 0.188          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Clk_Count[5]              ;
+; 0.257  ; 0.445        ; 0.188          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Clk_Count[6]              ;
+; 0.257  ; 0.445        ; 0.188          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Clk_Count[7]              ;
+; 0.258  ; 0.446        ; 0.188          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Clk_Count[8]              ;
+; 0.258  ; 0.446        ; 0.188          ; Low Pulse Width  ; i_Clk ; Rise       ; r_SM_Main.s_Cleanup         ;
+; 0.259  ; 0.447        ; 0.188          ; Low Pulse Width  ; i_Clk ; Rise       ; r_RX_Byte[0]                ;
+; 0.259  ; 0.447        ; 0.188          ; Low Pulse Width  ; i_Clk ; Rise       ; r_RX_Byte[1]                ;
+; 0.259  ; 0.447        ; 0.188          ; Low Pulse Width  ; i_Clk ; Rise       ; r_RX_Byte[2]                ;
+; 0.259  ; 0.447        ; 0.188          ; Low Pulse Width  ; i_Clk ; Rise       ; r_RX_Byte[3]                ;
+; 0.259  ; 0.447        ; 0.188          ; Low Pulse Width  ; i_Clk ; Rise       ; r_RX_Byte[4]                ;
+; 0.259  ; 0.447        ; 0.188          ; Low Pulse Width  ; i_Clk ; Rise       ; r_RX_Byte[5]                ;
+; 0.259  ; 0.447        ; 0.188          ; Low Pulse Width  ; i_Clk ; Rise       ; r_RX_Byte[6]                ;
+; 0.259  ; 0.447        ; 0.188          ; Low Pulse Width  ; i_Clk ; Rise       ; r_RX_Byte[7]                ;
+; 0.332  ; 0.552        ; 0.220          ; High Pulse Width ; i_Clk ; Rise       ; r_RX_Byte[6]                ;
+; 0.333  ; 0.553        ; 0.220          ; High Pulse Width ; i_Clk ; Rise       ; r_Clk_Count[8]              ;
+; 0.333  ; 0.553        ; 0.220          ; High Pulse Width ; i_Clk ; Rise       ; r_RX_Byte[0]                ;
+; 0.333  ; 0.553        ; 0.220          ; High Pulse Width ; i_Clk ; Rise       ; r_RX_Byte[1]                ;
+; 0.333  ; 0.553        ; 0.220          ; High Pulse Width ; i_Clk ; Rise       ; r_RX_Byte[2]                ;
+; 0.333  ; 0.553        ; 0.220          ; High Pulse Width ; i_Clk ; Rise       ; r_RX_Byte[3]                ;
+; 0.333  ; 0.553        ; 0.220          ; High Pulse Width ; i_Clk ; Rise       ; r_RX_Byte[4]                ;
+; 0.333  ; 0.553        ; 0.220          ; High Pulse Width ; i_Clk ; Rise       ; r_RX_Byte[5]                ;
+; 0.333  ; 0.553        ; 0.220          ; High Pulse Width ; i_Clk ; Rise       ; r_RX_Byte[7]                ;
+; 0.333  ; 0.553        ; 0.220          ; High Pulse Width ; i_Clk ; Rise       ; r_SM_Main.s_Cleanup         ;
+; 0.335  ; 0.555        ; 0.220          ; High Pulse Width ; i_Clk ; Rise       ; r_Bit_Index[0]              ;
+; 0.335  ; 0.555        ; 0.220          ; High Pulse Width ; i_Clk ; Rise       ; r_Bit_Index[1]              ;
+; 0.335  ; 0.555        ; 0.220          ; High Pulse Width ; i_Clk ; Rise       ; r_Bit_Index[2]              ;
+; 0.335  ; 0.555        ; 0.220          ; High Pulse Width ; i_Clk ; Rise       ; r_Clk_Count[0]              ;
+; 0.335  ; 0.555        ; 0.220          ; High Pulse Width ; i_Clk ; Rise       ; r_Clk_Count[1]              ;
+; 0.335  ; 0.555        ; 0.220          ; High Pulse Width ; i_Clk ; Rise       ; r_Clk_Count[2]              ;
+; 0.335  ; 0.555        ; 0.220          ; High Pulse Width ; i_Clk ; Rise       ; r_Clk_Count[3]              ;
+; 0.335  ; 0.555        ; 0.220          ; High Pulse Width ; i_Clk ; Rise       ; r_Clk_Count[4]              ;
+; 0.335  ; 0.555        ; 0.220          ; High Pulse Width ; i_Clk ; Rise       ; r_Clk_Count[5]              ;
+; 0.335  ; 0.555        ; 0.220          ; High Pulse Width ; i_Clk ; Rise       ; r_Clk_Count[6]              ;
+; 0.335  ; 0.555        ; 0.220          ; High Pulse Width ; i_Clk ; Rise       ; r_Clk_Count[7]              ;
+; 0.335  ; 0.555        ; 0.220          ; High Pulse Width ; i_Clk ; Rise       ; r_RX_DV                     ;
+; 0.335  ; 0.555        ; 0.220          ; High Pulse Width ; i_Clk ; Rise       ; r_RX_Data                   ;
+; 0.335  ; 0.555        ; 0.220          ; High Pulse Width ; i_Clk ; Rise       ; r_RX_Data_R                 ;
+; 0.335  ; 0.555        ; 0.220          ; High Pulse Width ; i_Clk ; Rise       ; r_SM_Main.s_Idle            ;
+; 0.335  ; 0.555        ; 0.220          ; High Pulse Width ; i_Clk ; Rise       ; r_SM_Main.s_RX_Data_Bits    ;
+; 0.335  ; 0.555        ; 0.220          ; High Pulse Width ; i_Clk ; Rise       ; r_SM_Main.s_RX_Start_Bit    ;
+; 0.335  ; 0.555        ; 0.220          ; High Pulse Width ; i_Clk ; Rise       ; r_SM_Main.s_RX_Stop_Bit     ;
+; 0.394  ; 0.394        ; 0.000          ; Low Pulse Width  ; i_Clk ; Rise       ; i_Clk~input|o               ;
+; 0.408  ; 0.408        ; 0.000          ; Low Pulse Width  ; i_Clk ; Rise       ; i_Clk~inputclkctrl|inclk[0] ;
+; 0.408  ; 0.408        ; 0.000          ; Low Pulse Width  ; i_Clk ; Rise       ; i_Clk~inputclkctrl|outclk   ;
+; 0.408  ; 0.408        ; 0.000          ; Low Pulse Width  ; i_Clk ; Rise       ; r_RX_Data_R|clk             ;
+; 0.409  ; 0.409        ; 0.000          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Bit_Index[0]|clk          ;
+; 0.409  ; 0.409        ; 0.000          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Bit_Index[1]|clk          ;
+; 0.409  ; 0.409        ; 0.000          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Bit_Index[2]|clk          ;
+; 0.409  ; 0.409        ; 0.000          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Clk_Count[0]|clk          ;
+; 0.409  ; 0.409        ; 0.000          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Clk_Count[1]|clk          ;
+; 0.409  ; 0.409        ; 0.000          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Clk_Count[2]|clk          ;
+; 0.409  ; 0.409        ; 0.000          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Clk_Count[3]|clk          ;
+; 0.409  ; 0.409        ; 0.000          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Clk_Count[4]|clk          ;
+; 0.409  ; 0.409        ; 0.000          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Clk_Count[5]|clk          ;
+; 0.409  ; 0.409        ; 0.000          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Clk_Count[6]|clk          ;
+; 0.409  ; 0.409        ; 0.000          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Clk_Count[7]|clk          ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------+
+
+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; i_RX_Serial ; i_Clk      ; 1.897 ; 2.290 ; Rise       ; i_Clk           ;
++-------------+------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Hold Times                                                                ;
++-------------+------------+--------+--------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-------------+------------+--------+--------+------------+-----------------+
+; i_RX_Serial ; i_Clk      ; -1.422 ; -1.797 ; Rise       ; i_Clk           ;
++-------------+------------+--------+--------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Clock to Output Times                                                     ;
++---------------+------------+-------+-------+------------+-----------------+
+; Data Port     ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++---------------+------------+-------+-------+------------+-----------------+
+; o_RX_Byte[*]  ; i_Clk      ; 8.459 ; 8.362 ; Rise       ; i_Clk           ;
+;  o_RX_Byte[0] ; i_Clk      ; 7.992 ; 7.949 ; Rise       ; i_Clk           ;
+;  o_RX_Byte[1] ; i_Clk      ; 8.459 ; 8.362 ; Rise       ; i_Clk           ;
+;  o_RX_Byte[2] ; i_Clk      ; 7.441 ; 7.380 ; Rise       ; i_Clk           ;
+;  o_RX_Byte[3] ; i_Clk      ; 7.751 ; 7.659 ; Rise       ; i_Clk           ;
+;  o_RX_Byte[4] ; i_Clk      ; 7.711 ; 7.654 ; Rise       ; i_Clk           ;
+;  o_RX_Byte[5] ; i_Clk      ; 7.741 ; 7.685 ; Rise       ; i_Clk           ;
+;  o_RX_Byte[6] ; i_Clk      ; 7.727 ; 7.671 ; Rise       ; i_Clk           ;
+;  o_RX_Byte[7] ; i_Clk      ; 7.751 ; 7.690 ; Rise       ; i_Clk           ;
+; o_RX_DV       ; i_Clk      ; 6.749 ; 6.710 ; Rise       ; i_Clk           ;
++---------------+------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                             ;
++---------------+------------+-------+-------+------------+-----------------+
+; Data Port     ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++---------------+------------+-------+-------+------------+-----------------+
+; o_RX_Byte[*]  ; i_Clk      ; 7.191 ; 7.130 ; Rise       ; i_Clk           ;
+;  o_RX_Byte[0] ; i_Clk      ; 7.717 ; 7.674 ; Rise       ; i_Clk           ;
+;  o_RX_Byte[1] ; i_Clk      ; 8.166 ; 8.070 ; Rise       ; i_Clk           ;
+;  o_RX_Byte[2] ; i_Clk      ; 7.191 ; 7.130 ; Rise       ; i_Clk           ;
+;  o_RX_Byte[3] ; i_Clk      ; 7.488 ; 7.399 ; Rise       ; i_Clk           ;
+;  o_RX_Byte[4] ; i_Clk      ; 7.448 ; 7.393 ; Rise       ; i_Clk           ;
+;  o_RX_Byte[5] ; i_Clk      ; 7.479 ; 7.423 ; Rise       ; i_Clk           ;
+;  o_RX_Byte[6] ; i_Clk      ; 7.465 ; 7.410 ; Rise       ; i_Clk           ;
+;  o_RX_Byte[7] ; i_Clk      ; 7.489 ; 7.428 ; Rise       ; i_Clk           ;
+; o_RX_DV       ; i_Clk      ; 6.526 ; 6.486 ; Rise       ; i_Clk           ;
++---------------+------------+-------+-------+------------+-----------------+
+
+
+----------------------------------------------
+; Slow 1200mV 85C Model Metastability Report ;
+----------------------------------------------
+No synchronizer chains to report.
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Fmax Summary                                                                         ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note                                                          ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; 335.68 MHz ; 250.0 MHz       ; i_Clk      ; limit due to minimum period restriction (max I/O toggle rate) ;
++------------+-----------------+------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++------------------------------------+
+; Slow 1200mV 0C Model Setup Summary ;
++-------+--------+-------------------+
+; Clock ; Slack  ; End Point TNS     ;
++-------+--------+-------------------+
+; i_Clk ; -1.979 ; -42.109           ;
++-------+--------+-------------------+
+
+
++-----------------------------------+
+; Slow 1200mV 0C Model Hold Summary ;
++-------+-------+-------------------+
+; Clock ; Slack ; End Point TNS     ;
++-------+-------+-------------------+
+; i_Clk ; 0.339 ; 0.000             ;
++-------+-------+-------------------+
+
+
+-----------------------------------------
+; Slow 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Slow 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Slow 1200mV 0C Model Minimum Pulse Width Summary ;
++-------+--------+---------------------------------+
+; Clock ; Slack  ; End Point TNS                   ;
++-------+--------+---------------------------------+
+; i_Clk ; -3.000 ; -38.980                         ;
++-------+--------+---------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Setup: 'i_Clk'                                                                                      ;
++--------+----------------+--------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node      ; To Node                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------+--------------------------+--------------+-------------+--------------+------------+------------+
+; -1.979 ; r_Clk_Count[6] ; r_RX_DV                  ; i_Clk        ; i_Clk       ; 1.000        ; -0.073     ; 2.905      ;
+; -1.976 ; r_Clk_Count[8] ; r_RX_DV                  ; i_Clk        ; i_Clk       ; 1.000        ; -0.470     ; 2.505      ;
+; -1.957 ; r_Clk_Count[4] ; r_RX_DV                  ; i_Clk        ; i_Clk       ; 1.000        ; -0.073     ; 2.883      ;
+; -1.916 ; r_Clk_Count[2] ; r_Clk_Count[0]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.071     ; 2.844      ;
+; -1.916 ; r_Clk_Count[2] ; r_Clk_Count[1]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.071     ; 2.844      ;
+; -1.916 ; r_Clk_Count[2] ; r_Clk_Count[2]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.071     ; 2.844      ;
+; -1.916 ; r_Clk_Count[2] ; r_Clk_Count[3]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.071     ; 2.844      ;
+; -1.916 ; r_Clk_Count[2] ; r_Clk_Count[4]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.071     ; 2.844      ;
+; -1.916 ; r_Clk_Count[2] ; r_Clk_Count[5]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.071     ; 2.844      ;
+; -1.916 ; r_Clk_Count[2] ; r_Clk_Count[6]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.071     ; 2.844      ;
+; -1.916 ; r_Clk_Count[2] ; r_Clk_Count[7]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.071     ; 2.844      ;
+; -1.912 ; r_Clk_Count[1] ; r_Clk_Count[0]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.071     ; 2.840      ;
+; -1.912 ; r_Clk_Count[1] ; r_Clk_Count[1]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.071     ; 2.840      ;
+; -1.912 ; r_Clk_Count[1] ; r_Clk_Count[2]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.071     ; 2.840      ;
+; -1.912 ; r_Clk_Count[1] ; r_Clk_Count[3]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.071     ; 2.840      ;
+; -1.912 ; r_Clk_Count[1] ; r_Clk_Count[4]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.071     ; 2.840      ;
+; -1.912 ; r_Clk_Count[1] ; r_Clk_Count[5]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.071     ; 2.840      ;
+; -1.912 ; r_Clk_Count[1] ; r_Clk_Count[6]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.071     ; 2.840      ;
+; -1.912 ; r_Clk_Count[1] ; r_Clk_Count[7]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.071     ; 2.840      ;
+; -1.883 ; r_Clk_Count[3] ; r_RX_DV                  ; i_Clk        ; i_Clk       ; 1.000        ; -0.073     ; 2.809      ;
+; -1.879 ; r_Clk_Count[0] ; r_RX_DV                  ; i_Clk        ; i_Clk       ; 1.000        ; -0.073     ; 2.805      ;
+; -1.841 ; r_Clk_Count[5] ; r_RX_DV                  ; i_Clk        ; i_Clk       ; 1.000        ; -0.073     ; 2.767      ;
+; -1.837 ; r_Clk_Count[8] ; r_Clk_Count[0]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.468     ; 2.368      ;
+; -1.837 ; r_Clk_Count[8] ; r_Clk_Count[1]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.468     ; 2.368      ;
+; -1.837 ; r_Clk_Count[8] ; r_Clk_Count[2]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.468     ; 2.368      ;
+; -1.837 ; r_Clk_Count[8] ; r_Clk_Count[3]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.468     ; 2.368      ;
+; -1.837 ; r_Clk_Count[8] ; r_Clk_Count[4]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.468     ; 2.368      ;
+; -1.837 ; r_Clk_Count[8] ; r_Clk_Count[5]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.468     ; 2.368      ;
+; -1.837 ; r_Clk_Count[8] ; r_Clk_Count[6]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.468     ; 2.368      ;
+; -1.837 ; r_Clk_Count[8] ; r_Clk_Count[7]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.468     ; 2.368      ;
+; -1.820 ; r_Clk_Count[6] ; r_Clk_Count[0]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.071     ; 2.748      ;
+; -1.820 ; r_Clk_Count[6] ; r_Clk_Count[1]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.071     ; 2.748      ;
+; -1.820 ; r_Clk_Count[6] ; r_Clk_Count[2]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.071     ; 2.748      ;
+; -1.820 ; r_Clk_Count[6] ; r_Clk_Count[3]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.071     ; 2.748      ;
+; -1.820 ; r_Clk_Count[6] ; r_Clk_Count[4]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.071     ; 2.748      ;
+; -1.820 ; r_Clk_Count[6] ; r_Clk_Count[5]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.071     ; 2.748      ;
+; -1.820 ; r_Clk_Count[6] ; r_Clk_Count[6]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.071     ; 2.748      ;
+; -1.820 ; r_Clk_Count[6] ; r_Clk_Count[7]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.071     ; 2.748      ;
+; -1.810 ; r_Clk_Count[0] ; r_Clk_Count[0]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.071     ; 2.738      ;
+; -1.810 ; r_Clk_Count[0] ; r_Clk_Count[1]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.071     ; 2.738      ;
+; -1.810 ; r_Clk_Count[0] ; r_Clk_Count[2]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.071     ; 2.738      ;
+; -1.810 ; r_Clk_Count[0] ; r_Clk_Count[3]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.071     ; 2.738      ;
+; -1.810 ; r_Clk_Count[0] ; r_Clk_Count[4]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.071     ; 2.738      ;
+; -1.810 ; r_Clk_Count[0] ; r_Clk_Count[5]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.071     ; 2.738      ;
+; -1.810 ; r_Clk_Count[0] ; r_Clk_Count[6]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.071     ; 2.738      ;
+; -1.810 ; r_Clk_Count[0] ; r_Clk_Count[7]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.071     ; 2.738      ;
+; -1.798 ; r_Clk_Count[4] ; r_Clk_Count[0]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.071     ; 2.726      ;
+; -1.798 ; r_Clk_Count[4] ; r_Clk_Count[1]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.071     ; 2.726      ;
+; -1.798 ; r_Clk_Count[4] ; r_Clk_Count[2]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.071     ; 2.726      ;
+; -1.798 ; r_Clk_Count[4] ; r_Clk_Count[3]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.071     ; 2.726      ;
+; -1.798 ; r_Clk_Count[4] ; r_Clk_Count[4]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.071     ; 2.726      ;
+; -1.798 ; r_Clk_Count[4] ; r_Clk_Count[5]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.071     ; 2.726      ;
+; -1.798 ; r_Clk_Count[4] ; r_Clk_Count[6]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.071     ; 2.726      ;
+; -1.798 ; r_Clk_Count[4] ; r_Clk_Count[7]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.071     ; 2.726      ;
+; -1.750 ; r_Clk_Count[6] ; r_SM_Main.s_RX_Stop_Bit  ; i_Clk        ; i_Clk       ; 1.000        ; -0.069     ; 2.680      ;
+; -1.747 ; r_Clk_Count[8] ; r_SM_Main.s_RX_Stop_Bit  ; i_Clk        ; i_Clk       ; 1.000        ; -0.466     ; 2.280      ;
+; -1.728 ; r_Clk_Count[4] ; r_SM_Main.s_RX_Stop_Bit  ; i_Clk        ; i_Clk       ; 1.000        ; -0.069     ; 2.658      ;
+; -1.725 ; r_Clk_Count[2] ; r_RX_DV                  ; i_Clk        ; i_Clk       ; 1.000        ; -0.073     ; 2.651      ;
+; -1.724 ; r_Clk_Count[3] ; r_Clk_Count[0]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.071     ; 2.652      ;
+; -1.724 ; r_Clk_Count[3] ; r_Clk_Count[1]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.071     ; 2.652      ;
+; -1.724 ; r_Clk_Count[3] ; r_Clk_Count[2]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.071     ; 2.652      ;
+; -1.724 ; r_Clk_Count[3] ; r_Clk_Count[3]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.071     ; 2.652      ;
+; -1.724 ; r_Clk_Count[3] ; r_Clk_Count[4]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.071     ; 2.652      ;
+; -1.724 ; r_Clk_Count[3] ; r_Clk_Count[5]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.071     ; 2.652      ;
+; -1.724 ; r_Clk_Count[3] ; r_Clk_Count[6]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.071     ; 2.652      ;
+; -1.724 ; r_Clk_Count[3] ; r_Clk_Count[7]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.071     ; 2.652      ;
+; -1.720 ; r_Clk_Count[7] ; r_RX_DV                  ; i_Clk        ; i_Clk       ; 1.000        ; -0.073     ; 2.646      ;
+; -1.687 ; r_Clk_Count[6] ; r_Bit_Index[2]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.073     ; 2.613      ;
+; -1.686 ; r_Clk_Count[6] ; r_SM_Main.s_RX_Data_Bits ; i_Clk        ; i_Clk       ; 1.000        ; -0.073     ; 2.612      ;
+; -1.684 ; r_Clk_Count[8] ; r_Bit_Index[2]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.470     ; 2.213      ;
+; -1.683 ; r_Clk_Count[8] ; r_SM_Main.s_RX_Data_Bits ; i_Clk        ; i_Clk       ; 1.000        ; -0.470     ; 2.212      ;
+; -1.682 ; r_Clk_Count[5] ; r_Clk_Count[0]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.071     ; 2.610      ;
+; -1.682 ; r_Clk_Count[5] ; r_Clk_Count[1]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.071     ; 2.610      ;
+; -1.682 ; r_Clk_Count[5] ; r_Clk_Count[2]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.071     ; 2.610      ;
+; -1.682 ; r_Clk_Count[5] ; r_Clk_Count[3]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.071     ; 2.610      ;
+; -1.682 ; r_Clk_Count[5] ; r_Clk_Count[4]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.071     ; 2.610      ;
+; -1.682 ; r_Clk_Count[5] ; r_Clk_Count[5]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.071     ; 2.610      ;
+; -1.682 ; r_Clk_Count[5] ; r_Clk_Count[6]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.071     ; 2.610      ;
+; -1.682 ; r_Clk_Count[5] ; r_Clk_Count[7]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.071     ; 2.610      ;
+; -1.682 ; r_Clk_Count[0] ; r_SM_Main.s_RX_Stop_Bit  ; i_Clk        ; i_Clk       ; 1.000        ; -0.069     ; 2.612      ;
+; -1.681 ; r_Clk_Count[3] ; r_SM_Main.s_RX_Stop_Bit  ; i_Clk        ; i_Clk       ; 1.000        ; -0.069     ; 2.611      ;
+; -1.667 ; r_Clk_Count[6] ; r_Bit_Index[1]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.073     ; 2.593      ;
+; -1.665 ; r_Clk_Count[4] ; r_Bit_Index[2]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.073     ; 2.591      ;
+; -1.664 ; r_Clk_Count[4] ; r_SM_Main.s_RX_Data_Bits ; i_Clk        ; i_Clk       ; 1.000        ; -0.073     ; 2.590      ;
+; -1.664 ; r_Clk_Count[8] ; r_Bit_Index[1]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.470     ; 2.193      ;
+; -1.652 ; r_Clk_Count[4] ; r_Bit_Index[1]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.073     ; 2.578      ;
+; -1.612 ; r_Clk_Count[5] ; r_SM_Main.s_RX_Stop_Bit  ; i_Clk        ; i_Clk       ; 1.000        ; -0.069     ; 2.542      ;
+; -1.612 ; r_Clk_Count[0] ; r_Bit_Index[2]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.073     ; 2.538      ;
+; -1.611 ; r_Clk_Count[3] ; r_Bit_Index[2]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.073     ; 2.537      ;
+; -1.610 ; r_Clk_Count[0] ; r_Bit_Index[1]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.073     ; 2.536      ;
+; -1.609 ; r_Clk_Count[1] ; r_RX_DV                  ; i_Clk        ; i_Clk       ; 1.000        ; -0.073     ; 2.535      ;
+; -1.609 ; r_Clk_Count[3] ; r_Bit_Index[1]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.073     ; 2.535      ;
+; -1.602 ; r_Clk_Count[0] ; r_SM_Main.s_RX_Data_Bits ; i_Clk        ; i_Clk       ; 1.000        ; -0.073     ; 2.528      ;
+; -1.601 ; r_Clk_Count[3] ; r_SM_Main.s_RX_Data_Bits ; i_Clk        ; i_Clk       ; 1.000        ; -0.073     ; 2.527      ;
+; -1.561 ; r_Clk_Count[7] ; r_Clk_Count[0]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.071     ; 2.489      ;
+; -1.561 ; r_Clk_Count[7] ; r_Clk_Count[1]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.071     ; 2.489      ;
+; -1.561 ; r_Clk_Count[7] ; r_Clk_Count[2]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.071     ; 2.489      ;
+; -1.561 ; r_Clk_Count[7] ; r_Clk_Count[3]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.071     ; 2.489      ;
+; -1.561 ; r_Clk_Count[7] ; r_Clk_Count[4]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.071     ; 2.489      ;
+; -1.561 ; r_Clk_Count[7] ; r_Clk_Count[5]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.071     ; 2.489      ;
++--------+----------------+--------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Hold: 'i_Clk'                                                                                                ;
++-------+--------------------------+--------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                ; To Node                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------+--------------------------+--------------+-------------+--------------+------------+------------+
+; 0.339 ; r_RX_Byte[0]             ; r_RX_Byte[0]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.087      ; 0.597      ;
+; 0.339 ; r_RX_Byte[1]             ; r_RX_Byte[1]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.087      ; 0.597      ;
+; 0.339 ; r_RX_Byte[2]             ; r_RX_Byte[2]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.087      ; 0.597      ;
+; 0.339 ; r_RX_Byte[3]             ; r_RX_Byte[3]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.087      ; 0.597      ;
+; 0.339 ; r_RX_Byte[4]             ; r_RX_Byte[4]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.087      ; 0.597      ;
+; 0.339 ; r_RX_Byte[5]             ; r_RX_Byte[5]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.087      ; 0.597      ;
+; 0.339 ; r_RX_Byte[6]             ; r_RX_Byte[6]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.087      ; 0.597      ;
+; 0.339 ; r_RX_Byte[7]             ; r_RX_Byte[7]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.087      ; 0.597      ;
+; 0.355 ; r_SM_Main.s_RX_Stop_Bit  ; r_SM_Main.s_RX_Stop_Bit  ; i_Clk        ; i_Clk       ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; r_SM_Main.s_Idle         ; r_SM_Main.s_Idle         ; i_Clk        ; i_Clk       ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; r_Bit_Index[0]           ; r_Bit_Index[0]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; r_Bit_Index[1]           ; r_Bit_Index[1]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; r_Bit_Index[2]           ; r_Bit_Index[2]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; r_SM_Main.s_RX_Data_Bits ; r_SM_Main.s_RX_Data_Bits ; i_Clk        ; i_Clk       ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; r_RX_DV                  ; r_RX_DV                  ; i_Clk        ; i_Clk       ; 0.000        ; 0.071      ; 0.597      ;
+; 0.391 ; r_Clk_Count[8]           ; r_Clk_Count[8]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.087      ; 0.649      ;
+; 0.489 ; r_Clk_Count[7]           ; r_Clk_Count[8]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.468      ; 1.128      ;
+; 0.531 ; r_SM_Main.s_RX_Stop_Bit  ; r_SM_Main.s_Cleanup      ; i_Clk        ; i_Clk       ; 0.000        ; 0.464      ; 1.166      ;
+; 0.537 ; r_RX_Data                ; r_SM_Main.s_RX_Start_Bit ; i_Clk        ; i_Clk       ; 0.000        ; 0.071      ; 0.779      ;
+; 0.552 ; r_RX_Data                ; r_RX_Byte[6]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.474      ; 1.197      ;
+; 0.594 ; r_Clk_Count[1]           ; r_Clk_Count[1]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.071      ; 0.836      ;
+; 0.599 ; r_Clk_Count[7]           ; r_Clk_Count[7]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.071      ; 0.841      ;
+; 0.610 ; r_SM_Main.s_RX_Data_Bits ; r_Bit_Index[0]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.071      ; 0.852      ;
+; 0.638 ; r_SM_Main.s_Idle         ; r_Bit_Index[2]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.071      ; 0.880      ;
+; 0.640 ; r_SM_Main.s_RX_Start_Bit ; r_RX_DV                  ; i_Clk        ; i_Clk       ; 0.000        ; 0.071      ; 0.882      ;
+; 0.644 ; r_RX_Data                ; r_RX_Byte[1]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.472      ; 1.287      ;
+; 0.644 ; r_RX_Data                ; r_RX_Byte[2]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.472      ; 1.287      ;
+; 0.645 ; r_RX_Data                ; r_RX_Byte[3]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.472      ; 1.288      ;
+; 0.646 ; r_RX_Data                ; r_RX_Byte[4]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.472      ; 1.289      ;
+; 0.647 ; r_RX_Data                ; r_RX_Byte[5]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.472      ; 1.290      ;
+; 0.649 ; r_RX_Data                ; r_RX_Byte[7]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.472      ; 1.292      ;
+; 0.650 ; r_RX_Data                ; r_RX_Byte[0]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.472      ; 1.293      ;
+; 0.653 ; r_RX_Data                ; r_SM_Main.s_RX_Data_Bits ; i_Clk        ; i_Clk       ; 0.000        ; 0.071      ; 0.895      ;
+; 0.674 ; r_Clk_Count[6]           ; r_Clk_Count[8]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.468      ; 1.313      ;
+; 0.678 ; r_SM_Main.s_Idle         ; r_Bit_Index[1]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.071      ; 0.920      ;
+; 0.707 ; r_RX_Data                ; r_SM_Main.s_Idle         ; i_Clk        ; i_Clk       ; 0.000        ; 0.071      ; 0.949      ;
+; 0.707 ; r_SM_Main.s_Idle         ; r_SM_Main.s_RX_Start_Bit ; i_Clk        ; i_Clk       ; 0.000        ; 0.071      ; 0.949      ;
+; 0.724 ; r_Bit_Index[2]           ; r_SM_Main.s_RX_Data_Bits ; i_Clk        ; i_Clk       ; 0.000        ; 0.071      ; 0.966      ;
+; 0.757 ; r_Clk_Count[2]           ; r_Clk_Count[2]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.071      ; 0.999      ;
+; 0.764 ; r_Clk_Count[5]           ; r_Clk_Count[8]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.468      ; 1.403      ;
+; 0.765 ; r_Clk_Count[4]           ; r_Clk_Count[4]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.071      ; 1.007      ;
+; 0.765 ; r_Clk_Count[5]           ; r_Clk_Count[5]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.071      ; 1.007      ;
+; 0.768 ; r_Clk_Count[3]           ; r_Clk_Count[3]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.071      ; 1.010      ;
+; 0.772 ; r_Clk_Count[6]           ; r_Clk_Count[6]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.071      ; 1.014      ;
+; 0.777 ; r_Clk_Count[4]           ; r_Clk_Count[8]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.468      ; 1.416      ;
+; 0.784 ; r_Clk_Count[0]           ; r_Clk_Count[0]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.071      ; 1.026      ;
+; 0.786 ; r_Bit_Index[0]           ; r_RX_Byte[6]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.474      ; 1.431      ;
+; 0.789 ; r_SM_Main.s_RX_Data_Bits ; r_Bit_Index[2]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.071      ; 1.031      ;
+; 0.813 ; r_Clk_Count[1]           ; r_Clk_Count[8]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.468      ; 1.452      ;
+; 0.839 ; r_Bit_Index[0]           ; r_RX_Byte[2]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.472      ; 1.482      ;
+; 0.842 ; r_Bit_Index[0]           ; r_RX_Byte[0]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.472      ; 1.485      ;
+; 0.842 ; r_Bit_Index[0]           ; r_RX_Byte[4]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.472      ; 1.485      ;
+; 0.855 ; r_Bit_Index[0]           ; r_RX_Byte[1]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.472      ; 1.498      ;
+; 0.859 ; r_Bit_Index[0]           ; r_RX_Byte[3]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.472      ; 1.502      ;
+; 0.860 ; r_Bit_Index[0]           ; r_RX_Byte[5]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.472      ; 1.503      ;
+; 0.864 ; r_SM_Main.s_RX_Start_Bit ; r_SM_Main.s_RX_Start_Bit ; i_Clk        ; i_Clk       ; 0.000        ; 0.071      ; 1.106      ;
+; 0.867 ; r_Bit_Index[0]           ; r_RX_Byte[7]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.472      ; 1.510      ;
+; 0.876 ; r_SM_Main.s_RX_Data_Bits ; r_Bit_Index[1]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.071      ; 1.118      ;
+; 0.878 ; r_Clk_Count[3]           ; r_Clk_Count[8]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.468      ; 1.517      ;
+; 0.879 ; r_Clk_Count[2]           ; r_Clk_Count[8]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.468      ; 1.518      ;
+; 0.880 ; r_Clk_Count[1]           ; r_Clk_Count[2]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.071      ; 1.122      ;
+; 0.884 ; r_Bit_Index[2]           ; r_RX_Byte[6]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.474      ; 1.529      ;
+; 0.891 ; r_Bit_Index[1]           ; r_RX_Byte[6]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.474      ; 1.536      ;
+; 0.914 ; r_Bit_Index[1]           ; r_SM_Main.s_RX_Data_Bits ; i_Clk        ; i_Clk       ; 0.000        ; 0.071      ; 1.156      ;
+; 0.918 ; r_Bit_Index[0]           ; r_Bit_Index[2]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.071      ; 1.160      ;
+; 0.926 ; r_Bit_Index[1]           ; r_RX_Byte[3]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.472      ; 1.569      ;
+; 0.931 ; r_Bit_Index[1]           ; r_RX_Byte[2]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.472      ; 1.574      ;
+; 0.932 ; r_SM_Main.s_RX_Data_Bits ; r_RX_DV                  ; i_Clk        ; i_Clk       ; 0.000        ; 0.071      ; 1.174      ;
+; 0.942 ; r_Bit_Index[1]           ; r_RX_Byte[7]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.472      ; 1.585      ;
+; 0.943 ; r_Bit_Index[1]           ; r_RX_Byte[0]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.472      ; 1.586      ;
+; 0.945 ; r_Bit_Index[1]           ; r_RX_Byte[1]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.472      ; 1.588      ;
+; 0.954 ; r_SM_Main.s_Idle         ; r_Bit_Index[0]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.071      ; 1.196      ;
+; 0.959 ; r_Bit_Index[0]           ; r_Bit_Index[1]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.071      ; 1.201      ;
+; 0.960 ; r_Bit_Index[2]           ; r_RX_Byte[5]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.472      ; 1.603      ;
+; 0.963 ; r_Bit_Index[2]           ; r_RX_Byte[4]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.472      ; 1.606      ;
+; 0.967 ; r_Bit_Index[1]           ; r_RX_Byte[4]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.472      ; 1.610      ;
+; 0.971 ; r_Bit_Index[2]           ; r_RX_Byte[1]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.472      ; 1.614      ;
+; 0.975 ; r_Bit_Index[1]           ; r_RX_Byte[5]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.472      ; 1.618      ;
+; 0.976 ; r_Bit_Index[2]           ; r_RX_Byte[0]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.472      ; 1.619      ;
+; 0.979 ; r_Clk_Count[1]           ; r_Clk_Count[3]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.071      ; 1.221      ;
+; 0.979 ; r_Bit_Index[2]           ; r_RX_Byte[7]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.472      ; 1.622      ;
+; 0.990 ; r_Clk_Count[1]           ; r_Clk_Count[4]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.071      ; 1.232      ;
+; 0.994 ; r_Bit_Index[2]           ; r_RX_Byte[2]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.472      ; 1.637      ;
+; 0.995 ; r_Clk_Count[0]           ; r_Clk_Count[8]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.468      ; 1.634      ;
+; 0.999 ; r_Bit_Index[2]           ; r_RX_Byte[3]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.472      ; 1.642      ;
+; 1.016 ; r_RX_Data_R              ; r_RX_Data                ; i_Clk        ; i_Clk       ; 0.000        ; 0.048      ; 1.235      ;
+; 1.035 ; r_Clk_Count[0]           ; r_Clk_Count[1]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.071      ; 1.277      ;
+; 1.037 ; r_Clk_Count[4]           ; r_Clk_Count[5]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.071      ; 1.279      ;
+; 1.045 ; r_Clk_Count[2]           ; r_Clk_Count[3]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.071      ; 1.287      ;
+; 1.051 ; r_Clk_Count[5]           ; r_Clk_Count[6]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.071      ; 1.293      ;
+; 1.055 ; r_Clk_Count[3]           ; r_Clk_Count[4]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.071      ; 1.297      ;
+; 1.056 ; r_Clk_Count[6]           ; r_Clk_Count[7]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.071      ; 1.298      ;
+; 1.056 ; r_Clk_Count[2]           ; r_Clk_Count[4]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.071      ; 1.298      ;
+; 1.062 ; r_Clk_Count[0]           ; r_Clk_Count[2]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.071      ; 1.304      ;
+; 1.064 ; r_Clk_Count[4]           ; r_Clk_Count[6]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.071      ; 1.306      ;
+; 1.066 ; r_SM_Main.s_Idle         ; r_Clk_Count[8]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.470      ; 1.707      ;
+; 1.079 ; r_Bit_Index[1]           ; r_Bit_Index[2]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.071      ; 1.321      ;
+; 1.089 ; r_Clk_Count[1]           ; r_Clk_Count[5]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.071      ; 1.331      ;
+; 1.100 ; r_Clk_Count[1]           ; r_Clk_Count[6]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.071      ; 1.342      ;
+; 1.113 ; r_Clk_Count[5]           ; r_Clk_Count[7]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.071      ; 1.355      ;
++-------+--------------------------+--------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Minimum Pulse Width: 'i_Clk'                                                            ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                      ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------+
+; -3.000 ; 1.000        ; 4.000          ; Port Rate        ; i_Clk ; Rise       ; i_Clk                       ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; i_Clk ; Rise       ; r_Bit_Index[0]              ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; i_Clk ; Rise       ; r_Bit_Index[1]              ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; i_Clk ; Rise       ; r_Bit_Index[2]              ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; i_Clk ; Rise       ; r_Clk_Count[0]              ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; i_Clk ; Rise       ; r_Clk_Count[1]              ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; i_Clk ; Rise       ; r_Clk_Count[2]              ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; i_Clk ; Rise       ; r_Clk_Count[3]              ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; i_Clk ; Rise       ; r_Clk_Count[4]              ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; i_Clk ; Rise       ; r_Clk_Count[5]              ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; i_Clk ; Rise       ; r_Clk_Count[6]              ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; i_Clk ; Rise       ; r_Clk_Count[7]              ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; i_Clk ; Rise       ; r_Clk_Count[8]              ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; i_Clk ; Rise       ; r_RX_Byte[0]                ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; i_Clk ; Rise       ; r_RX_Byte[1]                ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; i_Clk ; Rise       ; r_RX_Byte[2]                ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; i_Clk ; Rise       ; r_RX_Byte[3]                ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; i_Clk ; Rise       ; r_RX_Byte[4]                ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; i_Clk ; Rise       ; r_RX_Byte[5]                ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; i_Clk ; Rise       ; r_RX_Byte[6]                ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; i_Clk ; Rise       ; r_RX_Byte[7]                ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; i_Clk ; Rise       ; r_RX_DV                     ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; i_Clk ; Rise       ; r_RX_Data                   ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; i_Clk ; Rise       ; r_RX_Data_R                 ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; i_Clk ; Rise       ; r_SM_Main.s_Cleanup         ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; i_Clk ; Rise       ; r_SM_Main.s_Idle            ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; i_Clk ; Rise       ; r_SM_Main.s_RX_Data_Bits    ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; i_Clk ; Rise       ; r_SM_Main.s_RX_Start_Bit    ;
+; -1.285 ; 1.000        ; 2.285          ; Min Period       ; i_Clk ; Rise       ; r_SM_Main.s_RX_Stop_Bit     ;
+; 0.276  ; 0.462        ; 0.186          ; Low Pulse Width  ; i_Clk ; Rise       ; r_SM_Main.s_RX_Stop_Bit     ;
+; 0.277  ; 0.463        ; 0.186          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Bit_Index[0]              ;
+; 0.277  ; 0.463        ; 0.186          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Bit_Index[1]              ;
+; 0.277  ; 0.463        ; 0.186          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Bit_Index[2]              ;
+; 0.277  ; 0.463        ; 0.186          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Clk_Count[0]              ;
+; 0.277  ; 0.463        ; 0.186          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Clk_Count[1]              ;
+; 0.277  ; 0.463        ; 0.186          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Clk_Count[2]              ;
+; 0.277  ; 0.463        ; 0.186          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Clk_Count[3]              ;
+; 0.277  ; 0.463        ; 0.186          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Clk_Count[4]              ;
+; 0.277  ; 0.463        ; 0.186          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Clk_Count[5]              ;
+; 0.277  ; 0.463        ; 0.186          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Clk_Count[6]              ;
+; 0.277  ; 0.463        ; 0.186          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Clk_Count[7]              ;
+; 0.277  ; 0.463        ; 0.186          ; Low Pulse Width  ; i_Clk ; Rise       ; r_RX_DV                     ;
+; 0.277  ; 0.463        ; 0.186          ; Low Pulse Width  ; i_Clk ; Rise       ; r_RX_Data                   ;
+; 0.277  ; 0.463        ; 0.186          ; Low Pulse Width  ; i_Clk ; Rise       ; r_SM_Main.s_Idle            ;
+; 0.277  ; 0.463        ; 0.186          ; Low Pulse Width  ; i_Clk ; Rise       ; r_SM_Main.s_RX_Data_Bits    ;
+; 0.277  ; 0.463        ; 0.186          ; Low Pulse Width  ; i_Clk ; Rise       ; r_SM_Main.s_RX_Start_Bit    ;
+; 0.278  ; 0.464        ; 0.186          ; Low Pulse Width  ; i_Clk ; Rise       ; r_RX_Data_R                 ;
+; 0.294  ; 0.480        ; 0.186          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Clk_Count[8]              ;
+; 0.294  ; 0.480        ; 0.186          ; Low Pulse Width  ; i_Clk ; Rise       ; r_RX_Byte[0]                ;
+; 0.294  ; 0.480        ; 0.186          ; Low Pulse Width  ; i_Clk ; Rise       ; r_RX_Byte[1]                ;
+; 0.294  ; 0.480        ; 0.186          ; Low Pulse Width  ; i_Clk ; Rise       ; r_RX_Byte[2]                ;
+; 0.294  ; 0.480        ; 0.186          ; Low Pulse Width  ; i_Clk ; Rise       ; r_RX_Byte[3]                ;
+; 0.294  ; 0.480        ; 0.186          ; Low Pulse Width  ; i_Clk ; Rise       ; r_RX_Byte[4]                ;
+; 0.294  ; 0.480        ; 0.186          ; Low Pulse Width  ; i_Clk ; Rise       ; r_RX_Byte[5]                ;
+; 0.294  ; 0.480        ; 0.186          ; Low Pulse Width  ; i_Clk ; Rise       ; r_RX_Byte[7]                ;
+; 0.294  ; 0.480        ; 0.186          ; Low Pulse Width  ; i_Clk ; Rise       ; r_SM_Main.s_Cleanup         ;
+; 0.295  ; 0.481        ; 0.186          ; Low Pulse Width  ; i_Clk ; Rise       ; r_RX_Byte[6]                ;
+; 0.299  ; 0.517        ; 0.218          ; High Pulse Width ; i_Clk ; Rise       ; r_Clk_Count[8]              ;
+; 0.299  ; 0.517        ; 0.218          ; High Pulse Width ; i_Clk ; Rise       ; r_RX_Byte[6]                ;
+; 0.299  ; 0.517        ; 0.218          ; High Pulse Width ; i_Clk ; Rise       ; r_SM_Main.s_Cleanup         ;
+; 0.300  ; 0.518        ; 0.218          ; High Pulse Width ; i_Clk ; Rise       ; r_RX_Byte[0]                ;
+; 0.300  ; 0.518        ; 0.218          ; High Pulse Width ; i_Clk ; Rise       ; r_RX_Byte[1]                ;
+; 0.300  ; 0.518        ; 0.218          ; High Pulse Width ; i_Clk ; Rise       ; r_RX_Byte[2]                ;
+; 0.300  ; 0.518        ; 0.218          ; High Pulse Width ; i_Clk ; Rise       ; r_RX_Byte[3]                ;
+; 0.300  ; 0.518        ; 0.218          ; High Pulse Width ; i_Clk ; Rise       ; r_RX_Byte[4]                ;
+; 0.300  ; 0.518        ; 0.218          ; High Pulse Width ; i_Clk ; Rise       ; r_RX_Byte[5]                ;
+; 0.300  ; 0.518        ; 0.218          ; High Pulse Width ; i_Clk ; Rise       ; r_RX_Byte[7]                ;
+; 0.316  ; 0.534        ; 0.218          ; High Pulse Width ; i_Clk ; Rise       ; r_RX_Data_R                 ;
+; 0.317  ; 0.535        ; 0.218          ; High Pulse Width ; i_Clk ; Rise       ; r_Bit_Index[0]              ;
+; 0.317  ; 0.535        ; 0.218          ; High Pulse Width ; i_Clk ; Rise       ; r_Bit_Index[1]              ;
+; 0.317  ; 0.535        ; 0.218          ; High Pulse Width ; i_Clk ; Rise       ; r_Bit_Index[2]              ;
+; 0.317  ; 0.535        ; 0.218          ; High Pulse Width ; i_Clk ; Rise       ; r_RX_DV                     ;
+; 0.317  ; 0.535        ; 0.218          ; High Pulse Width ; i_Clk ; Rise       ; r_RX_Data                   ;
+; 0.317  ; 0.535        ; 0.218          ; High Pulse Width ; i_Clk ; Rise       ; r_SM_Main.s_Idle            ;
+; 0.317  ; 0.535        ; 0.218          ; High Pulse Width ; i_Clk ; Rise       ; r_SM_Main.s_RX_Data_Bits    ;
+; 0.317  ; 0.535        ; 0.218          ; High Pulse Width ; i_Clk ; Rise       ; r_SM_Main.s_RX_Start_Bit    ;
+; 0.318  ; 0.536        ; 0.218          ; High Pulse Width ; i_Clk ; Rise       ; r_Clk_Count[0]              ;
+; 0.318  ; 0.536        ; 0.218          ; High Pulse Width ; i_Clk ; Rise       ; r_Clk_Count[1]              ;
+; 0.318  ; 0.536        ; 0.218          ; High Pulse Width ; i_Clk ; Rise       ; r_Clk_Count[2]              ;
+; 0.318  ; 0.536        ; 0.218          ; High Pulse Width ; i_Clk ; Rise       ; r_Clk_Count[3]              ;
+; 0.318  ; 0.536        ; 0.218          ; High Pulse Width ; i_Clk ; Rise       ; r_Clk_Count[4]              ;
+; 0.318  ; 0.536        ; 0.218          ; High Pulse Width ; i_Clk ; Rise       ; r_Clk_Count[5]              ;
+; 0.318  ; 0.536        ; 0.218          ; High Pulse Width ; i_Clk ; Rise       ; r_Clk_Count[6]              ;
+; 0.318  ; 0.536        ; 0.218          ; High Pulse Width ; i_Clk ; Rise       ; r_Clk_Count[7]              ;
+; 0.318  ; 0.536        ; 0.218          ; High Pulse Width ; i_Clk ; Rise       ; r_SM_Main.s_RX_Stop_Bit     ;
+; 0.416  ; 0.416        ; 0.000          ; Low Pulse Width  ; i_Clk ; Rise       ; i_Clk~input|o               ;
+; 0.422  ; 0.422        ; 0.000          ; Low Pulse Width  ; i_Clk ; Rise       ; i_Clk~inputclkctrl|inclk[0] ;
+; 0.422  ; 0.422        ; 0.000          ; Low Pulse Width  ; i_Clk ; Rise       ; i_Clk~inputclkctrl|outclk   ;
+; 0.424  ; 0.424        ; 0.000          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Clk_Count[0]|clk          ;
+; 0.424  ; 0.424        ; 0.000          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Clk_Count[1]|clk          ;
+; 0.424  ; 0.424        ; 0.000          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Clk_Count[2]|clk          ;
+; 0.424  ; 0.424        ; 0.000          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Clk_Count[3]|clk          ;
+; 0.424  ; 0.424        ; 0.000          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Clk_Count[4]|clk          ;
+; 0.424  ; 0.424        ; 0.000          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Clk_Count[5]|clk          ;
+; 0.424  ; 0.424        ; 0.000          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Clk_Count[6]|clk          ;
+; 0.424  ; 0.424        ; 0.000          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Clk_Count[7]|clk          ;
+; 0.424  ; 0.424        ; 0.000          ; Low Pulse Width  ; i_Clk ; Rise       ; r_SM_Main.s_RX_Stop_Bit|clk ;
+; 0.425  ; 0.425        ; 0.000          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Bit_Index[0]|clk          ;
+; 0.425  ; 0.425        ; 0.000          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Bit_Index[1]|clk          ;
+; 0.425  ; 0.425        ; 0.000          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Bit_Index[2]|clk          ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------+
+
+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; i_RX_Serial ; i_Clk      ; 1.668 ; 1.912 ; Rise       ; i_Clk           ;
++-------------+------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Hold Times                                                                ;
++-------------+------------+--------+--------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-------------+------------+--------+--------+------------+-----------------+
+; i_RX_Serial ; i_Clk      ; -1.245 ; -1.473 ; Rise       ; i_Clk           ;
++-------------+------------+--------+--------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Clock to Output Times                                                     ;
++---------------+------------+-------+-------+------------+-----------------+
+; Data Port     ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++---------------+------------+-------+-------+------------+-----------------+
+; o_RX_Byte[*]  ; i_Clk      ; 7.669 ; 7.512 ; Rise       ; i_Clk           ;
+;  o_RX_Byte[0] ; i_Clk      ; 7.232 ; 7.142 ; Rise       ; i_Clk           ;
+;  o_RX_Byte[1] ; i_Clk      ; 7.669 ; 7.512 ; Rise       ; i_Clk           ;
+;  o_RX_Byte[2] ; i_Clk      ; 6.717 ; 6.639 ; Rise       ; i_Clk           ;
+;  o_RX_Byte[3] ; i_Clk      ; 7.003 ; 6.889 ; Rise       ; i_Clk           ;
+;  o_RX_Byte[4] ; i_Clk      ; 6.978 ; 6.880 ; Rise       ; i_Clk           ;
+;  o_RX_Byte[5] ; i_Clk      ; 7.011 ; 6.911 ; Rise       ; i_Clk           ;
+;  o_RX_Byte[6] ; i_Clk      ; 6.992 ; 6.896 ; Rise       ; i_Clk           ;
+;  o_RX_Byte[7] ; i_Clk      ; 7.016 ; 6.916 ; Rise       ; i_Clk           ;
+; o_RX_DV       ; i_Clk      ; 6.074 ; 6.024 ; Rise       ; i_Clk           ;
++---------------+------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                             ;
++---------------+------------+-------+-------+------------+-----------------+
+; Data Port     ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++---------------+------------+-------+-------+------------+-----------------+
+; o_RX_Byte[*]  ; i_Clk      ; 6.475 ; 6.400 ; Rise       ; i_Clk           ;
+;  o_RX_Byte[0] ; i_Clk      ; 6.967 ; 6.880 ; Rise       ; i_Clk           ;
+;  o_RX_Byte[1] ; i_Clk      ; 7.387 ; 7.236 ; Rise       ; i_Clk           ;
+;  o_RX_Byte[2] ; i_Clk      ; 6.475 ; 6.400 ; Rise       ; i_Clk           ;
+;  o_RX_Byte[3] ; i_Clk      ; 6.751 ; 6.640 ; Rise       ; i_Clk           ;
+;  o_RX_Byte[4] ; i_Clk      ; 6.725 ; 6.630 ; Rise       ; i_Clk           ;
+;  o_RX_Byte[5] ; i_Clk      ; 6.757 ; 6.661 ; Rise       ; i_Clk           ;
+;  o_RX_Byte[6] ; i_Clk      ; 6.738 ; 6.646 ; Rise       ; i_Clk           ;
+;  o_RX_Byte[7] ; i_Clk      ; 6.763 ; 6.666 ; Rise       ; i_Clk           ;
+; o_RX_DV       ; i_Clk      ; 5.856 ; 5.808 ; Rise       ; i_Clk           ;
++---------------+------------+-------+-------+------------+-----------------+
+
+
+---------------------------------------------
+; Slow 1200mV 0C Model Metastability Report ;
+---------------------------------------------
+No synchronizer chains to report.
+
+
++------------------------------------+
+; Fast 1200mV 0C Model Setup Summary ;
++-------+--------+-------------------+
+; Clock ; Slack  ; End Point TNS     ;
++-------+--------+-------------------+
+; i_Clk ; -0.625 ; -9.867            ;
++-------+--------+-------------------+
+
+
++-----------------------------------+
+; Fast 1200mV 0C Model Hold Summary ;
++-------+-------+-------------------+
+; Clock ; Slack ; End Point TNS     ;
++-------+-------+-------------------+
+; i_Clk ; 0.174 ; 0.000             ;
++-------+-------+-------------------+
+
+
+-----------------------------------------
+; Fast 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Fast 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Fast 1200mV 0C Model Minimum Pulse Width Summary ;
++-------+--------+---------------------------------+
+; Clock ; Slack  ; End Point TNS                   ;
++-------+--------+---------------------------------+
+; i_Clk ; -3.000 ; -32.947                         ;
++-------+--------+---------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Setup: 'i_Clk'                                                                                      ;
++--------+----------------+--------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node      ; To Node                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------+--------------------------+--------------+-------------+--------------+------------+------------+
+; -0.625 ; r_Clk_Count[8] ; r_RX_DV                  ; i_Clk        ; i_Clk       ; 1.000        ; -0.245     ; 1.367      ;
+; -0.624 ; r_Clk_Count[6] ; r_RX_DV                  ; i_Clk        ; i_Clk       ; 1.000        ; -0.042     ; 1.569      ;
+; -0.610 ; r_Clk_Count[4] ; r_RX_DV                  ; i_Clk        ; i_Clk       ; 1.000        ; -0.042     ; 1.555      ;
+; -0.575 ; r_Clk_Count[3] ; r_RX_DV                  ; i_Clk        ; i_Clk       ; 1.000        ; -0.042     ; 1.520      ;
+; -0.572 ; r_Clk_Count[0] ; r_RX_DV                  ; i_Clk        ; i_Clk       ; 1.000        ; -0.042     ; 1.517      ;
+; -0.531 ; r_Clk_Count[5] ; r_RX_DV                  ; i_Clk        ; i_Clk       ; 1.000        ; -0.042     ; 1.476      ;
+; -0.505 ; r_Clk_Count[8] ; r_SM_Main.s_RX_Stop_Bit  ; i_Clk        ; i_Clk       ; 1.000        ; -0.241     ; 1.251      ;
+; -0.504 ; r_Clk_Count[6] ; r_SM_Main.s_RX_Stop_Bit  ; i_Clk        ; i_Clk       ; 1.000        ; -0.038     ; 1.453      ;
+; -0.490 ; r_Clk_Count[4] ; r_SM_Main.s_RX_Stop_Bit  ; i_Clk        ; i_Clk       ; 1.000        ; -0.038     ; 1.439      ;
+; -0.477 ; r_Clk_Count[8] ; r_Clk_Count[0]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.243     ; 1.221      ;
+; -0.477 ; r_Clk_Count[8] ; r_Clk_Count[1]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.243     ; 1.221      ;
+; -0.477 ; r_Clk_Count[8] ; r_Clk_Count[2]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.243     ; 1.221      ;
+; -0.477 ; r_Clk_Count[8] ; r_Clk_Count[3]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.243     ; 1.221      ;
+; -0.477 ; r_Clk_Count[8] ; r_Clk_Count[4]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.243     ; 1.221      ;
+; -0.477 ; r_Clk_Count[8] ; r_Clk_Count[5]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.243     ; 1.221      ;
+; -0.477 ; r_Clk_Count[8] ; r_Clk_Count[6]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.243     ; 1.221      ;
+; -0.477 ; r_Clk_Count[8] ; r_Clk_Count[7]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.243     ; 1.221      ;
+; -0.476 ; r_Clk_Count[6] ; r_Clk_Count[0]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.040     ; 1.423      ;
+; -0.476 ; r_Clk_Count[6] ; r_Clk_Count[1]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.040     ; 1.423      ;
+; -0.476 ; r_Clk_Count[6] ; r_Clk_Count[2]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.040     ; 1.423      ;
+; -0.476 ; r_Clk_Count[6] ; r_Clk_Count[3]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.040     ; 1.423      ;
+; -0.476 ; r_Clk_Count[6] ; r_Clk_Count[4]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.040     ; 1.423      ;
+; -0.476 ; r_Clk_Count[6] ; r_Clk_Count[5]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.040     ; 1.423      ;
+; -0.476 ; r_Clk_Count[6] ; r_Clk_Count[6]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.040     ; 1.423      ;
+; -0.476 ; r_Clk_Count[6] ; r_Clk_Count[7]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.040     ; 1.423      ;
+; -0.474 ; r_Clk_Count[2] ; r_RX_DV                  ; i_Clk        ; i_Clk       ; 1.000        ; -0.042     ; 1.419      ;
+; -0.473 ; r_Clk_Count[7] ; r_RX_DV                  ; i_Clk        ; i_Clk       ; 1.000        ; -0.042     ; 1.418      ;
+; -0.466 ; r_Clk_Count[2] ; r_Clk_Count[0]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.040     ; 1.413      ;
+; -0.466 ; r_Clk_Count[2] ; r_Clk_Count[1]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.040     ; 1.413      ;
+; -0.466 ; r_Clk_Count[2] ; r_Clk_Count[2]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.040     ; 1.413      ;
+; -0.466 ; r_Clk_Count[2] ; r_Clk_Count[3]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.040     ; 1.413      ;
+; -0.466 ; r_Clk_Count[2] ; r_Clk_Count[4]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.040     ; 1.413      ;
+; -0.466 ; r_Clk_Count[2] ; r_Clk_Count[5]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.040     ; 1.413      ;
+; -0.466 ; r_Clk_Count[2] ; r_Clk_Count[6]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.040     ; 1.413      ;
+; -0.466 ; r_Clk_Count[2] ; r_Clk_Count[7]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.040     ; 1.413      ;
+; -0.462 ; r_Clk_Count[4] ; r_Clk_Count[0]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.040     ; 1.409      ;
+; -0.462 ; r_Clk_Count[4] ; r_Clk_Count[1]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.040     ; 1.409      ;
+; -0.462 ; r_Clk_Count[4] ; r_Clk_Count[2]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.040     ; 1.409      ;
+; -0.462 ; r_Clk_Count[4] ; r_Clk_Count[3]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.040     ; 1.409      ;
+; -0.462 ; r_Clk_Count[4] ; r_Clk_Count[4]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.040     ; 1.409      ;
+; -0.462 ; r_Clk_Count[4] ; r_Clk_Count[5]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.040     ; 1.409      ;
+; -0.462 ; r_Clk_Count[4] ; r_Clk_Count[6]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.040     ; 1.409      ;
+; -0.462 ; r_Clk_Count[4] ; r_Clk_Count[7]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.040     ; 1.409      ;
+; -0.459 ; r_Clk_Count[8] ; r_Bit_Index[2]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.245     ; 1.201      ;
+; -0.458 ; r_Clk_Count[1] ; r_Clk_Count[0]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.040     ; 1.405      ;
+; -0.458 ; r_Clk_Count[1] ; r_Clk_Count[1]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.040     ; 1.405      ;
+; -0.458 ; r_Clk_Count[1] ; r_Clk_Count[2]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.040     ; 1.405      ;
+; -0.458 ; r_Clk_Count[1] ; r_Clk_Count[3]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.040     ; 1.405      ;
+; -0.458 ; r_Clk_Count[1] ; r_Clk_Count[4]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.040     ; 1.405      ;
+; -0.458 ; r_Clk_Count[1] ; r_Clk_Count[5]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.040     ; 1.405      ;
+; -0.458 ; r_Clk_Count[1] ; r_Clk_Count[6]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.040     ; 1.405      ;
+; -0.458 ; r_Clk_Count[1] ; r_Clk_Count[7]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.040     ; 1.405      ;
+; -0.458 ; r_Clk_Count[6] ; r_Bit_Index[2]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.042     ; 1.403      ;
+; -0.457 ; r_Clk_Count[8] ; r_Bit_Index[1]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.245     ; 1.199      ;
+; -0.456 ; r_Clk_Count[6] ; r_Bit_Index[1]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.042     ; 1.401      ;
+; -0.455 ; r_Clk_Count[8] ; r_SM_Main.s_RX_Data_Bits ; i_Clk        ; i_Clk       ; 1.000        ; -0.245     ; 1.197      ;
+; -0.455 ; r_Clk_Count[3] ; r_SM_Main.s_RX_Stop_Bit  ; i_Clk        ; i_Clk       ; 1.000        ; -0.038     ; 1.404      ;
+; -0.454 ; r_Clk_Count[6] ; r_SM_Main.s_RX_Data_Bits ; i_Clk        ; i_Clk       ; 1.000        ; -0.042     ; 1.399      ;
+; -0.452 ; r_Clk_Count[0] ; r_SM_Main.s_RX_Stop_Bit  ; i_Clk        ; i_Clk       ; 1.000        ; -0.038     ; 1.401      ;
+; -0.444 ; r_Clk_Count[4] ; r_Bit_Index[2]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.042     ; 1.389      ;
+; -0.442 ; r_Clk_Count[4] ; r_Bit_Index[1]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.042     ; 1.387      ;
+; -0.440 ; r_Clk_Count[4] ; r_SM_Main.s_RX_Data_Bits ; i_Clk        ; i_Clk       ; 1.000        ; -0.042     ; 1.385      ;
+; -0.427 ; r_Clk_Count[3] ; r_Clk_Count[0]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.040     ; 1.374      ;
+; -0.427 ; r_Clk_Count[3] ; r_Clk_Count[1]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.040     ; 1.374      ;
+; -0.427 ; r_Clk_Count[3] ; r_Clk_Count[2]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.040     ; 1.374      ;
+; -0.427 ; r_Clk_Count[3] ; r_Clk_Count[3]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.040     ; 1.374      ;
+; -0.427 ; r_Clk_Count[3] ; r_Clk_Count[4]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.040     ; 1.374      ;
+; -0.427 ; r_Clk_Count[3] ; r_Clk_Count[5]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.040     ; 1.374      ;
+; -0.427 ; r_Clk_Count[3] ; r_Clk_Count[6]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.040     ; 1.374      ;
+; -0.427 ; r_Clk_Count[3] ; r_Clk_Count[7]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.040     ; 1.374      ;
+; -0.424 ; r_Clk_Count[0] ; r_Clk_Count[0]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.040     ; 1.371      ;
+; -0.424 ; r_Clk_Count[0] ; r_Clk_Count[1]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.040     ; 1.371      ;
+; -0.424 ; r_Clk_Count[0] ; r_Clk_Count[2]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.040     ; 1.371      ;
+; -0.424 ; r_Clk_Count[0] ; r_Clk_Count[3]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.040     ; 1.371      ;
+; -0.424 ; r_Clk_Count[0] ; r_Clk_Count[4]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.040     ; 1.371      ;
+; -0.424 ; r_Clk_Count[0] ; r_Clk_Count[5]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.040     ; 1.371      ;
+; -0.424 ; r_Clk_Count[0] ; r_Clk_Count[6]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.040     ; 1.371      ;
+; -0.424 ; r_Clk_Count[0] ; r_Clk_Count[7]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.040     ; 1.371      ;
+; -0.420 ; r_Clk_Count[1] ; r_RX_DV                  ; i_Clk        ; i_Clk       ; 1.000        ; -0.042     ; 1.365      ;
+; -0.411 ; r_Clk_Count[5] ; r_SM_Main.s_RX_Stop_Bit  ; i_Clk        ; i_Clk       ; 1.000        ; -0.038     ; 1.360      ;
+; -0.409 ; r_Clk_Count[3] ; r_Bit_Index[2]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.042     ; 1.354      ;
+; -0.407 ; r_Clk_Count[3] ; r_Bit_Index[1]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.042     ; 1.352      ;
+; -0.406 ; r_Clk_Count[0] ; r_Bit_Index[2]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.042     ; 1.351      ;
+; -0.405 ; r_Clk_Count[3] ; r_SM_Main.s_RX_Data_Bits ; i_Clk        ; i_Clk       ; 1.000        ; -0.042     ; 1.350      ;
+; -0.404 ; r_Clk_Count[0] ; r_Bit_Index[1]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.042     ; 1.349      ;
+; -0.402 ; r_Clk_Count[0] ; r_SM_Main.s_RX_Data_Bits ; i_Clk        ; i_Clk       ; 1.000        ; -0.042     ; 1.347      ;
+; -0.385 ; r_Clk_Count[8] ; r_Bit_Index[0]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.245     ; 1.127      ;
+; -0.384 ; r_Clk_Count[6] ; r_Bit_Index[0]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.042     ; 1.329      ;
+; -0.383 ; r_Clk_Count[5] ; r_Clk_Count[0]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.040     ; 1.330      ;
+; -0.383 ; r_Clk_Count[5] ; r_Clk_Count[1]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.040     ; 1.330      ;
+; -0.383 ; r_Clk_Count[5] ; r_Clk_Count[2]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.040     ; 1.330      ;
+; -0.383 ; r_Clk_Count[5] ; r_Clk_Count[3]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.040     ; 1.330      ;
+; -0.383 ; r_Clk_Count[5] ; r_Clk_Count[4]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.040     ; 1.330      ;
+; -0.383 ; r_Clk_Count[5] ; r_Clk_Count[5]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.040     ; 1.330      ;
+; -0.383 ; r_Clk_Count[5] ; r_Clk_Count[6]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.040     ; 1.330      ;
+; -0.383 ; r_Clk_Count[5] ; r_Clk_Count[7]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.040     ; 1.330      ;
+; -0.370 ; r_Clk_Count[4] ; r_Bit_Index[0]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.042     ; 1.315      ;
+; -0.365 ; r_Clk_Count[5] ; r_Bit_Index[2]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.042     ; 1.310      ;
+; -0.363 ; r_Clk_Count[5] ; r_Bit_Index[1]           ; i_Clk        ; i_Clk       ; 1.000        ; -0.042     ; 1.308      ;
+; -0.361 ; r_Clk_Count[5] ; r_SM_Main.s_RX_Data_Bits ; i_Clk        ; i_Clk       ; 1.000        ; -0.042     ; 1.306      ;
++--------+----------------+--------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Hold: 'i_Clk'                                                                                                ;
++-------+--------------------------+--------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                ; To Node                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------+--------------------------+--------------+-------------+--------------+------------+------------+
+; 0.174 ; r_RX_Byte[0]             ; r_RX_Byte[0]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.049      ; 0.307      ;
+; 0.174 ; r_RX_Byte[1]             ; r_RX_Byte[1]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.049      ; 0.307      ;
+; 0.174 ; r_RX_Byte[2]             ; r_RX_Byte[2]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.049      ; 0.307      ;
+; 0.174 ; r_RX_Byte[3]             ; r_RX_Byte[3]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.049      ; 0.307      ;
+; 0.174 ; r_RX_Byte[4]             ; r_RX_Byte[4]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.049      ; 0.307      ;
+; 0.174 ; r_RX_Byte[5]             ; r_RX_Byte[5]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.049      ; 0.307      ;
+; 0.174 ; r_RX_Byte[6]             ; r_RX_Byte[6]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.049      ; 0.307      ;
+; 0.174 ; r_RX_Byte[7]             ; r_RX_Byte[7]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.049      ; 0.307      ;
+; 0.182 ; r_SM_Main.s_RX_Stop_Bit  ; r_SM_Main.s_RX_Stop_Bit  ; i_Clk        ; i_Clk       ; 0.000        ; 0.041      ; 0.307      ;
+; 0.183 ; r_SM_Main.s_Idle         ; r_SM_Main.s_Idle         ; i_Clk        ; i_Clk       ; 0.000        ; 0.040      ; 0.307      ;
+; 0.183 ; r_Bit_Index[0]           ; r_Bit_Index[0]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.040      ; 0.307      ;
+; 0.183 ; r_Bit_Index[1]           ; r_Bit_Index[1]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.040      ; 0.307      ;
+; 0.183 ; r_Bit_Index[2]           ; r_Bit_Index[2]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.040      ; 0.307      ;
+; 0.183 ; r_SM_Main.s_RX_Data_Bits ; r_SM_Main.s_RX_Data_Bits ; i_Clk        ; i_Clk       ; 0.000        ; 0.040      ; 0.307      ;
+; 0.183 ; r_RX_DV                  ; r_RX_DV                  ; i_Clk        ; i_Clk       ; 0.000        ; 0.040      ; 0.307      ;
+; 0.196 ; r_Clk_Count[8]           ; r_Clk_Count[8]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.049      ; 0.329      ;
+; 0.246 ; r_Clk_Count[7]           ; r_Clk_Count[8]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.243      ; 0.573      ;
+; 0.257 ; r_SM_Main.s_RX_Stop_Bit  ; r_SM_Main.s_Cleanup      ; i_Clk        ; i_Clk       ; 0.000        ; 0.239      ; 0.580      ;
+; 0.261 ; r_RX_Data                ; r_RX_Byte[6]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.249      ; 0.594      ;
+; 0.275 ; r_RX_Data                ; r_SM_Main.s_RX_Start_Bit ; i_Clk        ; i_Clk       ; 0.000        ; 0.040      ; 0.399      ;
+; 0.299 ; r_Clk_Count[1]           ; r_Clk_Count[1]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.040      ; 0.423      ;
+; 0.300 ; r_Clk_Count[7]           ; r_Clk_Count[7]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.040      ; 0.424      ;
+; 0.305 ; r_RX_Data                ; r_RX_Byte[1]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.247      ; 0.636      ;
+; 0.305 ; r_RX_Data                ; r_RX_Byte[2]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.247      ; 0.636      ;
+; 0.306 ; r_RX_Data                ; r_RX_Byte[3]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.247      ; 0.637      ;
+; 0.307 ; r_RX_Data                ; r_RX_Byte[4]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.247      ; 0.638      ;
+; 0.307 ; r_SM_Main.s_RX_Data_Bits ; r_Bit_Index[0]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.040      ; 0.431      ;
+; 0.308 ; r_RX_Data                ; r_RX_Byte[5]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.247      ; 0.639      ;
+; 0.309 ; r_RX_Data                ; r_RX_Byte[7]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.247      ; 0.640      ;
+; 0.310 ; r_RX_Data                ; r_RX_Byte[0]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.247      ; 0.641      ;
+; 0.318 ; r_SM_Main.s_Idle         ; r_Bit_Index[2]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.040      ; 0.442      ;
+; 0.319 ; r_SM_Main.s_RX_Start_Bit ; r_RX_DV                  ; i_Clk        ; i_Clk       ; 0.000        ; 0.040      ; 0.443      ;
+; 0.333 ; r_Clk_Count[6]           ; r_Clk_Count[8]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.243      ; 0.660      ;
+; 0.337 ; r_RX_Data                ; r_SM_Main.s_RX_Data_Bits ; i_Clk        ; i_Clk       ; 0.000        ; 0.040      ; 0.461      ;
+; 0.343 ; r_SM_Main.s_Idle         ; r_Bit_Index[1]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.040      ; 0.467      ;
+; 0.357 ; r_SM_Main.s_Idle         ; r_SM_Main.s_RX_Start_Bit ; i_Clk        ; i_Clk       ; 0.000        ; 0.040      ; 0.481      ;
+; 0.358 ; r_RX_Data                ; r_SM_Main.s_Idle         ; i_Clk        ; i_Clk       ; 0.000        ; 0.040      ; 0.482      ;
+; 0.359 ; r_Bit_Index[2]           ; r_SM_Main.s_RX_Data_Bits ; i_Clk        ; i_Clk       ; 0.000        ; 0.040      ; 0.483      ;
+; 0.369 ; r_Clk_Count[2]           ; r_Clk_Count[2]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.040      ; 0.493      ;
+; 0.370 ; r_Clk_Count[4]           ; r_Clk_Count[4]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.040      ; 0.494      ;
+; 0.370 ; r_Clk_Count[5]           ; r_Clk_Count[5]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.040      ; 0.494      ;
+; 0.371 ; r_Clk_Count[3]           ; r_Clk_Count[3]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.040      ; 0.495      ;
+; 0.375 ; r_Clk_Count[6]           ; r_Clk_Count[6]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.040      ; 0.499      ;
+; 0.382 ; r_Clk_Count[5]           ; r_Clk_Count[8]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.243      ; 0.709      ;
+; 0.383 ; r_Clk_Count[0]           ; r_Clk_Count[0]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.040      ; 0.507      ;
+; 0.384 ; r_SM_Main.s_RX_Data_Bits ; r_Bit_Index[2]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.040      ; 0.508      ;
+; 0.394 ; r_Clk_Count[4]           ; r_Clk_Count[8]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.243      ; 0.721      ;
+; 0.397 ; r_Bit_Index[0]           ; r_RX_Byte[6]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.249      ; 0.730      ;
+; 0.407 ; r_Bit_Index[0]           ; r_RX_Byte[1]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.247      ; 0.738      ;
+; 0.411 ; r_Bit_Index[0]           ; r_RX_Byte[3]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.247      ; 0.742      ;
+; 0.413 ; r_Bit_Index[0]           ; r_RX_Byte[5]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.247      ; 0.744      ;
+; 0.415 ; r_Bit_Index[0]           ; r_RX_Byte[7]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.247      ; 0.746      ;
+; 0.418 ; r_Bit_Index[2]           ; r_RX_Byte[6]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.249      ; 0.751      ;
+; 0.420 ; r_Bit_Index[0]           ; r_RX_Byte[2]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.247      ; 0.751      ;
+; 0.423 ; r_Bit_Index[0]           ; r_RX_Byte[0]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.247      ; 0.754      ;
+; 0.423 ; r_Bit_Index[0]           ; r_RX_Byte[4]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.247      ; 0.754      ;
+; 0.423 ; r_Bit_Index[1]           ; r_RX_Byte[6]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.249      ; 0.756      ;
+; 0.425 ; r_SM_Main.s_RX_Start_Bit ; r_SM_Main.s_RX_Start_Bit ; i_Clk        ; i_Clk       ; 0.000        ; 0.040      ; 0.549      ;
+; 0.433 ; r_SM_Main.s_RX_Data_Bits ; r_Bit_Index[1]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.040      ; 0.557      ;
+; 0.443 ; r_Clk_Count[1]           ; r_Clk_Count[8]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.243      ; 0.770      ;
+; 0.448 ; r_Clk_Count[1]           ; r_Clk_Count[2]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.040      ; 0.572      ;
+; 0.449 ; r_Clk_Count[3]           ; r_Clk_Count[8]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.243      ; 0.776      ;
+; 0.456 ; r_Bit_Index[1]           ; r_RX_Byte[7]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.247      ; 0.787      ;
+; 0.459 ; r_Bit_Index[1]           ; r_RX_Byte[2]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.247      ; 0.790      ;
+; 0.459 ; r_Clk_Count[2]           ; r_Clk_Count[8]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.243      ; 0.786      ;
+; 0.460 ; r_Bit_Index[0]           ; r_Bit_Index[2]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.040      ; 0.584      ;
+; 0.460 ; r_Bit_Index[1]           ; r_RX_Byte[3]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.247      ; 0.791      ;
+; 0.461 ; r_Bit_Index[1]           ; r_SM_Main.s_RX_Data_Bits ; i_Clk        ; i_Clk       ; 0.000        ; 0.040      ; 0.585      ;
+; 0.464 ; r_Bit_Index[2]           ; r_RX_Byte[7]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.247      ; 0.795      ;
+; 0.465 ; r_Bit_Index[2]           ; r_RX_Byte[4]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.247      ; 0.796      ;
+; 0.468 ; r_SM_Main.s_RX_Data_Bits ; r_RX_DV                  ; i_Clk        ; i_Clk       ; 0.000        ; 0.040      ; 0.592      ;
+; 0.470 ; r_Bit_Index[2]           ; r_RX_Byte[5]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.247      ; 0.801      ;
+; 0.476 ; r_Bit_Index[2]           ; r_RX_Byte[1]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.247      ; 0.807      ;
+; 0.476 ; r_Bit_Index[1]           ; r_RX_Byte[0]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.247      ; 0.807      ;
+; 0.477 ; r_Bit_Index[1]           ; r_RX_Byte[1]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.247      ; 0.808      ;
+; 0.483 ; r_SM_Main.s_Idle         ; r_Bit_Index[0]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.040      ; 0.607      ;
+; 0.483 ; r_Bit_Index[2]           ; r_RX_Byte[0]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.247      ; 0.814      ;
+; 0.483 ; r_Bit_Index[0]           ; r_Bit_Index[1]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.040      ; 0.607      ;
+; 0.486 ; r_Bit_Index[1]           ; r_RX_Byte[4]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.247      ; 0.817      ;
+; 0.488 ; r_Bit_Index[2]           ; r_RX_Byte[2]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.247      ; 0.819      ;
+; 0.491 ; r_Bit_Index[1]           ; r_RX_Byte[5]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.247      ; 0.822      ;
+; 0.498 ; r_Bit_Index[2]           ; r_RX_Byte[3]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.247      ; 0.829      ;
+; 0.499 ; r_SM_Main.s_Idle         ; r_Clk_Count[8]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.245      ; 0.828      ;
+; 0.511 ; r_Clk_Count[1]           ; r_Clk_Count[3]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.040      ; 0.635      ;
+; 0.514 ; r_Clk_Count[1]           ; r_Clk_Count[4]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.040      ; 0.638      ;
+; 0.519 ; r_Clk_Count[5]           ; r_Clk_Count[6]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.040      ; 0.643      ;
+; 0.520 ; r_Clk_Count[3]           ; r_Clk_Count[4]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.040      ; 0.644      ;
+; 0.527 ; r_Clk_Count[2]           ; r_Clk_Count[3]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.040      ; 0.651      ;
+; 0.528 ; r_Clk_Count[4]           ; r_Clk_Count[5]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.040      ; 0.652      ;
+; 0.528 ; r_Clk_Count[0]           ; r_Clk_Count[8]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.243      ; 0.855      ;
+; 0.530 ; r_Clk_Count[0]           ; r_Clk_Count[1]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.040      ; 0.654      ;
+; 0.530 ; r_Clk_Count[2]           ; r_Clk_Count[4]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.040      ; 0.654      ;
+; 0.531 ; r_Clk_Count[4]           ; r_Clk_Count[6]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.040      ; 0.655      ;
+; 0.532 ; r_Bit_Index[1]           ; r_Bit_Index[2]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.040      ; 0.656      ;
+; 0.533 ; r_Clk_Count[6]           ; r_Clk_Count[7]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.040      ; 0.657      ;
+; 0.533 ; r_Clk_Count[0]           ; r_Clk_Count[2]           ; i_Clk        ; i_Clk       ; 0.000        ; 0.040      ; 0.657      ;
+; 0.535 ; r_RX_Data_R              ; r_RX_Data                ; i_Clk        ; i_Clk       ; 0.000        ; 0.018      ; 0.637      ;
+; 0.561 ; r_SM_Main.s_RX_Data_Bits ; r_RX_Byte[1]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.247      ; 0.892      ;
+; 0.562 ; r_SM_Main.s_RX_Data_Bits ; r_RX_Byte[2]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.247      ; 0.893      ;
+; 0.565 ; r_SM_Main.s_RX_Data_Bits ; r_RX_Byte[4]             ; i_Clk        ; i_Clk       ; 0.000        ; 0.247      ; 0.896      ;
++-------+--------------------------+--------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Minimum Pulse Width: 'i_Clk'                                                             ;
++--------+--------------+----------------+------------------+-------+------------+------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                       ;
++--------+--------------+----------------+------------------+-------+------------+------------------------------+
+; -3.000 ; 1.000        ; 4.000          ; Port Rate        ; i_Clk ; Rise       ; i_Clk                        ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; i_Clk ; Rise       ; r_Bit_Index[0]               ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; i_Clk ; Rise       ; r_Bit_Index[1]               ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; i_Clk ; Rise       ; r_Bit_Index[2]               ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; i_Clk ; Rise       ; r_Clk_Count[0]               ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; i_Clk ; Rise       ; r_Clk_Count[1]               ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; i_Clk ; Rise       ; r_Clk_Count[2]               ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; i_Clk ; Rise       ; r_Clk_Count[3]               ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; i_Clk ; Rise       ; r_Clk_Count[4]               ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; i_Clk ; Rise       ; r_Clk_Count[5]               ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; i_Clk ; Rise       ; r_Clk_Count[6]               ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; i_Clk ; Rise       ; r_Clk_Count[7]               ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; i_Clk ; Rise       ; r_Clk_Count[8]               ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; i_Clk ; Rise       ; r_RX_Byte[0]                 ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; i_Clk ; Rise       ; r_RX_Byte[1]                 ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; i_Clk ; Rise       ; r_RX_Byte[2]                 ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; i_Clk ; Rise       ; r_RX_Byte[3]                 ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; i_Clk ; Rise       ; r_RX_Byte[4]                 ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; i_Clk ; Rise       ; r_RX_Byte[5]                 ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; i_Clk ; Rise       ; r_RX_Byte[6]                 ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; i_Clk ; Rise       ; r_RX_Byte[7]                 ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; i_Clk ; Rise       ; r_RX_DV                      ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; i_Clk ; Rise       ; r_RX_Data                    ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; i_Clk ; Rise       ; r_RX_Data_R                  ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; i_Clk ; Rise       ; r_SM_Main.s_Cleanup          ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; i_Clk ; Rise       ; r_SM_Main.s_Idle             ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; i_Clk ; Rise       ; r_SM_Main.s_RX_Data_Bits     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; i_Clk ; Rise       ; r_SM_Main.s_RX_Start_Bit     ;
+; -1.000 ; 1.000        ; 2.000          ; Min Period       ; i_Clk ; Rise       ; r_SM_Main.s_RX_Stop_Bit      ;
+; -0.084 ; 0.100        ; 0.184          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Clk_Count[8]               ;
+; -0.084 ; 0.100        ; 0.184          ; Low Pulse Width  ; i_Clk ; Rise       ; r_RX_Byte[0]                 ;
+; -0.084 ; 0.100        ; 0.184          ; Low Pulse Width  ; i_Clk ; Rise       ; r_RX_Byte[1]                 ;
+; -0.084 ; 0.100        ; 0.184          ; Low Pulse Width  ; i_Clk ; Rise       ; r_RX_Byte[2]                 ;
+; -0.084 ; 0.100        ; 0.184          ; Low Pulse Width  ; i_Clk ; Rise       ; r_RX_Byte[3]                 ;
+; -0.084 ; 0.100        ; 0.184          ; Low Pulse Width  ; i_Clk ; Rise       ; r_RX_Byte[4]                 ;
+; -0.084 ; 0.100        ; 0.184          ; Low Pulse Width  ; i_Clk ; Rise       ; r_RX_Byte[5]                 ;
+; -0.084 ; 0.100        ; 0.184          ; Low Pulse Width  ; i_Clk ; Rise       ; r_RX_Byte[6]                 ;
+; -0.084 ; 0.100        ; 0.184          ; Low Pulse Width  ; i_Clk ; Rise       ; r_RX_Byte[7]                 ;
+; -0.084 ; 0.100        ; 0.184          ; Low Pulse Width  ; i_Clk ; Rise       ; r_SM_Main.s_Cleanup          ;
+; -0.062 ; 0.122        ; 0.184          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Clk_Count[0]               ;
+; -0.062 ; 0.122        ; 0.184          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Clk_Count[1]               ;
+; -0.062 ; 0.122        ; 0.184          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Clk_Count[2]               ;
+; -0.062 ; 0.122        ; 0.184          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Clk_Count[3]               ;
+; -0.062 ; 0.122        ; 0.184          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Clk_Count[4]               ;
+; -0.062 ; 0.122        ; 0.184          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Clk_Count[5]               ;
+; -0.062 ; 0.122        ; 0.184          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Clk_Count[6]               ;
+; -0.062 ; 0.122        ; 0.184          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Clk_Count[7]               ;
+; -0.062 ; 0.122        ; 0.184          ; Low Pulse Width  ; i_Clk ; Rise       ; r_RX_Data_R                  ;
+; -0.061 ; 0.123        ; 0.184          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Bit_Index[0]               ;
+; -0.061 ; 0.123        ; 0.184          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Bit_Index[1]               ;
+; -0.061 ; 0.123        ; 0.184          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Bit_Index[2]               ;
+; -0.061 ; 0.123        ; 0.184          ; Low Pulse Width  ; i_Clk ; Rise       ; r_RX_DV                      ;
+; -0.061 ; 0.123        ; 0.184          ; Low Pulse Width  ; i_Clk ; Rise       ; r_RX_Data                    ;
+; -0.061 ; 0.123        ; 0.184          ; Low Pulse Width  ; i_Clk ; Rise       ; r_SM_Main.s_Idle             ;
+; -0.061 ; 0.123        ; 0.184          ; Low Pulse Width  ; i_Clk ; Rise       ; r_SM_Main.s_RX_Data_Bits     ;
+; -0.061 ; 0.123        ; 0.184          ; Low Pulse Width  ; i_Clk ; Rise       ; r_SM_Main.s_RX_Start_Bit     ;
+; -0.061 ; 0.123        ; 0.184          ; Low Pulse Width  ; i_Clk ; Rise       ; r_SM_Main.s_RX_Stop_Bit      ;
+; 0.096  ; 0.096        ; 0.000          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Clk_Count[8]|clk           ;
+; 0.096  ; 0.096        ; 0.000          ; Low Pulse Width  ; i_Clk ; Rise       ; r_RX_Byte[0]|clk             ;
+; 0.096  ; 0.096        ; 0.000          ; Low Pulse Width  ; i_Clk ; Rise       ; r_RX_Byte[1]|clk             ;
+; 0.096  ; 0.096        ; 0.000          ; Low Pulse Width  ; i_Clk ; Rise       ; r_RX_Byte[2]|clk             ;
+; 0.096  ; 0.096        ; 0.000          ; Low Pulse Width  ; i_Clk ; Rise       ; r_RX_Byte[3]|clk             ;
+; 0.096  ; 0.096        ; 0.000          ; Low Pulse Width  ; i_Clk ; Rise       ; r_RX_Byte[4]|clk             ;
+; 0.096  ; 0.096        ; 0.000          ; Low Pulse Width  ; i_Clk ; Rise       ; r_RX_Byte[5]|clk             ;
+; 0.096  ; 0.096        ; 0.000          ; Low Pulse Width  ; i_Clk ; Rise       ; r_RX_Byte[6]|clk             ;
+; 0.096  ; 0.096        ; 0.000          ; Low Pulse Width  ; i_Clk ; Rise       ; r_RX_Byte[7]|clk             ;
+; 0.096  ; 0.096        ; 0.000          ; Low Pulse Width  ; i_Clk ; Rise       ; r_SM_Main.s_Cleanup|clk      ;
+; 0.118  ; 0.118        ; 0.000          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Clk_Count[0]|clk           ;
+; 0.118  ; 0.118        ; 0.000          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Clk_Count[1]|clk           ;
+; 0.118  ; 0.118        ; 0.000          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Clk_Count[2]|clk           ;
+; 0.118  ; 0.118        ; 0.000          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Clk_Count[3]|clk           ;
+; 0.118  ; 0.118        ; 0.000          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Clk_Count[4]|clk           ;
+; 0.118  ; 0.118        ; 0.000          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Clk_Count[5]|clk           ;
+; 0.118  ; 0.118        ; 0.000          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Clk_Count[6]|clk           ;
+; 0.118  ; 0.118        ; 0.000          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Clk_Count[7]|clk           ;
+; 0.118  ; 0.118        ; 0.000          ; Low Pulse Width  ; i_Clk ; Rise       ; r_RX_Data_R|clk              ;
+; 0.119  ; 0.119        ; 0.000          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Bit_Index[0]|clk           ;
+; 0.119  ; 0.119        ; 0.000          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Bit_Index[1]|clk           ;
+; 0.119  ; 0.119        ; 0.000          ; Low Pulse Width  ; i_Clk ; Rise       ; r_Bit_Index[2]|clk           ;
+; 0.119  ; 0.119        ; 0.000          ; Low Pulse Width  ; i_Clk ; Rise       ; r_RX_DV|clk                  ;
+; 0.119  ; 0.119        ; 0.000          ; Low Pulse Width  ; i_Clk ; Rise       ; r_RX_Data|clk                ;
+; 0.119  ; 0.119        ; 0.000          ; Low Pulse Width  ; i_Clk ; Rise       ; r_SM_Main.s_Idle|clk         ;
+; 0.119  ; 0.119        ; 0.000          ; Low Pulse Width  ; i_Clk ; Rise       ; r_SM_Main.s_RX_Data_Bits|clk ;
+; 0.119  ; 0.119        ; 0.000          ; Low Pulse Width  ; i_Clk ; Rise       ; r_SM_Main.s_RX_Start_Bit|clk ;
+; 0.119  ; 0.119        ; 0.000          ; Low Pulse Width  ; i_Clk ; Rise       ; r_SM_Main.s_RX_Stop_Bit|clk  ;
+; 0.120  ; 0.120        ; 0.000          ; Low Pulse Width  ; i_Clk ; Rise       ; i_Clk~input|o                ;
+; 0.133  ; 0.133        ; 0.000          ; Low Pulse Width  ; i_Clk ; Rise       ; i_Clk~inputclkctrl|inclk[0]  ;
+; 0.133  ; 0.133        ; 0.000          ; Low Pulse Width  ; i_Clk ; Rise       ; i_Clk~inputclkctrl|outclk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; i_Clk ; Rise       ; i_Clk~input|i                ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; i_Clk ; Rise       ; i_Clk~input|i                ;
+; 0.659  ; 0.875        ; 0.216          ; High Pulse Width ; i_Clk ; Rise       ; r_Bit_Index[0]               ;
+; 0.659  ; 0.875        ; 0.216          ; High Pulse Width ; i_Clk ; Rise       ; r_Bit_Index[1]               ;
+; 0.659  ; 0.875        ; 0.216          ; High Pulse Width ; i_Clk ; Rise       ; r_Bit_Index[2]               ;
+; 0.659  ; 0.875        ; 0.216          ; High Pulse Width ; i_Clk ; Rise       ; r_Clk_Count[0]               ;
+; 0.659  ; 0.875        ; 0.216          ; High Pulse Width ; i_Clk ; Rise       ; r_Clk_Count[1]               ;
+; 0.659  ; 0.875        ; 0.216          ; High Pulse Width ; i_Clk ; Rise       ; r_Clk_Count[2]               ;
+; 0.659  ; 0.875        ; 0.216          ; High Pulse Width ; i_Clk ; Rise       ; r_Clk_Count[3]               ;
+; 0.659  ; 0.875        ; 0.216          ; High Pulse Width ; i_Clk ; Rise       ; r_Clk_Count[4]               ;
+; 0.659  ; 0.875        ; 0.216          ; High Pulse Width ; i_Clk ; Rise       ; r_Clk_Count[5]               ;
+; 0.659  ; 0.875        ; 0.216          ; High Pulse Width ; i_Clk ; Rise       ; r_Clk_Count[6]               ;
++--------+--------------+----------------+------------------+-------+------------+------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; i_RX_Serial ; i_Clk      ; 0.873 ; 1.533 ; Rise       ; i_Clk           ;
++-------------+------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Hold Times                                                                ;
++-------------+------------+--------+--------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-------------+------------+--------+--------+------------+-----------------+
+; i_RX_Serial ; i_Clk      ; -0.639 ; -1.281 ; Rise       ; i_Clk           ;
++-------------+------------+--------+--------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Clock to Output Times                                                     ;
++---------------+------------+-------+-------+------------+-----------------+
+; Data Port     ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++---------------+------------+-------+-------+------------+-----------------+
+; o_RX_Byte[*]  ; i_Clk      ; 4.390 ; 4.496 ; Rise       ; i_Clk           ;
+;  o_RX_Byte[0] ; i_Clk      ; 4.171 ; 4.267 ; Rise       ; i_Clk           ;
+;  o_RX_Byte[1] ; i_Clk      ; 4.390 ; 4.496 ; Rise       ; i_Clk           ;
+;  o_RX_Byte[2] ; i_Clk      ; 3.925 ; 3.974 ; Rise       ; i_Clk           ;
+;  o_RX_Byte[3] ; i_Clk      ; 4.071 ; 4.133 ; Rise       ; i_Clk           ;
+;  o_RX_Byte[4] ; i_Clk      ; 4.049 ; 4.120 ; Rise       ; i_Clk           ;
+;  o_RX_Byte[5] ; i_Clk      ; 4.078 ; 4.149 ; Rise       ; i_Clk           ;
+;  o_RX_Byte[6] ; i_Clk      ; 4.059 ; 4.128 ; Rise       ; i_Clk           ;
+;  o_RX_Byte[7] ; i_Clk      ; 4.077 ; 4.153 ; Rise       ; i_Clk           ;
+; o_RX_DV       ; i_Clk      ; 3.578 ; 3.620 ; Rise       ; i_Clk           ;
++---------------+------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                             ;
++---------------+------------+-------+-------+------------+-----------------+
+; Data Port     ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++---------------+------------+-------+-------+------------+-----------------+
+; o_RX_Byte[*]  ; i_Clk      ; 3.797 ; 3.844 ; Rise       ; i_Clk           ;
+;  o_RX_Byte[0] ; i_Clk      ; 4.030 ; 4.123 ; Rise       ; i_Clk           ;
+;  o_RX_Byte[1] ; i_Clk      ; 4.240 ; 4.342 ; Rise       ; i_Clk           ;
+;  o_RX_Byte[2] ; i_Clk      ; 3.797 ; 3.844 ; Rise       ; i_Clk           ;
+;  o_RX_Byte[3] ; i_Clk      ; 3.937 ; 3.997 ; Rise       ; i_Clk           ;
+;  o_RX_Byte[4] ; i_Clk      ; 3.915 ; 3.983 ; Rise       ; i_Clk           ;
+;  o_RX_Byte[5] ; i_Clk      ; 3.943 ; 4.012 ; Rise       ; i_Clk           ;
+;  o_RX_Byte[6] ; i_Clk      ; 3.924 ; 3.991 ; Rise       ; i_Clk           ;
+;  o_RX_Byte[7] ; i_Clk      ; 3.943 ; 4.015 ; Rise       ; i_Clk           ;
+; o_RX_DV       ; i_Clk      ; 3.462 ; 3.503 ; Rise       ; i_Clk           ;
++---------------+------------+-------+-------+------------+-----------------+
+
+
+---------------------------------------------
+; Fast 1200mV 0C Model Metastability Report ;
+---------------------------------------------
+No synchronizer chains to report.
+
+
++-------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                           ;
++------------------+---------+-------+----------+---------+---------------------+
+; Clock            ; Setup   ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+---------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -2.325  ; 0.174 ; N/A      ; N/A     ; -3.000              ;
+;  i_Clk           ; -2.325  ; 0.174 ; N/A      ; N/A     ; -3.000              ;
+; Design-wide TNS  ; -49.101 ; 0.0   ; 0.0      ; 0.0     ; -38.98              ;
+;  i_Clk           ; -49.101 ; 0.000 ; N/A      ; N/A     ; -38.980             ;
++------------------+---------+-------+----------+---------+---------------------+
+
+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; i_RX_Serial ; i_Clk      ; 1.897 ; 2.290 ; Rise       ; i_Clk           ;
++-------------+------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Hold Times                                                                ;
++-------------+------------+--------+--------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-------------+------------+--------+--------+------------+-----------------+
+; i_RX_Serial ; i_Clk      ; -0.639 ; -1.281 ; Rise       ; i_Clk           ;
++-------------+------------+--------+--------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Clock to Output Times                                                     ;
++---------------+------------+-------+-------+------------+-----------------+
+; Data Port     ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++---------------+------------+-------+-------+------------+-----------------+
+; o_RX_Byte[*]  ; i_Clk      ; 8.459 ; 8.362 ; Rise       ; i_Clk           ;
+;  o_RX_Byte[0] ; i_Clk      ; 7.992 ; 7.949 ; Rise       ; i_Clk           ;
+;  o_RX_Byte[1] ; i_Clk      ; 8.459 ; 8.362 ; Rise       ; i_Clk           ;
+;  o_RX_Byte[2] ; i_Clk      ; 7.441 ; 7.380 ; Rise       ; i_Clk           ;
+;  o_RX_Byte[3] ; i_Clk      ; 7.751 ; 7.659 ; Rise       ; i_Clk           ;
+;  o_RX_Byte[4] ; i_Clk      ; 7.711 ; 7.654 ; Rise       ; i_Clk           ;
+;  o_RX_Byte[5] ; i_Clk      ; 7.741 ; 7.685 ; Rise       ; i_Clk           ;
+;  o_RX_Byte[6] ; i_Clk      ; 7.727 ; 7.671 ; Rise       ; i_Clk           ;
+;  o_RX_Byte[7] ; i_Clk      ; 7.751 ; 7.690 ; Rise       ; i_Clk           ;
+; o_RX_DV       ; i_Clk      ; 6.749 ; 6.710 ; Rise       ; i_Clk           ;
++---------------+------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                             ;
++---------------+------------+-------+-------+------------+-----------------+
+; Data Port     ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++---------------+------------+-------+-------+------------+-----------------+
+; o_RX_Byte[*]  ; i_Clk      ; 3.797 ; 3.844 ; Rise       ; i_Clk           ;
+;  o_RX_Byte[0] ; i_Clk      ; 4.030 ; 4.123 ; Rise       ; i_Clk           ;
+;  o_RX_Byte[1] ; i_Clk      ; 4.240 ; 4.342 ; Rise       ; i_Clk           ;
+;  o_RX_Byte[2] ; i_Clk      ; 3.797 ; 3.844 ; Rise       ; i_Clk           ;
+;  o_RX_Byte[3] ; i_Clk      ; 3.937 ; 3.997 ; Rise       ; i_Clk           ;
+;  o_RX_Byte[4] ; i_Clk      ; 3.915 ; 3.983 ; Rise       ; i_Clk           ;
+;  o_RX_Byte[5] ; i_Clk      ; 3.943 ; 4.012 ; Rise       ; i_Clk           ;
+;  o_RX_Byte[6] ; i_Clk      ; 3.924 ; 3.991 ; Rise       ; i_Clk           ;
+;  o_RX_Byte[7] ; i_Clk      ; 3.943 ; 4.015 ; Rise       ; i_Clk           ;
+; o_RX_DV       ; i_Clk      ; 3.462 ; 3.503 ; Rise       ; i_Clk           ;
++---------------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Board Trace Model Assignments                                                                                                                                                                                                                                                                                                                                                                                    ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; Pin           ; I/O Standard ; Near Tline Length ; Near Tline L per Length ; Near Tline C per Length ; Near Series R ; Near Differential R ; Near Pull-up R ; Near Pull-down R ; Near C ; Far Tline Length ; Far Tline L per Length ; Far Tline C per Length ; Far Series R ; Far Pull-up R ; Far Pull-down R ; Far C ; Termination Voltage ; Far Differential R ; EBD File Name ; EBD Signal Name ; EBD Far-end ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; o_RX_DV       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; o_RX_Byte[0]  ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; o_RX_Byte[1]  ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; o_RX_Byte[2]  ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; o_RX_Byte[3]  ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; o_RX_Byte[4]  ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; o_RX_Byte[5]  ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; o_RX_Byte[6]  ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; o_RX_Byte[7]  ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+
+
++----------------------------------------------------------------------------+
+; Input Transition Times                                                     ;
++-------------------------+--------------+-----------------+-----------------+
+; Pin                     ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
++-------------------------+--------------+-----------------+-----------------+
+; i_Clk                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; i_RX_Serial             ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_ASDO_DATA1~     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_FLASH_nCE_nCSO~ ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_DATA0~          ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
++-------------------------+--------------+-----------------+-----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; o_RX_DV       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; o_RX_Byte[0]  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; o_RX_Byte[1]  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; o_RX_Byte[2]  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; o_RX_Byte[3]  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; o_RX_Byte[4]  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; o_RX_Byte[5]  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; o_RX_Byte[6]  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; o_RX_Byte[7]  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.67e-09 V                   ; 2.38 V              ; -0.0485 V           ; 0.167 V                              ; 0.096 V                              ; 2.95e-10 s                  ; 2.73e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 2.67e-09 V                  ; 2.38 V             ; -0.0485 V          ; 0.167 V                             ; 0.096 V                             ; 2.95e-10 s                 ; 2.73e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.18e-09 V                   ; 2.38 V              ; -0.00483 V          ; 0.152 V                              ; 0.012 V                              ; 4.81e-10 s                  ; 6.29e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.18e-09 V                  ; 2.38 V             ; -0.00483 V         ; 0.152 V                             ; 0.012 V                             ; 4.81e-10 s                 ; 6.29e-10 s                 ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 85c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; o_RX_DV       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; o_RX_Byte[0]  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; o_RX_Byte[1]  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; o_RX_Byte[2]  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; o_RX_Byte[3]  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; o_RX_Byte[4]  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; o_RX_Byte[5]  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; o_RX_Byte[6]  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; o_RX_Byte[7]  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.75e-07 V                   ; 2.35 V              ; -0.0109 V           ; 0.084 V                              ; 0.027 V                              ; 4.31e-10 s                  ; 3.61e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.75e-07 V                  ; 2.35 V             ; -0.0109 V          ; 0.084 V                             ; 0.027 V                             ; 4.31e-10 s                 ; 3.61e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.15e-07 V                   ; 2.35 V              ; -0.00712 V          ; 0.093 V                              ; 0.02 V                               ; 6.21e-10 s                  ; 7.9e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 6.15e-07 V                  ; 2.35 V             ; -0.00712 V         ; 0.093 V                             ; 0.02 V                              ; 6.21e-10 s                 ; 7.9e-10 s                  ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Fast 1200mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; o_RX_DV       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; o_RX_Byte[0]  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; o_RX_Byte[1]  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; o_RX_Byte[2]  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; o_RX_Byte[3]  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; o_RX_Byte[4]  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; o_RX_Byte[5]  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; o_RX_Byte[6]  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; o_RX_Byte[7]  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.22e-08 V                   ; 2.74 V              ; -0.06 V             ; 0.158 V                              ; 0.08 V                               ; 2.68e-10 s                  ; 2.19e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 2.22e-08 V                  ; 2.74 V             ; -0.06 V            ; 0.158 V                             ; 0.08 V                              ; 2.68e-10 s                 ; 2.19e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.54e-08 V                   ; 2.7 V               ; -0.00943 V          ; 0.276 V                              ; 0.035 V                              ; 3.19e-10 s                  ; 4.99e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 3.54e-08 V                  ; 2.7 V              ; -0.00943 V         ; 0.276 V                             ; 0.035 V                             ; 3.19e-10 s                 ; 4.99e-10 s                 ; No                        ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; i_Clk      ; i_Clk    ; 634      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; i_Clk      ; i_Clk    ; 634      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 1     ; 1    ;
+; Unconstrained Input Port Paths  ; 1     ; 1    ;
+; Unconstrained Output Ports      ; 9     ; 9    ;
+; Unconstrained Output Port Paths ; 9     ; 9    ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Fri Nov 28 15:22:49 2025
+Info: Command: quartus_sta UART_RX_test -c UART_RX_test
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'UART_RX_test.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name i_Clk i_Clk
+Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow 1200mV 85C Model
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -2.325
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -2.325       -49.101 i_Clk 
+Info (332146): Worst-case hold slack is 0.385
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.385         0.000 i_Clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -3.000       -38.980 i_Clk 
+Info: Analyzing Slow 1200mV 0C Model
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -1.979
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.979       -42.109 i_Clk 
+Info (332146): Worst-case hold slack is 0.339
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.339         0.000 i_Clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -3.000       -38.980 i_Clk 
+Info: Analyzing Fast 1200mV 0C Model
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -0.625
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.625        -9.867 i_Clk 
+Info (332146): Worst-case hold slack is 0.174
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.174         0.000 i_Clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -3.000       -32.947 i_Clk 
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 4650 megabytes
+    Info: Processing ended: Fri Nov 28 15:22:52 2025
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:03
+
+

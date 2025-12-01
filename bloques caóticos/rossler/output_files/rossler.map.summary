@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Fri Oct 31 16:42:24 2025
+Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
+Revision Name : rossler
+Top-level Entity Name : rossler
+Family : Cyclone IV E
+Total logic elements : 160
+    Total combinational functions : 160
+    Dedicated logic registers : 54
+Total registers : 54
+Total pins : 56
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 2
+Total PLLs : 0
