@@ -1,0 +1,58 @@
+library ieee;
+
+use ieee.numeric_std.all;
+use ieee.std_logic_1164.all;
+
+entity main_AES is
+port (
+		clk  				: in  std_logic;
+		reset				: in  std_logic;
+		AES_version		: in  std_logic_vector(1 downto 0);
+		start				: in  std_logic;
+--		data_in			: in  std_logic_vector(127 downto 0);
+		done_o			: out std_logic;
+		ciphertext 		: out std_logic_vector (127 downto 0)
+		
+	);
+end main_AES;
+
+architecture behave of main_AES is
+
+	type state_type is (IDLE, START_s, SUB_BYTES, DONE);
+	signal state   : state_type;
+	
+	signal round : integer range 0 to 13;
+	signal Nr	 : integer range 0 to 13;
+	signal index : integer range 0 to 15;
+	
+begin
+	
+	process (clk, reset, start)
+		begin
+			if reset = '0' then
+				state <= IDLE;
+				round <= 0;
+				index <= 0;
+			elsif rising_edge(clk) then
+				case state is
+					
+					when IDLE =>
+						round <= 0;
+						index <= 0;
+						if start = '1' then
+							state <= START_s;
+						else
+							state <= IDLE;
+						end if;
+						
+					when START =>
+						if AES_version = "01" then
+							Nr <= 9;
+						elsif AES_version = "10" then
+							Nr <= 11;
+						else
+							Nr <= 13;
+						end if
+							state <= SUB_BYTES;
+						
+					
