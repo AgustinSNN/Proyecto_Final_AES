@@ -1,0 +1,24 @@
+
+State Machine - |controlador_main|UART_RX:inst3|r_SM_Main
+Name r_SM_Main.s_Cleanup r_SM_Main.s_RX_Stop_Bit r_SM_Main.s_RX_Data_Bits r_SM_Main.s_RX_Start_Bit r_SM_Main.s_Idle 
+r_SM_Main.s_Idle 0 0 0 0 0 
+r_SM_Main.s_RX_Start_Bit 0 0 0 1 1 
+r_SM_Main.s_RX_Data_Bits 0 0 1 0 1 
+r_SM_Main.s_RX_Stop_Bit 0 1 0 0 1 
+r_SM_Main.s_Cleanup 1 0 0 0 1 
+
+State Machine - |controlador_main|controlador:inst|state
+Name state.DONE state.SEND_DATA state.FILL_BUFFER state.READ_COMAND state.IDLE 
+state.IDLE 0 0 0 0 0 
+state.READ_COMAND 0 0 0 1 1 
+state.FILL_BUFFER 0 0 1 0 1 
+state.SEND_DATA 0 1 0 0 1 
+state.DONE 1 0 0 0 1 
+
+State Machine - |controlador_main|UART_TX:inst2|r_SM_Main
+Name r_SM_Main.s_Cleanup r_SM_Main.s_TX_Stop_Bit r_SM_Main.s_TX_Data_Bits r_SM_Main.s_TX_Start_Bit r_SM_Main.s_Idle 
+r_SM_Main.s_Idle 0 0 0 0 0 
+r_SM_Main.s_TX_Start_Bit 0 0 0 1 1 
+r_SM_Main.s_TX_Data_Bits 0 0 1 0 1 
+r_SM_Main.s_TX_Stop_Bit 0 1 0 0 1 
+r_SM_Main.s_Cleanup 1 0 0 0 1 
