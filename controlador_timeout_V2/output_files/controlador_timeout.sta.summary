@@ -1,0 +1,77 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'clk_in'
+Slack : -3.743
+TNS   : -219.527
+
+Type  : Slow 1200mV 85C Model Setup 'controlador:inst9|state.TIMEOUT'
+Slack : -0.668
+TNS   : -1.632
+
+Type  : Slow 1200mV 85C Model Hold 'clk_in'
+Slack : -0.278
+TNS   : -1.620
+
+Type  : Slow 1200mV 85C Model Hold 'controlador:inst9|state.TIMEOUT'
+Slack : 0.093
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk_in'
+Slack : -3.000
+TNS   : -125.444
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'controlador:inst9|state.TIMEOUT'
+Slack : 0.436
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'clk_in'
+Slack : -3.391
+TNS   : -192.953
+
+Type  : Slow 1200mV 0C Model Setup 'controlador:inst9|state.TIMEOUT'
+Slack : -0.532
+TNS   : -1.261
+
+Type  : Slow 1200mV 0C Model Hold 'clk_in'
+Slack : -0.240
+TNS   : -0.846
+
+Type  : Slow 1200mV 0C Model Hold 'controlador:inst9|state.TIMEOUT'
+Slack : 0.112
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk_in'
+Slack : -3.000
+TNS   : -125.312
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'controlador:inst9|state.TIMEOUT'
+Slack : 0.482
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'clk_in'
+Slack : -1.285
+TNS   : -58.284
+
+Type  : Fast 1200mV 0C Model Setup 'controlador:inst9|state.TIMEOUT'
+Slack : 0.157
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clk_in'
+Slack : -0.371
+TNS   : -4.601
+
+Type  : Fast 1200mV 0C Model Hold 'controlador:inst9|state.TIMEOUT'
+Slack : 0.020
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk_in'
+Slack : -3.000
+TNS   : -101.115
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'controlador:inst9|state.TIMEOUT'
+Slack : 0.362
+TNS   : 0.000
+
+------------------------------------------------------------

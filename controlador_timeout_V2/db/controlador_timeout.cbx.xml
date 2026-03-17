@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="controlador_timeout">
+		<CBX_INST_ENTRY INSTANCE_NAME="|controlador_main|BUSMUX:inst4|lpm_mux:$00000" CBX_FILE_NAME="mux_crc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|controlador_main|single_port_ram:inst5|altsyncram:ram_rtl_0" CBX_FILE_NAME="altsyncram_ac41.tdf"/>
+	</PROJECT>
+</LOG_ROOT>
