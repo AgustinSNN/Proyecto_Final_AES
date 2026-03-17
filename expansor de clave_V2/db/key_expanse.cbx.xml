@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="key_expanse">
+		<CBX_INST_ENTRY INSTANCE_NAME="|key_expansion|sbox_rom_sinc:AES_sbox|altsyncram:Mux7_rtl_0" CBX_FILE_NAME="altsyncram_md11.tdf"/>
+	</PROJECT>
+</LOG_ROOT>
