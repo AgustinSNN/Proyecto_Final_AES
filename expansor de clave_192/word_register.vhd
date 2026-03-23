@@ -1,0 +1,24 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+entity word_register is
+  Port (
+         clk, e     : in  std_logic;
+			in0, in1, in2, in3 : in std_logic_vector (7 downto 0);
+			out0, out1, out2, out3 : out std_logic_vector (7 downto 0)
+    );
+end word_register;
+
+architecture behave of word_register is
+begin
+	process (clk, in0, in1, in2, in3, e)
+	begin
+		if e = '1' and rising_edge(clk) then
+			out0 <= in0;
+			out1 <= in1;
+			out2 <= in2;
+			out3 <= in3;
+		end if;
+	end process;
+end architecture;

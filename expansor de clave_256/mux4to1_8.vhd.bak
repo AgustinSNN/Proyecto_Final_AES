@@ -1,0 +1,29 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use ieee.numeric_std.all;
+
+entity mux4to1_8 is
+
+    Port (
+        sel  : in  std_logic_vector (3 downto 0);   -- 4-bit select input
+        d0   : in  STD_LOGIC_VECTOR(7 downto 0);
+        d1   : in  STD_LOGIC_VECTOR(7 downto 0);
+		  d2   : in  STD_LOGIC_VECTOR(7 downto 0);
+		  d3   : in  STD_LOGIC_VECTOR(7 downto 0);
+		  y    : out std_logic_vector(7 downto 0)
+		);
+end mux2to1_8;
+
+architecture Behavioral of mux2to1_8 is
+begin
+    process(sel, d0, d1)
+    begin
+        case sel is
+            when "00" => y <= d0;
+            when "01" => y <= d1;
+				when "10" => y <= d2;
+				when "11" => y <= d3;
+            when others => y <= (others => '0');  -- Default output
+        end case;
+    end process;
+end Behavioral;
