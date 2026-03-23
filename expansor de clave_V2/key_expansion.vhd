@@ -119,7 +119,7 @@ begin
 					rcon(3)<= X"00";
 				when shift_words=>
 					counter <= counter + 1;
-					if counter = 2 then
+					if counter = 3 then
 						if round =10 then
 							state <= idle;
 						else

@@ -1,12 +1,12 @@
-Fitter Status : Successful - Wed Feb 25 18:01:12 2026
+Fitter Status : Successful - Mon Mar 23 14:05:30 2026
 Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
 Revision Name : key_expanse
 Top-level Entity Name : key_expansion
 Family : Cyclone III
 Device : EP3C5F256C6
 Timing Models : Final
-Total logic elements : 221 / 5,136 ( 4 % )
-    Total combinational functions : 192 / 5,136 ( 4 % )
+Total logic elements : 217 / 5,136 ( 4 % )
+    Total combinational functions : 191 / 5,136 ( 4 % )
     Dedicated logic registers : 183 / 5,136 ( 4 % )
 Total registers : 183
 Total pins : 103 / 183 ( 56 % )

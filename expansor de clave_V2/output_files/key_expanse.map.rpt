@@ -1,5 +1,5 @@
 Analysis & Synthesis report for key_expanse
-Wed Feb 25 18:01:06 2026
+Mon Mar 23 14:05:22 2026
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -53,13 +53,13 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Feb 25 18:01:06 2026           ;
+; Analysis & Synthesis Status        ; Successful - Mon Mar 23 14:05:22 2026           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; key_expanse                                     ;
 ; Top-level Entity Name              ; key_expansion                                   ;
 ; Family                             ; Cyclone III                                     ;
-; Total logic elements               ; 229                                             ;
-;     Total combinational functions  ; 191                                             ;
+; Total logic elements               ; 228                                             ;
+;     Total combinational functions  ; 190                                             ;
 ;     Dedicated logic registers      ; 183                                             ;
 ; Total registers                    ; 183                                             ;
 ; Total pins                         ; 103                                             ;
@@ -167,29 +167,29 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                   ;
-+----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                               ; Library ;
-+----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
-; word_register.vhd                ; yes             ; User VHDL File               ; E:/facultad 2025/Trabajo Final/expansor de clave_V2/word_register.vhd      ;         ;
-; key_expansion.vhd                ; yes             ; User VHDL File               ; E:/facultad 2025/Trabajo Final/expansor de clave_V2/key_expansion.vhd      ;         ;
-; mux2to1_32.vhd                   ; yes             ; User VHDL File               ; E:/facultad 2025/Trabajo Final/expansor de clave_V2/mux2to1_32.vhd         ;         ;
-; mux4to1_8.vhd                    ; yes             ; User VHDL File               ; E:/facultad 2025/Trabajo Final/expansor de clave_V2/mux4to1_8.vhd          ;         ;
-; demux1to4.vhd                    ; yes             ; User VHDL File               ; E:/facultad 2025/Trabajo Final/expansor de clave_V2/demux1to4.vhd          ;         ;
-; byte_register.vhd                ; yes             ; User VHDL File               ; E:/facultad 2025/Trabajo Final/expansor de clave_V2/byte_register.vhd      ;         ;
-; sbox_rom_sinc.vhd                ; yes             ; User VHDL File               ; E:/facultad 2025/Trabajo Final/expansor de clave_V2/sbox_rom_sinc.vhd      ;         ;
-; altsyncram.tdf                   ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altsyncram.tdf           ;         ;
-; stratix_ram_block.inc            ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/stratix_ram_block.inc    ;         ;
-; lpm_mux.inc                      ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_mux.inc              ;         ;
-; lpm_decode.inc                   ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_decode.inc           ;         ;
-; aglobal130.inc                   ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc           ;         ;
-; a_rdenreg.inc                    ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/a_rdenreg.inc            ;         ;
-; altrom.inc                       ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altrom.inc               ;         ;
-; altram.inc                       ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altram.inc               ;         ;
-; altdpram.inc                     ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altdpram.inc             ;         ;
-; db/altsyncram_md11.tdf           ; yes             ; Auto-Generated Megafunction  ; E:/facultad 2025/Trabajo Final/expansor de clave_V2/db/altsyncram_md11.tdf ;         ;
-+----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                      ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                  ; Library ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------+---------+
+; word_register.vhd                ; yes             ; User VHDL File               ; C:/Users/User/Documents/GitHub/Proyecto_Final_AES/expansor de clave_V2/word_register.vhd      ;         ;
+; key_expansion.vhd                ; yes             ; User VHDL File               ; C:/Users/User/Documents/GitHub/Proyecto_Final_AES/expansor de clave_V2/key_expansion.vhd      ;         ;
+; mux2to1_32.vhd                   ; yes             ; User VHDL File               ; C:/Users/User/Documents/GitHub/Proyecto_Final_AES/expansor de clave_V2/mux2to1_32.vhd         ;         ;
+; mux4to1_8.vhd                    ; yes             ; User VHDL File               ; C:/Users/User/Documents/GitHub/Proyecto_Final_AES/expansor de clave_V2/mux4to1_8.vhd          ;         ;
+; demux1to4.vhd                    ; yes             ; User VHDL File               ; C:/Users/User/Documents/GitHub/Proyecto_Final_AES/expansor de clave_V2/demux1to4.vhd          ;         ;
+; byte_register.vhd                ; yes             ; User VHDL File               ; C:/Users/User/Documents/GitHub/Proyecto_Final_AES/expansor de clave_V2/byte_register.vhd      ;         ;
+; sbox_rom_sinc.vhd                ; yes             ; User VHDL File               ; C:/Users/User/Documents/GitHub/Proyecto_Final_AES/expansor de clave_V2/sbox_rom_sinc.vhd      ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altsyncram.tdf                              ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/stratix_ram_block.inc                       ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_mux.inc                                 ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_decode.inc                              ;         ;
+; aglobal130.inc                   ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc                              ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/a_rdenreg.inc                               ;         ;
+; altrom.inc                       ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altrom.inc                                  ;         ;
+; altram.inc                       ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altram.inc                                  ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altdpram.inc                                ;         ;
+; db/altsyncram_md11.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/User/Documents/GitHub/Proyecto_Final_AES/expansor de clave_V2/db/altsyncram_md11.tdf ;         ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------+
@@ -197,16 +197,16 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 229       ;
+; Estimated Total logic elements              ; 228       ;
 ;                                             ;           ;
-; Total combinational functions               ; 191       ;
+; Total combinational functions               ; 190       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 69        ;
+;     -- 4 input functions                    ; 67        ;
 ;     -- 3 input functions                    ; 115       ;
-;     -- <=2 input functions                  ; 7         ;
+;     -- <=2 input functions                  ; 8         ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 191       ;
+;     -- normal mode                          ; 190       ;
 ;     -- arithmetic mode                      ; 0         ;
 ;                                             ;           ;
 ; Total registers                             ; 183       ;
@@ -218,8 +218,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ; Maximum fan-out node                        ; clk~input ;
 ; Maximum fan-out                             ; 191       ;
-; Total fan-out                               ; 1481      ;
-; Average fan-out                             ; 2.52      ;
+; Total fan-out                               ; 1474      ;
+; Average fan-out                             ; 2.51      ;
 +---------------------------------------------+-----------+
 
 
@@ -228,7 +228,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                        ; Library Name ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------+--------------+
-; |key_expansion                            ; 191 (47)          ; 183 (23)     ; 2048        ; 0            ; 0       ; 0         ; 103  ; 0            ; |key_expansion                                                                             ; work         ;
+; |key_expansion                            ; 190 (46)          ; 183 (23)     ; 2048        ; 0            ; 0       ; 0         ; 103  ; 0            ; |key_expansion                                                                             ; work         ;
 ;    |byte_register:aux_register_0|         ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |key_expansion|byte_register:aux_register_0                                                ; work         ;
 ;    |byte_register:aux_register_1|         ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |key_expansion|byte_register:aux_register_1                                                ; work         ;
 ;    |byte_register:aux_register_2|         ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |key_expansion|byte_register:aux_register_2                                                ; work         ;
@@ -339,9 +339,9 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                  ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |key_expansion|word_register:word_3|out3[3] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |key_expansion|word_register:word_3|out3[4] ;
 ; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |key_expansion|rcon                         ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |key_expansion|mux4to1_8:sbox_mux|Mux0      ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |key_expansion|mux4to1_8:sbox_mux|Mux2      ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
 
 
@@ -545,7 +545,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -555,7 +555,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Wed Feb 25 18:01:04 2026
+    Info: Processing started: Mon Mar 23 14:05:18 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off key_expanse -c key_expanse
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file word_register.vhd
@@ -634,15 +634,15 @@ Warning (13024): Output pins are stuck at VCC or GND
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 340 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 339 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 101 output pins
-    Info (21061): Implemented 229 logic cells
+    Info (21061): Implemented 228 logic cells
     Info (21064): Implemented 8 RAM segments
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 26 warnings
-    Info: Peak virtual memory: 4629 megabytes
-    Info: Processing ended: Wed Feb 25 18:01:06 2026
-    Info: Elapsed time: 00:00:02
+    Info: Peak virtual memory: 4637 megabytes
+    Info: Processing ended: Mon Mar 23 14:05:22 2026
+    Info: Elapsed time: 00:00:04
     Info: Total CPU time (on all processors): 00:00:02
 
 

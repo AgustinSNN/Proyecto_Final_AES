@@ -1,5 +1,5 @@
 Assembler report for key_expanse
-Wed Feb 25 18:01:14 2026
+Mon Mar 23 14:05:32 2026
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -10,7 +10,7 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: E:/facultad 2025/Trabajo Final/expansor de clave_V2/output_files/key_expanse.sof
+  5. Assembler Device Options: C:/Users/User/Documents/GitHub/Proyecto_Final_AES/expansor de clave_V2/output_files/key_expanse.sof
   6. Assembler Messages
 
 
@@ -37,7 +37,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Wed Feb 25 18:01:14 2026 ;
+; Assembler Status      ; Successful - Mon Mar 23 14:05:32 2026 ;
 ; Revision Name         ; key_expanse                           ;
 ; Top-level Entity Name ; key_expansion                         ;
 ; Family                ; Cyclone III                           ;
@@ -77,24 +77,24 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+----------+---------------+
 
 
-+----------------------------------------------------------------------------------+
-; Assembler Generated Files                                                        ;
-+----------------------------------------------------------------------------------+
-; File Name                                                                        ;
-+----------------------------------------------------------------------------------+
-; E:/facultad 2025/Trabajo Final/expansor de clave_V2/output_files/key_expanse.sof ;
-+----------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------+
+; Assembler Generated Files                                                                           ;
++-----------------------------------------------------------------------------------------------------+
+; File Name                                                                                           ;
++-----------------------------------------------------------------------------------------------------+
+; C:/Users/User/Documents/GitHub/Proyecto_Final_AES/expansor de clave_V2/output_files/key_expanse.sof ;
++-----------------------------------------------------------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: E:/facultad 2025/Trabajo Final/expansor de clave_V2/output_files/key_expanse.sof ;
-+----------------+-------------------------------------------------------------------------------------------+
-; Option         ; Setting                                                                                   ;
-+----------------+-------------------------------------------------------------------------------------------+
-; Device         ; EP3C5F256C6                                                                               ;
-; JTAG usercode  ; 0x000B938A                                                                                ;
-; Checksum       ; 0x000B938A                                                                                ;
-+----------------+-------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/User/Documents/GitHub/Proyecto_Final_AES/expansor de clave_V2/output_files/key_expanse.sof ;
++----------------+--------------------------------------------------------------------------------------------------------------+
+; Option         ; Setting                                                                                                      ;
++----------------+--------------------------------------------------------------------------------------------------------------+
+; Device         ; EP3C5F256C6                                                                                                  ;
+; JTAG usercode  ; 0x000B8ACC                                                                                                   ;
+; Checksum       ; 0x000B8ACC                                                                                                   ;
++----------------+--------------------------------------------------------------------------------------------------------------+
 
 
 +--------------------+
@@ -103,13 +103,13 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Assembler
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Wed Feb 25 18:01:13 2026
+    Info: Processing started: Mon Mar 23 14:05:31 2026
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off key_expanse -c key_expanse
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 4529 megabytes
-    Info: Processing ended: Wed Feb 25 18:01:14 2026
+    Info: Processing ended: Mon Mar 23 14:05:32 2026
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
