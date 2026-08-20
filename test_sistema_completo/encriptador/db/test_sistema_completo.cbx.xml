@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="test_sistema_completo">
+		<CBX_INST_ENTRY INSTANCE_NAME="|main|lorenz:sist_lorenz|lpm_mult:Mult1" CBX_FILE_NAME="mult_46t.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|main|sbox_caotica:sbox2|altsyncram:ram_rtl_0" CBX_FILE_NAME="altsyncram_vd41.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|main|single_port_ram:ram_1|altsyncram:ram_rtl_0" CBX_FILE_NAME="altsyncram_id41.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|main|lorenz:sist_lorenz|lpm_mult:Mult0" CBX_FILE_NAME="mult_46t.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|main|rossler:sist_rossler|lpm_mult:Mult0" CBX_FILE_NAME="mult_46t.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|main|sbox_rom:sbox|altsyncram:Mux7_rtl_0" CBX_FILE_NAME="altsyncram_2i11.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|main|single_port_ram:ram_0|altsyncram:ram_rtl_0" CBX_FILE_NAME="altsyncram_id41.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|main|single_port_ram:ram_2|altsyncram:ram_rtl_0" CBX_FILE_NAME="altsyncram_id41.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|main|single_port_ram:ram_TX|altsyncram:ram_rtl_0" CBX_FILE_NAME="altsyncram_ol41.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|main|mapa_logistico:m_log|lpm_mult:Mult0" CBX_FILE_NAME="mult_7dt.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|main|single_port_ram:ram_3|altsyncram:ram_rtl_0" CBX_FILE_NAME="altsyncram_id41.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

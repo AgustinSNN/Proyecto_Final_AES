@@ -1,0 +1,14 @@
+library ieee;
+
+use ieee.numeric_std.all;
+use ieee.std_logic_1164.all;
+
+entity main is
+port (
+		clk  				: in  std_logic;
+		reset				: in  std_logic;
+		UART_data_in	: in  std_logic;
+		UART_data_out	: out std_logic
+		
+	);
+end main_AES;
