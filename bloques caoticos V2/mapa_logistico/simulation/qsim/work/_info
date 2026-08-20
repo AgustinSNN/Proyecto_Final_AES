@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\LSC\agustin-spennato\bloques caoticos V2\mapa_logistico\simulation\qsim
+vmapa_logistico
+Z1 IXQdfmMMh04BUGeoM=R[J]1
+Z2 V8zW^RHB<H_49g=<VlRSkc3
+Z3 dC:\Users\LSC\agustin-spennato\bloques caoticos V2\mapa_logistico\simulation\qsim
+Z4 w1779974615
+Z5 8mapa_logistico.vo
+Z6 Fmapa_logistico.vo
+L0 31
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 !s90 -work|work|mapa_logistico.vo|
+Z9 o-work work -O0
+!i10b 1
+Z10 !s100 BI>CHSWN1Y2IRn3fWdza52
+!s85 0
+Z11 !s108 1779974615.974000
+Z12 !s107 mapa_logistico.vo|
+!s101 -O0
+vmapa_logistico_vlg_check_tst
+!i10b 1
+Z13 !s100 XF?ne`d938f:F;zMihR3L1
+Z14 ISC@15lN>zc^UeL7e9?88B3
+Z15 VA0g]LLjA@Qj4R<cDzB:^80
+R3
+Z16 w1779974613
+Z17 8mapa_logistico.vt
+Z18 Fmapa_logistico.vt
+L0 63
+R7
+r1
+!s85 0
+31
+Z19 !s108 1779974616.084000
+Z20 !s107 mapa_logistico.vt|
+Z21 !s90 -work|work|mapa_logistico.vt|
+!s101 -O0
+R9
+vmapa_logistico_vlg_sample_tst
+!i10b 1
+Z22 !s100 g>:Y<2XO48Y`5cJ>jVmgS2
+Z23 Ihe>aT62:elJo86M@NPUdR1
+Z24 V?Wg:P9:G1Q`8IHM[:MA8;1
+R3
+R16
+R17
+R18
+L0 29
+R7
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R9
+vmapa_logistico_vlg_vec_tst
+!i10b 1
+Z25 !s100 4Q<dQ34Ede>zlU@1g2GHo3
+Z26 Ih48D24fi2;ZAGV768OlbN0
+Z27 VL?ZaJz`TFOIZ[Uli54`5=3
+R3
+R16
+R17
+R18
+Z28 L0 933
+R7
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R9

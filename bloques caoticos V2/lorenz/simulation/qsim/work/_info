@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\LSC\agustin-spennato\bloques caoticos V2\lorenz\simulation\qsim
+vlorenz
+Z1 IaC<o00W=^=:^nCd864=M]1
+Z2 VL8FPPQXeYA7_ClP[a`Ie82
+Z3 dE:\facultad 2025\Trabajo Final\bloques caoticos V2\lorenz\simulation\qsim
+Z4 w1777839177
+Z5 8lorenz.vo
+Z6 Florenz.vo
+L0 31
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 !s90 -work|work|lorenz.vo|
+Z9 o-work work -O0
+!i10b 1
+Z10 !s100 U=0K[hPc4N]Sbn_nVW8MM3
+!s85 0
+Z11 !s108 1777839177.797000
+Z12 !s107 lorenz.vo|
+!s101 -O0
+vlorenz_vlg_check_tst
+!i10b 1
+!s100 ?<nTL23bMLC801a5`LJ9I2
+I^P?nH:fVRQTH<L<AU618H3
+VHWGfaHdUC>YBhRSH2@[Cl0
+R3
+Z13 w1777839176
+Z14 8lorenz.vt
+Z15 Florenz.vt
+L0 63
+R7
+r1
+!s85 0
+31
+Z16 !s108 1777839178.032000
+Z17 !s107 lorenz.vt|
+Z18 !s90 -work|work|lorenz.vt|
+!s101 -O0
+R9
+vlorenz_vlg_sample_tst
+!i10b 1
+Z19 !s100 SJBM:HOGZ7AC_9YV>a>ch3
+Z20 I_J`8^K6eW7Q?Oob`QcVRX0
+Z21 Vi1C5PAS_g>BHM1Z7?12z>1
+R3
+R13
+R14
+R15
+L0 29
+R7
+r1
+!s85 0
+31
+R16
+R17
+R18
+!s101 -O0
+R9
+vlorenz_vlg_vec_tst
+!i10b 1
+!s100 d_AX=Wo:NPKnPU0bzL8dC1
+IYKG:`RDm^^l]F=m:hcMPg3
+Z22 VCPUdgiE_W_I8[n<n;iPnU2
+R3
+R13
+R14
+R15
+L0 929
+R7
+r1
+!s85 0
+31
+R16
+R17
+R18
+!s101 -O0
+R9

@@ -1,0 +1,7 @@
+
+State Machine - |mapa_logistico|state
+Name state.DONE state.GENERATE_VALUES state.INIT state.IDLE 
+state.IDLE 0 0 0 0 
+state.INIT 0 0 1 1 
+state.GENERATE_VALUES 0 1 0 1 
+state.DONE 1 0 0 1 

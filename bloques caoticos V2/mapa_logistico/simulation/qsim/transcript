@@ -1,0 +1,172 @@
+# do mapa_logistico.do 
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module mapa_logistico
+# 
+# Top level modules:
+# 	mapa_logistico
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module mapa_logistico_vlg_sample_tst
+# -- Compiling module mapa_logistico_vlg_check_tst
+# -- Compiling module mapa_logistico_vlg_vec_tst
+# 
+# Top level modules:
+# 	mapa_logistico_vlg_vec_tst
+# vsim -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate -c -t 1ps -novopt work.mapa_logistico_vlg_vec_tst 
+# Loading work.mapa_logistico_vlg_vec_tst
+# Loading work.mapa_logistico
+# Loading cycloneive_ver.cycloneive_mac_out
+# Loading cycloneive_ver.cycloneive_lcell_comb
+# Loading altera_ver.dffeas
+# Loading cycloneive_ver.cycloneive_io_obuf
+# Loading cycloneive_ver.cycloneive_io_ibuf
+# Loading cycloneive_ver.cycloneive_clkctrl
+# Loading cycloneive_ver.cycloneive_mux41
+# Loading cycloneive_ver.cycloneive_ena_reg
+# Loading cycloneive_ver.cycloneive_mac_mult
+# Loading cycloneive_ver.cycloneive_mac_data_reg
+# Loading cycloneive_ver.cycloneive_mac_sign_reg
+# Loading cycloneive_ver.cycloneive_mac_mult_internal
+# Loading work.mapa_logistico_vlg_sample_tst
+# Loading work.mapa_logistico_vlg_check_tst
+# Loading altera_ver.PRIM_GDFF_LOW
+# ** Warning: (vsim-8607) c:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/cycloneive_atoms.v(6154): Non-positive replication multiplier inside concat. Replication will be ignored.
+# 
+# ** Warning: (vsim-8607) c:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/cycloneive_atoms.v(6155): Non-positive replication multiplier inside concat. Replication will be ignored.
+# 
+# ** Warning: (vsim-8607) c:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/cycloneive_atoms.v(6154): Non-positive replication multiplier inside concat. Replication will be ignored.
+# 
+# ** Warning: (vsim-8607) c:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/cycloneive_atoms.v(6155): Non-positive replication multiplier inside concat. Replication will be ignored.
+# 
+# ** Warning: (vsim-8607) c:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/cycloneive_atoms.v(6154): Non-positive replication multiplier inside concat. Replication will be ignored.
+# 
+# ** Warning: (vsim-8607) c:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/cycloneive_atoms.v(6155): Non-positive replication multiplier inside concat. Replication will be ignored.
+# 
+# ** Warning: (vsim-8607) c:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/cycloneive_atoms.v(6154): Non-positive replication multiplier inside concat. Replication will be ignored.
+# 
+# ** Warning: (vsim-8607) c:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/cycloneive_atoms.v(6155): Non-positive replication multiplier inside concat. Replication will be ignored.
+# 
+# ERROR! Vector Mismatch for output port data_out[0] :: @time = 1000000.000 ps
+#      Expected value = 00000000000000000000000000000000
+#      Real value = 00000100000001010000011000000111
+# ERROR! Vector Mismatch for output port data_out[1] :: @time = 1000000.000 ps
+#      Expected value = 00000000000000000000000000000000
+#      Real value = 00000100000001010000011000000111
+# ERROR! Vector Mismatch for output port data_out[2] :: @time = 1000000.000 ps
+#      Expected value = 00000000000000000000000000000000
+#      Real value = 00000100000001010000011000000111
+# ERROR! Vector Mismatch for output port data_out[9] :: @time = 1000000.000 ps
+#      Expected value = 00000000000000000000000000000000
+#      Real value = 00000100000001010000011000000111
+# ERROR! Vector Mismatch for output port data_out[10] :: @time = 1000000.000 ps
+#      Expected value = 00000000000000000000000000000000
+#      Real value = 00000100000001010000011000000111
+# ERROR! Vector Mismatch for output port data_out[16] :: @time = 1000000.000 ps
+#      Expected value = 00000000000000000000000000000000
+#      Real value = 00000100000001010000011000000111
+# ERROR! Vector Mismatch for output port data_out[18] :: @time = 1000000.000 ps
+#      Expected value = 00000000000000000000000000000000
+#      Real value = 00000100000001010000011000000111
+# ERROR! Vector Mismatch for output port data_out[26] :: @time = 1000000.000 ps
+#      Expected value = 00000000000000000000000000000000
+#      Real value = 00000100000001010000011000000111
+# ERROR! Vector Mismatch for output port data_valid :: @time = 1000000.000 ps
+#      Expected value = 0
+#      Real value = 1
+# ERROR! Vector Mismatch for output port ram_addr[0] :: @time = 1000000.000 ps
+#      Expected value = 0000
+#      Real value = 0011
+# ERROR! Vector Mismatch for output port ram_addr[1] :: @time = 1000000.000 ps
+#      Expected value = 0000
+#      Real value = 0011
+# ERROR! Vector Mismatch for output port counter_out[0] :: @time = 1050000.000 ps
+#      Expected value = 00
+#      Real value = 01
+# ERROR! Vector Mismatch for output port data_out[4] :: @time = 1050000.000 ps
+#      Expected value = 00000000000000000000000000000000
+#      Real value = 00001111110100110111011011110110
+# ERROR! Vector Mismatch for output port data_out[5] :: @time = 1050000.000 ps
+#      Expected value = 00000000000000000000000000000000
+#      Real value = 00001111110100110111011011110110
+# ERROR! Vector Mismatch for output port data_out[6] :: @time = 1050000.000 ps
+#      Expected value = 00000000000000000000000000000000
+#      Real value = 00001111110100110111011011110110
+# ERROR! Vector Mismatch for output port data_out[7] :: @time = 1050000.000 ps
+#      Expected value = 00000000000000000000000000000000
+#      Real value = 00001111110100110111011011110110
+# ERROR! Vector Mismatch for output port data_out[12] :: @time = 1050000.000 ps
+#      Expected value = 00000000000000000000000000000000
+#      Real value = 00001111110100110111011011110110
+# ERROR! Vector Mismatch for output port data_out[13] :: @time = 1050000.000 ps
+#      Expected value = 00000000000000000000000000000000
+#      Real value = 00001111110100110111011011110110
+# ERROR! Vector Mismatch for output port data_out[14] :: @time = 1050000.000 ps
+#      Expected value = 00000000000000000000000000000000
+#      Real value = 00001111110100110111011011110110
+# ERROR! Vector Mismatch for output port data_out[17] :: @time = 1050000.000 ps
+#      Expected value = 00000000000000000000000000000000
+#      Real value = 00001111110100110111011011110110
+# ERROR! Vector Mismatch for output port data_out[20] :: @time = 1050000.000 ps
+#      Expected value = 00000000000000000000000000000000
+#      Real value = 00001111110100110111011011110110
+# ERROR! Vector Mismatch for output port data_out[22] :: @time = 1050000.000 ps
+#      Expected value = 00000000000000000000000000000000
+#      Real value = 00001111110100110111011011110110
+# ERROR! Vector Mismatch for output port data_out[23] :: @time = 1050000.000 ps
+#      Expected value = 00000000000000000000000000000000
+#      Real value = 00001111110100110111011011110110
+# ERROR! Vector Mismatch for output port data_out[24] :: @time = 1050000.000 ps
+#      Expected value = 00000000000000000000000000000000
+#      Real value = 00001111110100110111011011110110
+# ERROR! Vector Mismatch for output port data_out[25] :: @time = 1050000.000 ps
+#      Expected value = 00000000000000000000000000000000
+#      Real value = 00001111110100110111011011110110
+# ERROR! Vector Mismatch for output port data_out[27] :: @time = 1050000.000 ps
+#      Expected value = 00000000000000000000000000000000
+#      Real value = 00001111110100110111011011110110
+# ERROR! Vector Mismatch for output port counter_out[1] :: @time = 1100000.000 ps
+#      Expected value = 00
+#      Real value = 10
+# ERROR! Vector Mismatch for output port data_out[3] :: @time = 1100000.000 ps
+#      Expected value = 00000000000000000000000000000000
+#      Real value = 00111011011001000000000101011111
+# ERROR! Vector Mismatch for output port data_out[8] :: @time = 1100000.000 ps
+#      Expected value = 00000000000000000000000000000000
+#      Real value = 00111011011001000000000101011111
+# ERROR! Vector Mismatch for output port data_out[21] :: @time = 1100000.000 ps
+#      Expected value = 00000000000000000000000000000000
+#      Real value = 00111011011001000000000101011111
+# ERROR! Vector Mismatch for output port data_out[28] :: @time = 1100000.000 ps
+#      Expected value = 00000000000000000000000000000000
+#      Real value = 00111011011001000000000101011111
+# ERROR! Vector Mismatch for output port data_out[29] :: @time = 1100000.000 ps
+#      Expected value = 00000000000000000000000000000000
+#      Real value = 00111011011001000000000101011111
+# ERROR! Vector Mismatch for output port data_out[31] :: @time = 1150000.000 ps
+#      Expected value = 00000000000000000000000000000000
+#      Real value = 10110110011100110000011010110000
+# ERROR! Vector Mismatch for output port data_out[19] :: @time = 1200000.000 ps
+#      Expected value = 00000000000000000000000000000000
+#      Real value = 11010001101011010001010111111010
+# ERROR! Vector Mismatch for output port data_out[30] :: @time = 1200000.000 ps
+#      Expected value = 00000000000000000000000000000000
+#      Real value = 11010001101011010001010111111010
+# ERROR! Vector Mismatch for output port ram_addr[2] :: @time = 1200000.000 ps
+#      Expected value = 0000
+#      Real value = 0100
+# ERROR! Vector Mismatch for output port data_out[11] :: @time = 1250000.000 ps
+#      Expected value = 00000000000000000000000000000000
+#      Real value = 10010111110001000000110001000100
+# ERROR! Vector Mismatch for output port data_out[15] :: @time = 1300000.000 ps
+#      Expected value = 00000000000000000000000000000000
+#      Real value = 11110111001011001011111010100011
+# ERROR! Vector Mismatch for output port ram_addr[3] :: @time = 2000000.000 ps
+#      Expected value = 0000
+#      Real value = 1000
+# ERROR! Vector Mismatch for output port done_out :: @time = 2450000.000 ps
+#      Expected value = 0
+#      Real value = 1
+#          40 mismatched vectors : Simulation failed !
+# ** Note: $finish    : mapa_logistico.vt(929)
+#    Time: 10 us  Iteration: 0  Instance: /mapa_logistico_vlg_vec_tst/tb_out
