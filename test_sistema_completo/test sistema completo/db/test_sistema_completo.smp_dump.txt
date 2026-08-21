@@ -34,12 +34,13 @@ state.TEST 0 1 0 0 0 0 0 0 0 1
 state.DONE 1 0 0 0 0 0 0 0 0 1 
 
 State Machine - |main|main_inv_AES:inv_cipher|state
-Name state.DONE state.DEC_ROUND state.SUB_BYTES state.START_s state.IDLE 
-state.IDLE 0 0 0 0 0 
-state.START_s 0 0 0 1 1 
-state.SUB_BYTES 0 0 1 0 1 
-state.DEC_ROUND 0 1 0 0 1 
-state.DONE 1 0 0 0 1 
+Name state.DONE state.DEC_ROUND state.SUB_BYTES state.START_AUX state.START_s state.IDLE 
+state.IDLE 0 0 0 0 0 0 
+state.START_s 0 0 0 0 1 1 
+state.START_AUX 0 0 0 1 0 1 
+state.SUB_BYTES 0 0 1 0 0 1 
+state.DEC_ROUND 0 1 0 0 0 1 
+state.DONE 1 0 0 0 0 1 
 
 State Machine - |main|main_AES:cipher|state
 Name state.DONE state.INC_ROUND state.SUB_BYTES state.START_s state.IDLE 

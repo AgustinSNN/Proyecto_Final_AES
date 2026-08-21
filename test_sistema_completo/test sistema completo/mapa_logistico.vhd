@@ -158,6 +158,9 @@ begin
 					
 					if counter = total_key_words then
 						state <= DONE;
+						---------------
+						done_out <= '1';
+						---------------						
 --						data_valid <= '0';
 						s_data_valid <= '0';
 						counter <= 0;
@@ -176,8 +179,8 @@ begin
 					end if;
 						
 				when DONE =>
-					state <= DONE;
-					done_out <= '1';
+					state <= IDLE;
+			--		done_out <= '1';
 			end case;
 		end if;
 	end process;

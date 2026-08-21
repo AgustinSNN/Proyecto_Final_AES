@@ -54,7 +54,7 @@ architecture behave of main_inv_AES is
 	end component;
 	
 
-	type state_type is (IDLE, START_s, SUB_BYTES, DEC_ROUND, DONE);
+	type state_type is (IDLE, START_s, START_AUX, SUB_BYTES, DEC_ROUND, DONE);
 	signal state   : state_type;
 	
 	type state_block is array (0 to 15) of std_logic_vector(7 downto 0);
@@ -65,14 +65,14 @@ architecture behave of main_inv_AES is
 --	signal sbox_out : std_logic_vector(7 downto 0);
 --	signal enable_sbox : std_logic;
 	
-	signal round : integer range 0 to 13;
-	signal Nr : integer range 0 to 13;
+	signal round : integer range 0 to 15;
+--	signal Nr : integer range 0 to 13;
 	signal last_round : std_logic;
 	signal index : integer range 0 to 16;
 	
 begin
 	
-	round_out <= round - 1;
+	round_out <= round;
 	
 	process (clk, reset, start)
 	begin
@@ -94,11 +94,14 @@ begin
 						done_o <= '0';
 						state <= START_s;
 						if AES_version = "01" then
-							Nr <= 9;
+--							Nr <= 9;
+							round <= 9;
 						elsif AES_version = "10" then
-							Nr <= 11;
+--							Nr <= 11;
+							round <= 11;
 						else
-							Nr <= 13;
+--							Nr <= 13;
+							round <= 13;
 						end if;
 					else
 						done_o <= '1';
@@ -106,14 +109,22 @@ begin
 					end if;
 						
 				when START_s =>
-					enable_sbox <= '1';
-					reg_text <= ciphertext_in xor round_key;
-					state <= SUB_BYTES;
+					enable_sbox <= '0';
+					state <= START_AUX;
 					------------------------
-					round <= Nr;
+					
+					------------------------
+--					round <= Nr;
 					------------------------
 --				when AUX_STATE => --uso este estado para leer el primer byte de la memoria y que no se desface por la lectura asincrónica
 --					state <= SUB_BYTES;	
+
+				when START_AUX =>			-- necesito 1 ciclo de reloj para que la roundkey esté disponible
+					enable_sbox <= '1';
+					state <= SUB_BYTES;
+					reg_text <= ciphertext_in xor round_key;
+					round <= round - 1;
+
 				
 				when SUB_BYTES =>
 					sub_text(index-1) <= sbox_out;
@@ -138,7 +149,7 @@ begin
 					reg_text <= (mixed_text(0) & mixed_text(1) & mixed_text(2) & mixed_text(3) & mixed_text(4) & mixed_text(5) & mixed_text(6) & mixed_text(7) & mixed_text(8) & mixed_text(9) & mixed_text(10) & mixed_text(11) & mixed_text(12) & mixed_text(13) & mixed_text(14) & mixed_text(15));
 					round <= round - 1;
 					state <= SUB_BYTES;
-					if round > 1 then
+					if round > 0 then
 						last_round <= '0';
 				--		round <= round +1;
 					else 
@@ -155,6 +166,9 @@ begin
 			end case;
 		end if;
 	end process;
+	
+--	plaintext_out <= (sub_text(0) & sub_text(13) & sub_text(10) & sub_text(7) & sub_text(4) & sub_text(1) & sub_text(14) & sub_text(11) & sub_text(8) & sub_text(5) & sub_text(2) & sub_text(15) & sub_text(12) & sub_text(9) & sub_text(6) & sub_text(3)) xor key;
+	
 	
 	-------------shift + add_round_key--------------------
 	

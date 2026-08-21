@@ -59,6 +59,7 @@ component controlador is
 	 sel_sbox_generator : out std_logic_vector(1 downto 0);
 	 enable_sbox_generator : out std_logic_vector(3 downto 0);
 	 sel_sbox_addr	: out std_logic_vector(2 downto 0);
+	 sel_inv_sbox_addr : out std_logic_vector(1 downto 0);
 	 start_sbox_generator : out std_logic;
 	 state_out : out std_logic_vector(3 downto 0);
 	 FLAG_KEY_READY, FLAG_DATA_READY, FLAG_SEND, FLAG_INVALID_DATA   : out std_logic
@@ -534,6 +535,7 @@ begin
 	sel_sbox => sel_sbox,
 	sel_sbox_generator => sel_sbox_generator,
 	sel_sbox_addr => sel_sbox_addr,
+	sel_inv_sbox_addr => sel_inv_sbox_addr,
 	start_sbox_generator => start_sbox_generator,
 	enable_sbox_generator => enable_sbox_generator,
 	
@@ -699,14 +701,16 @@ begin
 	---------------------------------------------------------
 	-------------- S-BOX -------------------------
 	
-	sbox: sbox_rom port map (clk => clk, e => (sbox_enable_cipher or sbox_enable_key128 or sbox_enable_key192 or sbox_enable_key256 or enable_sbox_read), addr => mux_out_addr_sbox, q => sbox_out_AES);
-	inv_sbox: inv_sbox_rom port map (clk => clk, e => (sbox_enable_inv_cipher or enable_sbox_read), addr => mux_out_addr_inv_sbox, q => inv_sbox_out_AES); 
+	sbox: sbox_rom port map (clk => clk, e => (sbox_enable_cipher or sbox_enable_key128 or sbox_enable_key192 or sbox_enable_key256 or (enable_sbox_read and not SET_MODE)), addr => mux_out_addr_sbox, q => sbox_out_AES);
+	inv_sbox: inv_sbox_rom port map (clk => clk, e => (sbox_enable_inv_cipher or (enable_sbox_read and SET_MODE)), addr => mux_out_addr_inv_sbox, q => inv_sbox_out_AES); 
 	
 	sbox2: sbox_caotica generic map(DATA_WIDTH => 8, ADDR_WIDTH => 8) port map(clk => clk, we => sbox_load_values, addr => mux_out_addr_sbox, data => data_out_sbox_generator, q => sbox_out_caotica);
 	inv_sbox2: sbox_caotica generic map (DATA_WIDTH => 8, ADDR_WIDTH => 8) port map(clk => clk, we => sbox_load_values, addr => mux_out_addr_inv_sbox, data => sbox_addr_generator, q => inv_sbox_out_caotica);
 	
 	mux_sbox_out: mux2to1 generic map(M => 8) port map(sel => sel_sbox, d0 => sbox_out_AES, d1 => sbox_out_caotica, y => sbox_out);
 	mux_inv_sbox_out: mux2to1 generic map(M => 8) port map(sel => sel_sbox, d0 => inv_sbox_out_AES, d1 => inv_sbox_out_caotica, y => inv_sbox_out);
+	
+	mux_sbox_TX: mux2to1 generic map(M => 8) port map(sel => SET_MODE, d0 => sbox_out, d1 => inv_sbox_out, y => sbox_send);
 	
 	-------------- paginado de 4 memorias de 32b para la calve expandida
 	
@@ -721,8 +725,6 @@ begin
 	
 	ram_TX: single_port_ram generic map(DATA_WIDTH => 128, ADDR_WIDTH => 14) port map(clk => clk, addr => block_counter, data => data_send, we => (enable_reg_out or enable_reg_out_inv), q => block_data_out); 
 	registro_salida: register_out port map(clk => clk, data_in => out_block, addr => out_block_index, data_out => TX_byte_block);
-	
-	mux_sbox_TX: mux2to1 generic map(M => 8) port map(sel => SET_MODE, d0 => sbox_out, d1 => inv_sbox_out, y => sbox_send);
 	
 	mux_uart_TX: mux2to1 generic map(M => 8) port map(sel => sel_uart_TX, d0 => TX_byte_block, d1 => sbox_send, y => TX_byte);
 	mux_send: mux4to1 generic map (M => 128) port map (sel => sel_data_out, d0 => block_data_out, d1 => key(255 downto 128), d2 => round_key, d3 => round_key, y => out_block);
@@ -748,13 +750,16 @@ begin
 	data_out => mux_out_addr_sbox
 	);								
 									
-	mux_inv_sbox_addr: mux_generic generic map(DATA_WIDTH => 8, NUM_INPUTS => 4) port map(sel => sel_inv_sbox_addr, data_in =>
-	sbox_counter &
-	sbox_counter &
-	data_out_sbox_generator &
-	sbox_addr_inv_cipher,
-	data_out => mux_out_addr_inv_sbox
-	);										
+--	mux_inv_sbox_addr: mux_generic generic map(DATA_WIDTH => 8, NUM_INPUTS => 4) port map(sel => sel_inv_sbox_addr, data_in =>
+--	sbox_counter &
+--	sbox_counter &
+--	data_out_sbox_generator &
+--	sbox_addr_inv_cipher,
+--	data_out => mux_out_addr_inv_sbox
+--	);		
+
+	mux_inv_sbox_addr: mux4to1 generic map(M => 8) port map( sel => sel_inv_sbox_addr, d0 => sbox_addr_inv_cipher, d1 => data_out_sbox_generator, d2 => sbox_counter, d3 => sbox_counter, y => mux_out_addr_inv_sbox);
+	
 	------- mux para elejir el bloque que alimenta al generador de sbox ---------------------
 	
 	mux_sbox_generator_data: mux4to1 generic map(M => 24) port map(sel => sel_sbox_generator, d0 => data_out_mlog(23 downto 0), d1 => data_out_mlog(23 downto 0), d2 => data_out_lorenz(23 downto 0), d3 => data_out_rossler(23 downto 0), y => chaotic_values);

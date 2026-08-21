@@ -1,5 +1,5 @@
 Analysis & Synthesis report for test_sistema_completo
-Fri Aug 14 11:55:22 2026
+Fri Aug 21 12:05:38 2026
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -52,17 +52,17 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
  44. Parameter Settings for User Entity Instance: sbox_caotica:inv_sbox2
  45. Parameter Settings for User Entity Instance: mux2to1:mux_sbox_out
  46. Parameter Settings for User Entity Instance: mux2to1:mux_inv_sbox_out
- 47. Parameter Settings for User Entity Instance: single_port_ram:ram_0
- 48. Parameter Settings for User Entity Instance: single_port_ram:ram_1
- 49. Parameter Settings for User Entity Instance: single_port_ram:ram_2
- 50. Parameter Settings for User Entity Instance: single_port_ram:ram_3
- 51. Parameter Settings for User Entity Instance: mux2to1:mux_cipher_TX
- 52. Parameter Settings for User Entity Instance: single_port_ram:ram_TX
- 53. Parameter Settings for User Entity Instance: mux2to1:mux_sbox_TX
+ 47. Parameter Settings for User Entity Instance: mux2to1:mux_sbox_TX
+ 48. Parameter Settings for User Entity Instance: single_port_ram:ram_0
+ 49. Parameter Settings for User Entity Instance: single_port_ram:ram_1
+ 50. Parameter Settings for User Entity Instance: single_port_ram:ram_2
+ 51. Parameter Settings for User Entity Instance: single_port_ram:ram_3
+ 52. Parameter Settings for User Entity Instance: mux2to1:mux_cipher_TX
+ 53. Parameter Settings for User Entity Instance: single_port_ram:ram_TX
  54. Parameter Settings for User Entity Instance: mux2to1:mux_uart_TX
  55. Parameter Settings for User Entity Instance: mux4to1:mux_send
  56. Parameter Settings for User Entity Instance: mux_generic:mux_sbox_addr
- 57. Parameter Settings for User Entity Instance: mux_generic:mux_inv_sbox_addr
+ 57. Parameter Settings for User Entity Instance: mux4to1:mux_inv_sbox_addr
  58. Parameter Settings for User Entity Instance: mux4to1:mux_sbox_generator_data
  59. Parameter Settings for User Entity Instance: mux2to1:mux_round_key
  60. Parameter Settings for User Entity Instance: mux_generic:mux_round_key_addr
@@ -114,15 +114,15 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Aug 14 11:55:21 2026           ;
+; Analysis & Synthesis Status        ; Successful - Fri Aug 21 12:05:38 2026           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; test_sistema_completo                           ;
 ; Top-level Entity Name              ; main                                            ;
 ; Family                             ; Cyclone IV E                                    ;
-; Total logic elements               ; 24,161                                          ;
-;     Total combinational functions  ; 15,212                                          ;
-;     Dedicated logic registers      ; 10,762                                          ;
-; Total registers                    ; 10762                                           ;
+; Total logic elements               ; 24,862                                          ;
+;     Total combinational functions  ; 15,915                                          ;
+;     Dedicated logic registers      ; 10,890                                          ;
+; Total registers                    ; 10890                                           ;
 ; Total pins                         ; 22                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 2,107,392                                       ;
@@ -297,29 +297,29 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 24,161    ;
+; Estimated Total logic elements              ; 24,862    ;
 ;                                             ;           ;
-; Total combinational functions               ; 15212     ;
+; Total combinational functions               ; 15915     ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 12335     ;
-;     -- 3 input functions                    ; 1795      ;
-;     -- <=2 input functions                  ; 1082      ;
+;     -- 4 input functions                    ; 12898     ;
+;     -- 3 input functions                    ; 1833      ;
+;     -- <=2 input functions                  ; 1184      ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 14093     ;
+;     -- normal mode                          ; 14796     ;
 ;     -- arithmetic mode                      ; 1119      ;
 ;                                             ;           ;
-; Total registers                             ; 10762     ;
-;     -- Dedicated logic registers            ; 10762     ;
+; Total registers                             ; 10890     ;
+;     -- Dedicated logic registers            ; 10890     ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 22        ;
 ; Total memory bits                           ; 2107392   ;
 ; Embedded Multiplier 9-bit elements          ; 32        ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 11178     ;
-; Total fan-out                               ; 114542    ;
-; Average fan-out                             ; 4.33      ;
+; Maximum fan-out                             ; 11306     ;
+; Total fan-out                               ; 117499    ;
+; Average fan-out                             ; 4.30      ;
 +---------------------------------------------+-----------+
 
 
@@ -328,10 +328,10 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                 ; Library Name ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------+--------------+
-; |main                                     ; 15212 (10)        ; 10762 (0)    ; 2107392     ; 32           ; 0       ; 16        ; 22   ; 0            ; |main                                                                                               ; work         ;
+; |main                                     ; 15915 (10)        ; 10890 (0)    ; 2107392     ; 32           ; 0       ; 16        ; 22   ; 0            ; |main                                                                                               ; work         ;
 ;    |UART_RX:RX|                           ; 51 (51)           ; 29 (29)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|UART_RX:RX                                                                                    ; work         ;
-;    |UART_TX:TX|                           ; 47 (47)           ; 27 (27)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|UART_TX:TX                                                                                    ; work         ;
-;    |controlador:ins_controlador|          ; 291 (291)         ; 114 (114)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|controlador:ins_controlador                                                                   ; work         ;
+;    |UART_TX:TX|                           ; 46 (46)           ; 27 (27)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|UART_TX:TX                                                                                    ; work         ;
+;    |controlador:ins_controlador|          ; 298 (298)         ; 116 (116)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|controlador:ins_controlador                                                                   ; work         ;
 ;    |decoder_2to4:deco|                    ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|decoder_2to4:deco                                                                             ; work         ;
 ;    |inv_sbox_rom:inv_sbox|                ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|inv_sbox_rom:inv_sbox                                                                         ; work         ;
 ;       |altsyncram:Mux7_rtl_0|             ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|inv_sbox_rom:inv_sbox|altsyncram:Mux7_rtl_0                                                   ; work         ;
@@ -400,14 +400,35 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;       |mix_columns:column2|               ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|main_AES:cipher|mix_columns:column2                                                           ; work         ;
 ;       |mix_columns:column3|               ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|main_AES:cipher|mix_columns:column3                                                           ; work         ;
 ;       |mix_columns:column4|               ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|main_AES:cipher|mix_columns:column4                                                           ; work         ;
-;    |main_inv_AES:inv_cipher|              ; 186 (186)         ; 277 (277)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|main_inv_AES:inv_cipher                                                                       ; work         ;
-;    |mapa_logistico:m_log|                 ; 276 (199)         ; 74 (74)      ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |main|mapa_logistico:m_log                                                                          ; work         ;
+;    |main_inv_AES:inv_cipher|              ; 788 (449)         ; 403 (403)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|main_inv_AES:inv_cipher                                                                       ; work         ;
+;       |inv_mix_columns:column1|           ; 85 (75)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|main_inv_AES:inv_cipher|inv_mix_columns:column1                                               ; work         ;
+;          |xtime:b0x2|                     ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|main_inv_AES:inv_cipher|inv_mix_columns:column1|xtime:b0x2                                    ; work         ;
+;          |xtime:b1x2|                     ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|main_inv_AES:inv_cipher|inv_mix_columns:column1|xtime:b1x2                                    ; work         ;
+;          |xtime:b2x2|                     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|main_inv_AES:inv_cipher|inv_mix_columns:column1|xtime:b2x2                                    ; work         ;
+;          |xtime:b3x2|                     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|main_inv_AES:inv_cipher|inv_mix_columns:column1|xtime:b3x2                                    ; work         ;
+;       |inv_mix_columns:column2|           ; 85 (75)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|main_inv_AES:inv_cipher|inv_mix_columns:column2                                               ; work         ;
+;          |xtime:b0x2|                     ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|main_inv_AES:inv_cipher|inv_mix_columns:column2|xtime:b0x2                                    ; work         ;
+;          |xtime:b1x2|                     ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|main_inv_AES:inv_cipher|inv_mix_columns:column2|xtime:b1x2                                    ; work         ;
+;          |xtime:b2x2|                     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|main_inv_AES:inv_cipher|inv_mix_columns:column2|xtime:b2x2                                    ; work         ;
+;          |xtime:b3x2|                     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|main_inv_AES:inv_cipher|inv_mix_columns:column2|xtime:b3x2                                    ; work         ;
+;       |inv_mix_columns:column3|           ; 85 (75)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|main_inv_AES:inv_cipher|inv_mix_columns:column3                                               ; work         ;
+;          |xtime:b0x2|                     ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|main_inv_AES:inv_cipher|inv_mix_columns:column3|xtime:b0x2                                    ; work         ;
+;          |xtime:b1x2|                     ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|main_inv_AES:inv_cipher|inv_mix_columns:column3|xtime:b1x2                                    ; work         ;
+;          |xtime:b2x2|                     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|main_inv_AES:inv_cipher|inv_mix_columns:column3|xtime:b2x2                                    ; work         ;
+;          |xtime:b3x2|                     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|main_inv_AES:inv_cipher|inv_mix_columns:column3|xtime:b3x2                                    ; work         ;
+;       |inv_mix_columns:column4|           ; 84 (74)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|main_inv_AES:inv_cipher|inv_mix_columns:column4                                               ; work         ;
+;          |xtime:b0x2|                     ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|main_inv_AES:inv_cipher|inv_mix_columns:column4|xtime:b0x2                                    ; work         ;
+;          |xtime:b1x2|                     ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|main_inv_AES:inv_cipher|inv_mix_columns:column4|xtime:b1x2                                    ; work         ;
+;          |xtime:b2x2|                     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|main_inv_AES:inv_cipher|inv_mix_columns:column4|xtime:b2x2                                    ; work         ;
+;          |xtime:b3x2|                     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|main_inv_AES:inv_cipher|inv_mix_columns:column4|xtime:b3x2                                    ; work         ;
+;    |mapa_logistico:m_log|                 ; 275 (198)         ; 74 (74)      ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |main|mapa_logistico:m_log                                                                          ; work         ;
 ;       |lpm_mult:Mult0|                    ; 77 (0)            ; 0 (0)        ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |main|mapa_logistico:m_log|lpm_mult:Mult0                                                           ; work         ;
 ;          |mult_7dt:auto_generated|        ; 77 (77)           ; 0 (0)        ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |main|mapa_logistico:m_log|lpm_mult:Mult0|mult_7dt:auto_generated                                   ; work         ;
 ;    |mux2to1:mux_cipher_TX|                ; 128 (128)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|mux2to1:mux_cipher_TX                                                                         ; work         ;
 ;    |mux2to1:mux_inv_sbox_out|             ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|mux2to1:mux_inv_sbox_out                                                                      ; work         ;
 ;    |mux2to1:mux_sbox_out|                 ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|mux2to1:mux_sbox_out                                                                          ; work         ;
 ;    |mux2to1:mux_uart_TX|                  ; 80 (80)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|mux2to1:mux_uart_TX                                                                           ; work         ;
+;    |mux4to1:mux_inv_sbox_addr|            ; 96 (96)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|mux4to1:mux_inv_sbox_addr                                                                     ; work         ;
 ;    |mux4to1:mux_send|                     ; 256 (256)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|mux4to1:mux_send                                                                              ; work         ;
 ;    |mux_generic:mux_counter_word|         ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|mux_generic:mux_counter_word                                                                  ; work         ;
 ;    |mux_generic:mux_key_word|             ; 144 (144)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|mux_generic:mux_key_word                                                                      ; work         ;
@@ -416,7 +437,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;    |register_bank:data_register|          ; 24 (24)           ; 128 (128)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|register_bank:data_register                                                                   ; work         ;
 ;    |register_bank:key_register|           ; 40 (40)           ; 256 (256)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|register_bank:key_register                                                                    ; work         ;
 ;    |register_out:registro_salida|         ; 0 (0)             ; 132 (132)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|register_out:registro_salida                                                                  ; work         ;
-;    |rossler:sist_rossler|                 ; 672 (580)         ; 138 (138)    ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |main|rossler:sist_rossler                                                                          ; work         ;
+;    |rossler:sist_rossler|                 ; 673 (581)         ; 138 (138)    ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |main|rossler:sist_rossler                                                                          ; work         ;
 ;       |lpm_mult:Mult0|                    ; 92 (0)            ; 0 (0)        ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |main|rossler:sist_rossler|lpm_mult:Mult0                                                           ; work         ;
 ;          |mult_46t:auto_generated|        ; 92 (92)           ; 0 (0)        ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |main|rossler:sist_rossler|lpm_mult:Mult0|mult_46t:auto_generated                                   ; work         ;
 ;    |sbox_caotica:inv_sbox2|               ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|sbox_caotica:inv_sbox2                                                                        ; work         ;
@@ -425,7 +446,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;    |sbox_caotica:sbox2|                   ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|sbox_caotica:sbox2                                                                            ; work         ;
 ;       |altsyncram:ram_rtl_0|              ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|sbox_caotica:sbox2|altsyncram:ram_rtl_0                                                       ; work         ;
 ;          |altsyncram_vd41:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|sbox_caotica:sbox2|altsyncram:ram_rtl_0|altsyncram_vd41:auto_generated                        ; work         ;
-;    |sbox_generator:algoritmo_sbox|        ; 10674 (10674)     ; 8279 (8279)  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|sbox_generator:algoritmo_sbox                                                                 ; work         ;
+;    |sbox_generator:algoritmo_sbox|        ; 10673 (10673)     ; 8279 (8279)  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|sbox_generator:algoritmo_sbox                                                                 ; work         ;
 ;    |sbox_rom:sbox|                        ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|sbox_rom:sbox                                                                                 ; work         ;
 ;       |altsyncram:Mux7_rtl_0|             ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|sbox_rom:sbox|altsyncram:Mux7_rtl_0                                                           ; work         ;
 ;          |altsyncram_2i11:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|sbox_rom:sbox|altsyncram:Mux7_rtl_0|altsyncram_2i11:auto_generated                            ; work         ;
@@ -543,17 +564,18 @@ Encoding Type:  One-Hot
 
 
 Encoding Type:  One-Hot
-+-----------------------------------------------------------------------------------------------+
-; State Machine - |main|main_inv_AES:inv_cipher|state                                           ;
-+-----------------+------------+-----------------+-----------------+---------------+------------+
-; Name            ; state.DONE ; state.DEC_ROUND ; state.SUB_BYTES ; state.START_s ; state.IDLE ;
-+-----------------+------------+-----------------+-----------------+---------------+------------+
-; state.IDLE      ; 0          ; 0               ; 0               ; 0             ; 0          ;
-; state.START_s   ; 0          ; 0               ; 0               ; 1             ; 1          ;
-; state.SUB_BYTES ; 0          ; 0               ; 1               ; 0             ; 1          ;
-; state.DEC_ROUND ; 0          ; 1               ; 0               ; 0             ; 1          ;
-; state.DONE      ; 1          ; 0               ; 0               ; 0             ; 1          ;
-+-----------------+------------+-----------------+-----------------+---------------+------------+
++-----------------------------------------------------------------------------------------------------------------+
+; State Machine - |main|main_inv_AES:inv_cipher|state                                                             ;
++-----------------+------------+-----------------+-----------------+-----------------+---------------+------------+
+; Name            ; state.DONE ; state.DEC_ROUND ; state.SUB_BYTES ; state.START_AUX ; state.START_s ; state.IDLE ;
++-----------------+------------+-----------------+-----------------+-----------------+---------------+------------+
+; state.IDLE      ; 0          ; 0               ; 0               ; 0               ; 0             ; 0          ;
+; state.START_s   ; 0          ; 0               ; 0               ; 0               ; 1             ; 1          ;
+; state.START_AUX ; 0          ; 0               ; 0               ; 1               ; 0             ; 1          ;
+; state.SUB_BYTES ; 0          ; 0               ; 1               ; 0               ; 0             ; 1          ;
+; state.DEC_ROUND ; 0          ; 1               ; 0               ; 0               ; 0             ; 1          ;
+; state.DONE      ; 1          ; 0               ; 0               ; 0               ; 0             ; 1          ;
++-----------------+------------+-----------------+-----------------+-----------------+---------------+------------+
 
 
 Encoding Type:  One-Hot
@@ -773,7 +795,6 @@ Encoding Type:  One-Hot
 ; single_port_ram:ram_0|addr_reg[3]                 ; Merged with single_port_ram:ram_3|addr_reg[3]                    ;
 ; single_port_ram:ram_1|addr_reg[3]                 ; Merged with single_port_ram:ram_3|addr_reg[3]                    ;
 ; single_port_ram:ram_2|addr_reg[3]                 ; Merged with single_port_ram:ram_3|addr_reg[3]                    ;
-; main_inv_AES:inv_cipher|Nr[3]                     ; Merged with main_inv_AES:inv_cipher|Nr[0]                        ;
 ; main_AES:cipher|Nr[3]                             ; Merged with main_AES:cipher|Nr[0]                                ;
 ; key_expansion_192:key_192|s_data_valid            ; Merged with key_expansion_192:key_192|data_valid                 ;
 ; controlador:ins_controlador|key_size[4]           ; Merged with controlador:ins_controlador|AES_version[1]           ;
@@ -782,10 +803,9 @@ Encoding Type:  One-Hot
 ; controlador:ins_controlador|top_key_address[0,3]  ; Merged with controlador:ins_controlador|key_size[0]              ;
 ; controlador:ins_controlador|sel_sbox_generator[0] ; Merged with controlador:ins_controlador|enable_sbox_generator[3] ;
 ; key_expansion_192:key_192|reset_ram               ; Merged with key_expansion_192:key_192|done_o                     ;
-; main_inv_AES:inv_cipher|reg_text[0..127]          ; Lost fanout                                                      ;
 ; controlador:ins_controlador|sel_sbox_generator[1] ; Merged with controlador:ins_controlador|enable_sbox_generator[0] ;
 ; controlador:ins_controlador|top_key_address[1]    ; Merged with controlador:ins_controlador|AES_version[0]           ;
-; Total Number of Removed Registers = 247           ;                                                                  ;
+; Total Number of Removed Registers = 118           ;                                                                  ;
 +---------------------------------------------------+------------------------------------------------------------------+
 
 
@@ -794,12 +814,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 10762 ;
+; Total registers                              ; 10890 ;
 ; Number of registers using Synchronous Clear  ; 62    ;
-; Number of registers using Synchronous Load   ; 6502  ;
-; Number of registers using Asynchronous Clear ; 6542  ;
+; Number of registers using Synchronous Load   ; 6503  ;
+; Number of registers using Asynchronous Clear ; 6543  ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 10424 ;
+; Number of registers using Clock Enable       ; 10551 ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -810,7 +830,7 @@ Encoding Type:  One-Hot
 ; Inverted Register                          ; Fan out ;
 +--------------------------------------------+---------+
 ; sbox_generator:algoritmo_sbox|j[0]         ; 796     ;
-; controlador:ins_controlador|AES_version[0] ; 14      ;
+; controlador:ins_controlador|AES_version[0] ; 16      ;
 ; key_expansion_192:key_192|counter[0]       ; 4       ;
 ; sbox_generator:algoritmo_sbox|j[4]         ; 771     ;
 ; sbox_generator:algoritmo_sbox|j[5]         ; 772     ;
@@ -819,7 +839,7 @@ Encoding Type:  One-Hot
 ; sbox_generator:algoritmo_sbox|j[3]         ; 794     ;
 ; sbox_generator:algoritmo_sbox|j[2]         ; 794     ;
 ; sbox_generator:algoritmo_sbox|j[1]         ; 794     ;
-; sbox_generator:algoritmo_sbox|j[8]         ; 16      ;
+; sbox_generator:algoritmo_sbox|j[8]         ; 14      ;
 ; Total number of inverted registers = 11    ;         ;
 +--------------------------------------------+---------+
 
@@ -844,308 +864,309 @@ Encoding Type:  One-Hot
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                   ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------+
 ; 3:1                ; 4 bits    ; 8 LEs         ; 0 LEs                ; 8 LEs                  ; Yes        ; |main|controlador:ins_controlador|enable_sbox_generator[3]   ;
-; 4:1                ; 128 bits  ; 256 LEs       ; 256 LEs              ; 0 LEs                  ; Yes        ; |main|register_out:registro_salida|ram[13][3]                ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |main|key_expansion_192:key_192|word_register:word_5|out3[1] ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |main|key_expansion_128:key_128|word_register:word_3|out3[7] ;
-; 3:1                ; 128 bits  ; 256 LEs       ; 128 LEs              ; 128 LEs                ; Yes        ; |main|main_inv_AES:inv_cipher|reg_text[56]                   ;
-; 3:1                ; 128 bits  ; 256 LEs       ; 128 LEs              ; 128 LEs                ; Yes        ; |main|main_AES:cipher|reg_text[13]                           ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |main|key_expansion_256:key_256|word_register:word_7|out3[5] ;
+; 4:1                ; 128 bits  ; 256 LEs       ; 256 LEs              ; 0 LEs                  ; Yes        ; |main|register_out:registro_salida|ram[2][5]                 ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |main|key_expansion_192:key_192|word_register:word_5|out3[2] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |main|key_expansion_128:key_128|word_register:word_3|out3[2] ;
+; 3:1                ; 128 bits  ; 256 LEs       ; 128 LEs              ; 128 LEs                ; Yes        ; |main|main_inv_AES:inv_cipher|reg_text[52]                   ;
+; 3:1                ; 128 bits  ; 256 LEs       ; 128 LEs              ; 128 LEs                ; Yes        ; |main|main_AES:cipher|reg_text[87]                           ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |main|key_expansion_256:key_256|word_register:word_7|out3[4] ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |main|mapa_logistico:m_log|s_counter_out[0]                  ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |main|rossler:sist_rossler|s_counter_out[0]                  ;
 ; 4:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; Yes        ; |main|rossler:sist_rossler|y_reg[31]                         ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |main|lorenz:sist_lorenz|s_counter_out[0]                    ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |main|main_inv_AES:inv_cipher|round[3]                       ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |main|key_expansion_256:key_256|counter[2]                   ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |main|main_inv_AES:inv_cipher|round[0]                       ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |main|key_expansion_256:key_256|counter[1]                   ;
 ; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |main|key_expansion_128:key_128|s_ram_addr[3]                ;
-; 5:1                ; 5 bits    ; 15 LEs        ; 10 LEs               ; 5 LEs                  ; Yes        ; |main|controlador:ins_controlador|key_size[0]                ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 10 LEs               ; 5 LEs                  ; Yes        ; |main|controlador:ins_controlador|AES_version[1]             ;
 ; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|sbox_out[0]              ;
-; 5:1                ; 9 bits    ; 27 LEs        ; 9 LEs                ; 18 LEs                 ; Yes        ; |main|mapa_logistico:m_log|counter[1]                        ;
-; 5:1                ; 9 bits    ; 27 LEs        ; 9 LEs                ; 18 LEs                 ; Yes        ; |main|rossler:sist_rossler|counter[2]                        ;
-; 5:1                ; 9 bits    ; 27 LEs        ; 9 LEs                ; 18 LEs                 ; Yes        ; |main|lorenz:sist_lorenz|counter[3]                          ;
-; 7:1                ; 13 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |main|rossler:sist_rossler|y_reg[17]                         ;
-; 4:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |main|UART_TX:TX|r_Clk_Count[8]                              ;
-; 18:1               ; 8 bits    ; 96 LEs        ; 96 LEs               ; 0 LEs                  ; Yes        ; |main|UART_TX:TX|r_TX_Data[5]                                ;
+; 5:1                ; 9 bits    ; 27 LEs        ; 9 LEs                ; 18 LEs                 ; Yes        ; |main|mapa_logistico:m_log|counter[3]                        ;
+; 5:1                ; 9 bits    ; 27 LEs        ; 9 LEs                ; 18 LEs                 ; Yes        ; |main|rossler:sist_rossler|counter[4]                        ;
+; 5:1                ; 9 bits    ; 27 LEs        ; 9 LEs                ; 18 LEs                 ; Yes        ; |main|lorenz:sist_lorenz|counter[8]                          ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |main|main_inv_AES:inv_cipher|round[1]                       ;
+; 7:1                ; 13 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |main|rossler:sist_rossler|y_reg[20]                         ;
+; 4:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |main|UART_TX:TX|r_Clk_Count[1]                              ;
+; 18:1               ; 8 bits    ; 96 LEs        ; 96 LEs               ; 0 LEs                  ; Yes        ; |main|UART_TX:TX|r_TX_Data[2]                                ;
 ; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |main|main_AES:cipher|round[1]                               ;
 ; 7:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |main|key_expansion_256:key_256|s_ram_addr[1]                ;
 ; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |main|controlador:ins_controlador|index[4]                   ;
-; 256:1              ; 24 bits   ; 4080 LEs      ; 4080 LEs             ; 0 LEs                  ; Yes        ; |main|sbox_generator:algoritmo_sbox|aux_value[0]             ;
-; 8:1                ; 4 bits    ; 20 LEs        ; 8 LEs                ; 12 LEs                 ; Yes        ; |main|controlador:ins_controlador|s_key_round[3]             ;
-; 7:1                ; 9 bits    ; 36 LEs        ; 9 LEs                ; 27 LEs                 ; Yes        ; |main|UART_RX:RX|r_Clk_Count[0]                              ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[1][19]     ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[2][19]     ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[3][15]     ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[4][2]      ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[5][16]     ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[6][18]     ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[7][23]     ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[8][21]     ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[9][5]      ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[10][22]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[11][8]     ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[12][20]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[13][23]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[14][8]     ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[15][19]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[16][19]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[17][19]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[18][19]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[19][8]     ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[20][4]     ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[21][20]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[22][20]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[23][22]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[24][17]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[25][0]     ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[26][16]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[27][11]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[28][9]     ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[29][10]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[30][12]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[31][15]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[32][9]     ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[33][11]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[34][10]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[35][21]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[36][6]     ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[37][22]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[38][21]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[39][4]     ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[40][12]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[41][3]     ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[42][12]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[43][6]     ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[44][19]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[45][4]     ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[46][17]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[47][17]    ;
+; 256:1              ; 24 bits   ; 4080 LEs      ; 4080 LEs             ; 0 LEs                  ; Yes        ; |main|sbox_generator:algoritmo_sbox|aux_value[6]             ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 8 LEs                ; 12 LEs                 ; Yes        ; |main|controlador:ins_controlador|s_key_round[0]             ;
+; 7:1                ; 9 bits    ; 36 LEs        ; 9 LEs                ; 27 LEs                 ; Yes        ; |main|UART_RX:RX|r_Clk_Count[4]                              ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[1][10]     ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[2][3]      ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[3][23]     ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[4][9]      ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[5][5]      ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[6][8]      ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[7][22]     ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[8][4]      ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[9][11]     ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[10][16]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[11][12]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[12][15]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[13][12]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[14][22]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[15][0]     ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[16][7]     ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[17][21]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[18][6]     ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[19][22]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[20][18]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[21][18]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[22][12]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[23][12]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[24][12]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[25][12]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[26][8]     ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[27][7]     ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[28][11]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[29][8]     ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[30][8]     ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[31][11]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[32][3]     ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[33][3]     ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[34][23]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[35][0]     ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[36][13]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[37][8]     ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[38][2]     ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[39][1]     ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[40][6]     ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[41][9]     ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[42][13]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[43][1]     ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[44][17]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[45][8]     ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[46][12]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[47][11]    ;
 ; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[48][6]     ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[49][4]     ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[50][9]     ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[51][17]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[52][0]     ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[53][13]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[54][22]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[55][6]     ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[56][12]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[57][11]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[58][22]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[59][7]     ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[60][18]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[61][2]     ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[62][15]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[63][13]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[64][11]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[65][23]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[49][2]     ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[50][15]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[51][9]     ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[52][9]     ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[53][18]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[54][14]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[55][11]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[56][20]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[57][10]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[58][20]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[59][14]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[60][1]     ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[61][4]     ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[62][20]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[63][22]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[64][6]     ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[65][15]    ;
 ; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[66][23]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[67][7]     ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[68][19]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[69][6]     ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[70][17]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[71][1]     ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[72][5]     ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[73][20]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[74][9]     ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[75][7]     ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[76][21]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[77][6]     ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[78][6]     ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[79][8]     ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[80][15]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[81][11]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[67][21]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[68][17]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[69][18]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[70][18]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[71][3]     ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[72][18]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[73][18]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[74][18]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[75][12]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[76][1]     ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[77][19]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[78][21]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[79][21]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[80][21]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[81][21]    ;
 ; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[82][19]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[83][0]     ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[83][10]    ;
 ; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[84][21]    ;
 ; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[85][21]    ;
 ; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[86][21]    ;
 ; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[87][21]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[88][17]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[89][17]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[90][14]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[91][9]     ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[92][15]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[93][3]     ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[94][20]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[95][4]     ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[96][6]     ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[97][6]     ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[98][1]     ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[99][10]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[100][2]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[101][5]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[102][8]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[103][16]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[104][20]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[105][13]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[88][21]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[89][4]     ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[90][23]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[91][21]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[92][21]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[93][21]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[94][21]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[95][21]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[96][9]     ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[97][20]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[98][8]     ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[99][0]     ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[100][22]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[101][13]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[102][17]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[103][4]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[104][10]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[105][3]    ;
 ; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[106][14]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[107][8]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[108][2]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[109][13]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[110][18]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[111][2]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[112][16]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[113][4]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[114][3]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[115][6]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[116][5]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[117][17]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[118][19]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[119][19]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[120][19]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[121][15]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[122][8]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[123][6]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[124][14]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[125][4]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[126][18]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[127][2]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[128][1]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[129][9]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[130][9]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[131][9]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[132][9]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[133][10]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[134][12]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[135][17]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[136][8]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[107][6]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[108][6]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[109][8]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[110][22]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[111][7]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[112][14]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[113][14]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[114][20]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[115][9]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[116][19]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[117][5]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[118][7]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[119][7]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[120][0]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[121][3]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[122][20]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[123][19]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[124][19]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[125][16]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[126][23]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[127][7]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[128][18]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[129][14]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[130][11]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[131][20]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[132][8]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[133][11]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[134][16]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[135][16]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[136][5]    ;
 ; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[137][11]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[138][12]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[139][21]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[138][8]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[139][18]   ;
 ; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[140][18]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[141][19]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[142][2]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[143][4]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[144][10]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[145][22]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[146][19]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[147][14]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[148][3]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[149][18]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[150][16]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[151][2]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[152][10]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[153][3]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[154][19]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[155][4]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[156][8]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[157][21]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[158][17]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[159][19]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[160][17]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[161][8]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[162][10]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[163][5]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[164][8]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[165][8]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[166][9]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[167][16]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[168][23]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[169][3]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[170][6]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[171][16]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[172][10]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[173][20]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[174][5]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[175][3]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[176][11]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[177][5]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[178][1]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[179][11]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[180][22]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[141][8]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[142][17]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[143][12]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[144][18]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[145][18]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[146][22]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[147][0]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[148][1]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[149][23]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[150][12]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[151][20]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[152][12]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[153][12]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[154][12]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[155][12]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[156][12]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[157][0]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[158][18]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[159][17]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[160][18]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[161][19]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[162][4]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[163][1]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[164][2]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[165][4]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[166][13]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[167][22]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[168][16]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[169][23]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[170][0]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[171][5]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[172][4]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[173][22]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[174][10]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[175][0]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[176][4]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[177][11]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[178][5]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[179][3]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[180][11]   ;
 ; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[181][19]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[182][19]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[183][12]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[184][7]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[185][4]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[186][16]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[187][11]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[188][5]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[189][5]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[190][5]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[191][5]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[192][4]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[193][5]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[194][0]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[195][13]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[196][6]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[197][22]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[198][6]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[199][17]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[200][5]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[182][8]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[183][3]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[184][12]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[185][0]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[186][22]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[187][19]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[188][16]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[189][19]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[190][19]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[191][19]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[192][19]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[193][19]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[194][2]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[195][19]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[196][5]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[197][0]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[198][18]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[199][12]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[200][13]   ;
 ; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[201][5]    ;
 ; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[202][20]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[203][5]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[204][5]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[205][7]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[206][11]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[207][22]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[208][15]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[209][16]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[210][5]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[211][5]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[212][14]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[213][13]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[214][15]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[215][18]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[216][22]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[217][9]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[218][6]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[219][13]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[220][21]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[221][3]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[222][16]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[223][7]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[224][6]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[225][18]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[226][8]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[227][18]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[228][15]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[229][19]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[230][15]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[231][15]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[232][1]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[233][4]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[234][20]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[235][23]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[236][3]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[237][16]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[238][1]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[239][22]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[240][8]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[241][19]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[242][8]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[243][10]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[203][17]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[204][19]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[205][20]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[206][9]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[207][3]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[208][14]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[209][10]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[210][22]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[211][8]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[212][4]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[213][0]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[214][1]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[215][14]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[216][8]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[217][3]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[218][9]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[219][20]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[220][2]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[221][16]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[222][17]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[223][12]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[224][22]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[225][7]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[226][22]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[227][1]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[228][10]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[229][20]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[230][4]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[231][3]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[232][22]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[233][11]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[234][10]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[235][13]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[236][20]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[237][14]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[238][0]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[239][6]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[240][6]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[241][6]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[242][6]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[243][9]    ;
 ; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[244][6]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[245][10]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[246][8]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[247][15]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[248][6]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[249][3]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[250][4]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[251][17]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[252][16]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[253][0]    ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[254][13]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[255][10]   ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[0][18]     ;
-; 21:1               ; 2 bits    ; 28 LEs        ; 4 LEs                ; 24 LEs                 ; Yes        ; |main|controlador:ins_controlador|sel_sbox_addr[0]           ;
-; 13:1               ; 15 bits   ; 120 LEs       ; 30 LEs               ; 90 LEs                 ; Yes        ; |main|controlador:ins_controlador|s_block_counter[7]         ;
-; 4:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; Yes        ; |main|rossler:sist_rossler|x_reg[25]                         ;
-; 4:1                ; 22 bits   ; 44 LEs        ; 44 LEs               ; 0 LEs                  ; Yes        ; |main|lorenz:sist_lorenz|x_reg[29]                           ;
-; 5:1                ; 9 bits    ; 27 LEs        ; 18 LEs               ; 9 LEs                  ; Yes        ; |main|sbox_generator:algoritmo_sbox|j[3]                     ;
-; 7:1                ; 32 bits   ; 128 LEs       ; 128 LEs              ; 0 LEs                  ; Yes        ; |main|mapa_logistico:m_log|x_reg[3]                          ;
-; 7:1                ; 46 bits   ; 184 LEs       ; 184 LEs              ; 0 LEs                  ; Yes        ; |main|lorenz:sist_lorenz|z_reg[16]                           ;
-; 7:1                ; 33 bits   ; 132 LEs       ; 132 LEs              ; 0 LEs                  ; Yes        ; |main|rossler:sist_rossler|x_reg[8]                          ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[245][6]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[246][1]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[247][3]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[248][8]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[249][17]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[250][0]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[251][2]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[252][17]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[253][1]    ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[254][11]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[255][11]   ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |main|sbox_generator:algoritmo_sbox|values_random[0][1]      ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 4 LEs                ; 24 LEs                 ; Yes        ; |main|controlador:ins_controlador|sel_sbox_addr[1]           ;
+; 13:1               ; 15 bits   ; 120 LEs       ; 30 LEs               ; 90 LEs                 ; Yes        ; |main|controlador:ins_controlador|s_block_counter[6]         ;
+; 4:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; Yes        ; |main|rossler:sist_rossler|x_reg[31]                         ;
+; 4:1                ; 22 bits   ; 44 LEs        ; 44 LEs               ; 0 LEs                  ; Yes        ; |main|lorenz:sist_lorenz|y_reg[29]                           ;
+; 5:1                ; 9 bits    ; 27 LEs        ; 18 LEs               ; 9 LEs                  ; Yes        ; |main|sbox_generator:algoritmo_sbox|j[0]                     ;
+; 7:1                ; 32 bits   ; 128 LEs       ; 128 LEs              ; 0 LEs                  ; Yes        ; |main|mapa_logistico:m_log|x_reg[1]                          ;
+; 7:1                ; 46 bits   ; 184 LEs       ; 184 LEs              ; 0 LEs                  ; Yes        ; |main|lorenz:sist_lorenz|z_reg[13]                           ;
+; 7:1                ; 33 bits   ; 132 LEs       ; 132 LEs              ; 0 LEs                  ; Yes        ; |main|rossler:sist_rossler|z_reg[12]                         ;
 ; 3:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |main|mapa_logistico:m_log|counter_2                         ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |main|mapa_logistico:m_log|round                             ;
-; 4:1                ; 24 bits   ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |main|mux4to1:mux_sbox_generator_data|Mux15                  ;
+; 4:1                ; 24 bits   ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |main|mux4to1:mux_sbox_generator_data|Mux23                  ;
 ; 3:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |main|rossler:sist_rossler|counter_2                         ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |main|rossler:sist_rossler|round                             ;
 ; 3:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |main|lorenz:sist_lorenz|counter_2                           ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |main|lorenz:sist_lorenz|round                               ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |main|controlador:ins_controlador|Mux54                      ;
-; 3:1                ; 24 bits   ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |main|key_expansion_256:key_256|mux2to1_32:mux_aux_2|y[8]    ;
-; 4:1                ; 18 bits   ; 36 LEs        ; 36 LEs               ; 0 LEs                  ; No         ; |main|lorenz:sist_lorenz|Mux34                               ;
-; 4:1                ; 18 bits   ; 36 LEs        ; 36 LEs               ; 0 LEs                  ; No         ; |main|rossler:sist_rossler|Mux8                              ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |main|controlador:ins_controlador|Mux53                      ;
+; 3:1                ; 24 bits   ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |main|key_expansion_256:key_256|mux2to1_32:mux_aux_2|y[3]    ;
+; 4:1                ; 18 bits   ; 36 LEs        ; 36 LEs               ; 0 LEs                  ; No         ; |main|lorenz:sist_lorenz|Mux12                               ;
+; 4:1                ; 18 bits   ; 36 LEs        ; 36 LEs               ; 0 LEs                  ; No         ; |main|rossler:sist_rossler|Mux27                             ;
 ; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |main|key_expansion_128:key_128|rcon                         ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |main|controlador:ins_controlador|state                      ;
 ; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |main|controlador:ins_controlador|sbox_counter               ;
@@ -1155,13 +1176,14 @@ Encoding Type:  One-Hot
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |main|main_AES:cipher|state                                  ;
 ; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |main|controlador:ins_controlador|timeout_counter            ;
 ; 4:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |main|key_expansion_256:key_256|rcon                         ;
-; 8:1                ; 34 bits   ; 170 LEs       ; 136 LEs              ; 34 LEs                 ; No         ; |main|mux_generic:mux_key_word|Mux19                         ;
-; 9:1                ; 4 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |main|mux_generic:mux_round_key_addr|Mux2                    ;
-; 19:1               ; 8 bits    ; 96 LEs        ; 0 LEs                ; 96 LEs                 ; No         ; |main|mux_generic:mux_inv_sbox_addr|Mux3                     ;
-; 256:1              ; 24 bits   ; 4080 LEs      ; 4080 LEs             ; 0 LEs                  ; No         ; |main|sbox_generator:algoritmo_sbox|Mux31                    ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |main|sbox_generator:algoritmo_sbox|Selector6182             ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |main|sbox_generator:algoritmo_sbox|Selector6184             ;
-; 32:1               ; 8 bits    ; 168 LEs       ; 160 LEs              ; 8 LEs                  ; No         ; |main|mux_generic:mux_sbox_addr|Mux4                         ;
+; 8:1                ; 34 bits   ; 170 LEs       ; 136 LEs              ; 34 LEs                 ; No         ; |main|mux_generic:mux_counter_word|Mux0                      ;
+; 9:1                ; 4 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |main|mux_generic:mux_round_key_addr|Mux3                    ;
+; 19:1               ; 8 bits    ; 96 LEs        ; 96 LEs               ; 0 LEs                  ; No         ; |main|mux4to1:mux_inv_sbox_addr|Mux6                         ;
+; 18:1               ; 2 bits    ; 24 LEs        ; 4 LEs                ; 20 LEs                 ; No         ; |main|controlador:ins_controlador|Mux39                      ;
+; 256:1              ; 24 bits   ; 4080 LEs      ; 4080 LEs             ; 0 LEs                  ; No         ; |main|sbox_generator:algoritmo_sbox|Mux32                    ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |main|sbox_generator:algoritmo_sbox|Selector6183             ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |main|sbox_generator:algoritmo_sbox|Selector6186             ;
+; 32:1               ; 8 bits    ; 168 LEs       ; 160 LEs              ; 8 LEs                  ; No         ; |main|mux_generic:mux_sbox_addr|Mux7                         ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------+
 
 
@@ -1370,6 +1392,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mux2to1:mux_sbox_TX ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; m              ; 8     ; Signed Integer                          ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +--------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: single_port_ram:ram_0 ;
 +----------------+-------+-------------------------------------------+
@@ -1436,16 +1468,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: mux2to1:mux_sbox_TX ;
-+----------------+-------+-----------------------------------------+
-; Parameter Name ; Value ; Type                                    ;
-+----------------+-------+-----------------------------------------+
-; m              ; 8     ; Signed Integer                          ;
-+----------------+-------+-----------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: mux2to1:mux_uart_TX ;
 +----------------+-------+-----------------------------------------+
 ; Parameter Name ; Value ; Type                                    ;
@@ -1476,14 +1498,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+----------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: mux_generic:mux_inv_sbox_addr ;
-+----------------+-------+---------------------------------------------------+
-; Parameter Name ; Value ; Type                                              ;
-+----------------+-------+---------------------------------------------------+
-; data_width     ; 8     ; Signed Integer                                    ;
-; num_inputs     ; 4     ; Signed Integer                                    ;
-+----------------+-------+---------------------------------------------------+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mux4to1:mux_inv_sbox_addr ;
++----------------+-------+-----------------------------------------------+
+; Parameter Name ; Value ; Type                                          ;
++----------------+-------+-----------------------------------------------+
+; m              ; 8     ; Signed Integer                                ;
++----------------+-------+-----------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -2408,14 +2429,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------+-------+----------+---------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "controlador:ins_controlador"                                                                                                 ;
-+--------------------------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; Port                     ; Type   ; Severity ; Details                                                                                                  ;
-+--------------------------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; enable_sbox_generator[1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
-; sel_inv_sbox_addr        ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-+--------------------------+--------+----------+----------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "controlador:ins_controlador"                                                                            ;
++--------------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port                     ; Type   ; Severity ; Details                                                                             ;
++--------------------------+--------+----------+-------------------------------------------------------------------------------------+
+; enable_sbox_generator[1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------------------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------+
@@ -2432,7 +2452,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:12:15     ;
+; Top            ; 00:12:05     ;
 +----------------+--------------+
 
 
@@ -2442,7 +2462,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Fri Aug 14 11:42:58 2026
+    Info: Processing started: Fri Aug 21 11:53:26 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off test_sistema_completo -c test_sistema_completo
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file controlador.vhd
@@ -2545,8 +2565,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file main_ae
     Info (12022): Found design unit 1: main_AES-behave
     Info (12023): Found entity 1: main_AES
 Info (12127): Elaborating entity "main" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at main.vhd(413): object "TX_active" assigned a value but never read
-Warning (10541): VHDL Signal Declaration warning at main.vhd(459): used implicit default value for signal "sel_inv_sbox_addr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10036): Verilog HDL or VHDL warning at main.vhd(414): object "TX_active" assigned a value but never read
 Info (12128): Elaborating entity "UART_RX" for hierarchy "UART_RX:RX"
 Info (12128): Elaborating entity "UART_TX" for hierarchy "UART_TX:TX"
 Info (12128): Elaborating entity "register_bank" for hierarchy "register_bank:data_register"
@@ -2580,7 +2599,7 @@ Info (12128): Elaborating entity "register_out" for hierarchy "register_out:regi
 Info (12128): Elaborating entity "mux4to1" for hierarchy "mux4to1:mux_send"
 Info (12128): Elaborating entity "decoder_2to4" for hierarchy "decoder_2to4:deco"
 Info (12128): Elaborating entity "mux_generic" for hierarchy "mux_generic:mux_sbox_addr"
-Info (12128): Elaborating entity "mux_generic" for hierarchy "mux_generic:mux_inv_sbox_addr"
+Info (12128): Elaborating entity "mux4to1" for hierarchy "mux4to1:mux_inv_sbox_addr"
 Info (12128): Elaborating entity "mux4to1" for hierarchy "mux4to1:mux_sbox_generator_data"
 Info (12128): Elaborating entity "mux2to1" for hierarchy "mux2to1:mux_round_key"
 Info (12128): Elaborating entity "mux_generic" for hierarchy "mux_generic:mux_round_key_addr"
@@ -2795,25 +2814,23 @@ Info (12133): Instantiated megafunction "lorenz:sist_lorenz|lpm_mult:Mult0" with
     Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
     Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
     Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
-Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (13014): Ignored 932 buffer(s)
     Info (13019): Ignored 932 SOFT buffer(s)
 Info (13000): Registers with preset signals will power-up high
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 128 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 24705 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 25408 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 4 input pins
     Info (21059): Implemented 18 output pins
-    Info (21061): Implemented 24235 logic cells
+    Info (21061): Implemented 24938 logic cells
     Info (21064): Implemented 416 RAM segments
     Info (21062): Implemented 32 DSP elements
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 4781 megabytes
-    Info: Processing ended: Fri Aug 14 11:55:22 2026
-    Info: Elapsed time: 00:12:24
-    Info: Total CPU time (on all processors): 00:12:23
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 4784 megabytes
+    Info: Processing ended: Fri Aug 21 12:05:38 2026
+    Info: Elapsed time: 00:12:12
+    Info: Total CPU time (on all processors): 00:12:13
 
 
